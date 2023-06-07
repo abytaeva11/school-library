@@ -114,7 +114,7 @@ const Tabs = () => {
                     </div>
 
                     <button   className="buttonTabs"> показать больше</button>
-
+                    <h1>vyidwasjbhcj</h1>
                 </div>
             </div>
         </div>
