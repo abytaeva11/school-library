@@ -1,0 +1,31 @@
+#header{
+  position: fixed;
+  width: 100%;
+  background: linear-gradient(100deg,#D78B59,#595FEB);
+  padding: 20px 0;
+  z-index: 99;
+  top: 0;
+  border-bottom: 1px solid white;
+}
+.header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header-logo h1{
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14.8993px;
+  line-height: 18px;
+  color: #FFFFFF;
+}
+.header-title {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  color: #FFFFFF;
+}
+.header-icon{
+  font-size: 25px;
+  margin-right: 7px;
+}

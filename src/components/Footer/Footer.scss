@@ -1,0 +1,234 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  width: 1140px;
+  margin: 0 auto;
+
+}
+
+#footer {
+  background: rgba(89, 95, 235, 0.58);
+  border-top: 1px solid #FFFFFF;
+  position: relative;
+
+  .books {
+    position: absolute;
+    left: 865px;
+    bottom: 5px;
+  }
+
+  .foot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent;
+    backdrop-filter: blur(10px);
+    z-index: 2;
+
+    &--title {
+      &__img {
+        margin: 40px 0 0 55px;
+      }
+
+      h1 {
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 18px;
+        color: #FFFFFF;
+      }
+
+      &__lang {
+        display: flex;
+        align-items: center;
+        margin: 65px 0;
+
+        h2 {
+          font-family: 'Montserrat', sans-serif;
+          font-weight: 500;
+          font-size: 20px;
+          line-height: 24px;
+          color: #FFFFFF;
+          transition: .2s;
+          border-bottom: 2px solid white;
+          margin-top: 7px;
+        }
+
+        h2:hover {
+          cursor: pointer;
+        }
+
+        h2:active {
+          transform: scale(1.1);
+          color: gray;
+          border-bottom: 2px solid gray;
+          cursor: pointer;
+        }
+
+        p {
+          font-family: 'Montserrat', sans-serif;
+          font-weight: 500;
+          font-size: 20px;
+          line-height: 24px;
+          color: #FFFFFF;
+          margin: 0 10px;
+          transition: .2s;
+          border-bottom: 2px solid white;
+        }
+
+        p:hover {
+          cursor: pointer;
+        }
+
+        p:active {
+          transform: scale(1.0);
+          color: gray;
+          cursor: pointer;
+          border-bottom: 2px solid gray;
+        }
+      }
+    }
+
+    &--link {
+      margin-bottom: 50px;
+
+      &__line1 {
+        width: 120px;
+        height: 1px;
+        background: linear-gradient(#DFAC4D, #310CAA);
+        margin: 0 0 15px 10px;
+      }
+
+      h2 {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 24px;
+        color: #FFFFFF;
+        margin: 0 0 20px 0;
+      }
+
+      a {
+        font-family: 'Montserrat',sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+        color: #FFFFFF;
+        display: flex;
+        margin: 15px 10px;
+      }
+    }
+
+    &--wifi {
+      margin-bottom: 95px;
+      &__ion{
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        flex-wrap: wrap;
+      }
+
+      h2 {
+        font-family: 'Montserrat',sans-serif;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 24px;
+        color: #FFFFFF;
+        margin: 0 0 20px 0;
+
+      }
+
+      &__icon {
+        color: #FFFFFF;
+        margin: 5px 7px;
+        font-size: 20px;
+      }
+      &__icon3 {
+        font-size: 20px;
+      }
+    }
+
+    &--call {
+      margin-bottom: 95px;
+
+      h2 {
+        font-family: 'Montserrat',sans-serif;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 24px;
+        color: #FFFFFF;
+        margin: 0 0 20px 0;
+
+      }
+
+      p {
+        font-family: 'Montserrat',sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+        color: #FFFFFF;
+        margin: 10px 10px;
+        display: flex;
+        align-items: flex-start;
+      }
+
+      &__icon2 {
+        color: #FFFFFF;
+        font-size: 20px;
+        margin: 0 10px;
+
+      }
+    }
+
+    &--location {
+      margin-bottom: 55px;
+
+      h1 {
+        font-family: 'Montserrat',sans-serif;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 24px;
+        color: #FFFFFF;
+        margin: 0 0 20px 0;
+
+      }
+
+      p {
+        font-family: 'Montserrat';
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+        color: #FFFFFF;
+        display: flex;
+        align-items: flex-start;
+        margin: 0 20px;
+      }
+
+      &__icon3 {
+        color: #FFFFFF;
+        font-size: 25px;
+        margin: 0 10px;
+      }
+    }
+  }
+
+  .logo3 {
+    margin-top: -80px;
+    margin-left: 510px;
+    position: absolute;
+  }
+
+  .logo4 {
+    position: absolute;
+    bottom: 50px;
+    left: 650px;
+  }
+}
