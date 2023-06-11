@@ -1,32 +1,44 @@
-import React, {useState} from "react";
-import "./Questions.scss"
-import sub1 from "../../pages/Questions/img/sub1.png"
-import sub2 from "../../pages/Questions/img/sub2.png"
-import query from "../../pages/Questions/img/bigQuery.png"
-import ques from "../../pages/Questions/img/ques.png"
+import React, {useContext, useState} from "react";
+import sub1 from "../../Pages/Questions/img/sub1.png"
+import sub2 from "../../Pages/Questions/img/sub2.png"
+import query from "../../Pages/Questions/img/bigQuery.png"
+import ques from "../../Pages/Questions/img/ques.png"
+import {LanguageContext} from "../../components/Context";
+
 const Questions = () => {
+    const {language} =  useContext(LanguageContext)
+const {data} = useContext(LanguageContext)
+    // const data = [
+    //     {
+    //         card: {
+    //             title: "Подпишитесь сейчас за 250,00 $ / год",
+    //             desc: "И получи доступ ко всем нашим материалам и начинай развиваться сейчас вместе со всеми",
+    //             sub: "Подписаться",
+    //             know: "Узнать больше",
+    //             titleRU: "Subscribe now for $250.00/year",
+    //             descRU: "And get access to all our materials and start developing now with everyone",
+    //             subRU: "Subscribe",
+    //         knowRU: "To learn more",
+    //         },
+    //         accord: {
+    //             name: "Появились вопросы?",
+    //             question1: "Сколько всего насчитывается материала всего?",
+    //             question2: "Потеряю ли я оставшесея время если перейду на другой до окончания этого?",
+    //             question3: "Могу ли я отказаться от автопродления подписки?",
+    //             question4: "Откуда мне узнавать про новые статьи и курсы?",
+    //             title: "К сожелению мы уже утратили счет материала спустьа столько лет работы и уже их настолько много что их уже не",
+    //             question1RU: "How much material is there in total?",
+    //             question2RU: "Will I lose the remaining time if I switch to another before this one ends?",
+    //             question3RU: "Can I cancel the subscription auto-renewal?",
+    //             question4RU: "How can I stay updated on new articles and courses?",
+    //             titleRU: "Unfortunately, we have already lost count of the material after so many years of work, and there are already so many of them that they...",
+    //
+    //         }
+    //     }
+    // ];
 
-    const data = [
-        {
-            card: {
-                title: "Подпишитесь сейчас за 250,00 $ / год",
-                desc: "И получи доступ ко всем нашим материалам и начинай развиваться сейчас вместе со всеми",
-                sub: "Подписаться",
-                know: "Узнать больше"
-            },
-            accord: {
-                name: "Появились вопросы?",
-                question1: "Сколько всего насчитывается материала всего?",
-                question2: "Потеряю ли я оставшесея время если перейду на другой до окончания этого?",
-                question3: "Могу ли я отказаться от автопродления подписки?",
-                question4: "Откуда мне узнавать про новые статьи и курсы?",
-                title: "К сожелению мы уже утратили счет материала спустьа столько лет работы и уже их настолько много что их уже не"
 
-            }
-        }
-    ];
-
-    function AccordionItem({ title, content }) {
+    function AccordionItem({title, content}) {
         const [isExpanded, setIsExpanded] = useState(false);
 
         const toggleAccordion = () => {
@@ -34,14 +46,14 @@ const Questions = () => {
         };
 
         return (
-            <div className={`accordion-item relative border-b border-gray-300 mb-2 ${isExpanded ? 'expanded' : ''}`}>
-                <h2 className="accordion-heading ">
+            <div className={` relative border-b border-gray-300 mb-2 ${isExpanded ? 'expanded' : ''}`}>
+                <h2 className=" ">
                     <button
-                        className="accordion-button flex items-center relative   justify-between w-full p-[0.4rem]  text-left  "
+                        className=" flex items-center relative   justify-between w-full p-[0.4rem]  text-left  "
                         onClick={toggleAccordion}
                         aria-expanded={isExpanded}
                     >
-                        <span className="text-white font-[400] text-[25px] font-sans w-[540px] ">{title}</span>
+                        <span className="text-white font-[300] text-[25px] font-sans w-[540px] ">{title}</span>
                         <svg
                             className={`accordion-icon w-9 h-9 rotate-0 shrink-0 text-white mb-[30px] ${isExpanded ? 'rotate-[-180deg] duration-500 ' : ' rotate-0 duration-500'}`}
                             fill="currentColor"
@@ -67,59 +79,57 @@ const Questions = () => {
     }
 
     return (
-        <div className="question  pt-[90px] pb-[200px]  px-[0]   bg-[#595FEB]">
+        <div className="question  pt-[90px] pb-[200px]  px-[0]">
             <div className="container mx-auto">
                 {
                     data?.map((el) => (
-                        <div className=" py-[50px] backdrop-blur-lg relative px-[53px] flex  rounded-[10px] border border-indigo-50">
+                        <div
+                            className=" py-[50px] backdrop-blur-lg relative px-[53px] flex  rounded-[10px] border border-indigo-50">
                             <img src={sub1} className="absolute top-0 left-0 w-[80px]" alt=""/>
                             <div className="flex flex-col  mr-[210px]">
-                                <h2 className="text-white font-[600] text-[32px] mb-[5px]  font-sans ">{el.card.title}</h2>
-                                <h4 className="text-white font-[300] text-[25px] space-x-0.5  font-sans w-[635px]">{el.card.desc}</h4>
+                                <h2 className="text-white font-[500] text-[32px] mb-[5px]   ">{ language ?  el.card.titleKG : el.card.title }</h2>
+                                <h4 className="text-white font-[400] text-[25px] space-x-0.5  font-sans w-[635px]">{ language ?  el.card.descKG : el.card.desc}</h4>
                             </div>
                             <div className="flex flex-col ">
-                                <button className="py-[8px] px-[17px] mt-[10px] mb-[20px]  text-[#595FEB] font-sans font-[500] bg-white rounded-[10px] ">{el.card.sub}</button>
-                                <button className="py-[8px] px-[17px]  text-white border  font-sans font-[800] border-fuchsia-50 rounded-[10px]  ">{el.card.know}</button>
+                                <button
+                                    className="py-[8px] px-[17px] mt-[10px] mb-[20px] text-[16px]  font-sans font-[700] bg-white rounded-[10px] " style={{
+                                        color: "#595FEB",
+
+                                }}>{ language ?  el.card.subKG : el.card.sub}</button>
+                                <button
+                                    className="py-[8px] px-[17px]  text-white border text-[16px] font-sans font-[800] border-fuchsia-50 rounded-[10px]  ">{language ?  el.card.knowKG : el.card.know}</button>
                             </div>
                             <img src={sub2} className="absolute bottom-0 right-[250px] w-[200px] " alt=""/>
                         </div>
                     ))
                 }
                 {
-                    data.map((el)=>(
+                    data.map((el) => (
                         <div className="pt-[230px]  items-center ">
-                            <h2 className="text-white text-[30px] font-[600] font-sans ">{el.accord.name}</h2>
+                            <h2 className="text-white text-[30px] font-[500] font-sans ">{language ?  el.accord.nameKG : el.accord.name}</h2>
                             <div className="flex  ">
                                 <div className="relative">
-                                    <img src={ques} className='absolute left-0 top-[120px]' alt=""/>
-                                    <img src={query} className="ml-[200px] mt-[50px] "  width={250}  alt=""/>
+                                    {/*<img src={ques} className='absolute left-0 top-[120px]' alt=""/>*/}
+                                    <img src={query} className="ml-[150px] mt-[50px] " width={280} alt=""/>
                                 </div>
-                                <div className="ml-[120px] ">
+                                <div className="ml-[120px] mt-[17px] ">
 
                                     <div id="accordion-collapse" className="accordion ">
                                         <AccordionItem
-                                            title={el.accord.question1}
-                                            content={
-                                                el.accord.title
-                                            }
+                                            title={language ?  el.accord.question1KG : el.accord.question1}
+                                            content={language ?  el.accord.titleKG : el.accord.title}
                                         />
                                         <AccordionItem
-                                            title={el.accord.question2}
-                                            content={
-                                                el.accord.title
-                                            }
+                                            title={language ?  el.accord.question2KG : el.accord.question2}
+                                            content={language ?  el.accord.titleKG : el.accord.title}
                                         />
                                         <AccordionItem
-                                            title={el.accord.question3}
-                                            content={
-                                                el.accord.title
-                                            }
+                                            title={language ?  el.accord.question3KG : el.accord.question3}
+                                            content={language ?  el.accord.titleKG : el.accord.title}
                                         />
                                         <AccordionItem
-                                            title={el.accord.question4}
-                                            content={
-                                                el.accord.title
-                                            }
+                                            title={language ?  el.accord.question4KG : el.accord.question4}
+                                            content={language ?  el.accord.titleKG : el.accord.title}
                                         />
                                     </div>
                                 </div>
