@@ -1,6 +1,7 @@
 import React from "react"
 import Tabs from "../Pages/Tabs/Tabs";
 import Hero from "../Pages/hero/Hero";
+import Questions from "../Pages/Questions/Questions";
 
 
 const Global=()=>{
@@ -9,7 +10,7 @@ const Global=()=>{
             <Hero/>
             <Tabs/>
             {/*<InfoFollowers/>*/}
-            {/*<Questions/>*/}
+            <Questions/>
         </div>
     )
 }

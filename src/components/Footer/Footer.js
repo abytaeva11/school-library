@@ -1,4 +1,3 @@
-import React from "react"
 import logo from "./img/logo1.png"
 import visa from "./img/visa.png"
 import maestro from "./img/master.png"
@@ -12,10 +11,14 @@ import {FaTiktok} from "react-icons/fa";
 import '../Footer/Footer.scss'
 import {BiLocationPlus} from "react-icons/bi";
 import {Tb123} from "react-icons/tb";
+import {useContext} from "react";
+import {LanguageContext} from "../Context";
 
 const Footer = () => {
+    const {getLanguage} = useContext(LanguageContext)
     return (
-        <div>
+        <>
+            <div>
             <section id="footer">
                 <div className="container">
                     <div className="foot">
@@ -23,7 +26,7 @@ const Footer = () => {
                             <img className="foot--title__img" src={logo} alt=""/>
                             <h1>SELF DEVELOPING SCHOOL</h1>
                             <div className="foot--title__lang">
-                                <h2 className="foot--title__lang--h">KG</h2>
+                                <h2 className="foot--title__lang--h" onClick={getLanguage}>KG</h2>
                                 <p>РУ</p>
                             </div>
                         </div>
@@ -46,8 +49,8 @@ const Footer = () => {
                                 < BsFacebook className="foot--wifi__icon"/>
                                 < BsTwitter className="foot--wifi__icon"/>
                                 < FaTiktok className="foot--wifi__icon"/>
-                                    < SlSocialVkontakte className="foot--wifi__icon"/>
-                                    < BsTelegram className="foot--wifi__icon"/>
+                                < SlSocialVkontakte className="foot--wifi__icon"/>
+                                < BsTelegram className="foot--wifi__icon"/>
                             </div>
 
 
@@ -74,6 +77,9 @@ const Footer = () => {
             </section>
 
         </div>
+
+        </>
+
     )
 }
 export default Footer;
