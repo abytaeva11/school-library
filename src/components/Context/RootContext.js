@@ -33,15 +33,19 @@ const RootContext = ({children}) => {
         }
     ];
     const [language, setLanguage] = useState(false)
-    const getLanguage = () =>{
+    const getKG = () =>{
         setLanguage(true)
+    }
+    const getRU = () =>{
+        setLanguage(false)
     }
     return (
         // eslint-disable-next-line react/jsx-no-undef
         <LanguageContext.Provider value={{
             language,
             data,
-            getLanguage
+            getKG,
+            getRU
         }}>
             {children}
         </LanguageContext.Provider>

@@ -8,36 +8,6 @@ import {LanguageContext} from "../../components/Context";
 const Questions = () => {
     const {language} =  useContext(LanguageContext)
 const {data} = useContext(LanguageContext)
-    // const data = [
-    //     {
-    //         card: {
-    //             title: "Подпишитесь сейчас за 250,00 $ / год",
-    //             desc: "И получи доступ ко всем нашим материалам и начинай развиваться сейчас вместе со всеми",
-    //             sub: "Подписаться",
-    //             know: "Узнать больше",
-    //             titleRU: "Subscribe now for $250.00/year",
-    //             descRU: "And get access to all our materials and start developing now with everyone",
-    //             subRU: "Subscribe",
-    //         knowRU: "To learn more",
-    //         },
-    //         accord: {
-    //             name: "Появились вопросы?",
-    //             question1: "Сколько всего насчитывается материала всего?",
-    //             question2: "Потеряю ли я оставшесея время если перейду на другой до окончания этого?",
-    //             question3: "Могу ли я отказаться от автопродления подписки?",
-    //             question4: "Откуда мне узнавать про новые статьи и курсы?",
-    //             title: "К сожелению мы уже утратили счет материала спустьа столько лет работы и уже их настолько много что их уже не",
-    //             question1RU: "How much material is there in total?",
-    //             question2RU: "Will I lose the remaining time if I switch to another before this one ends?",
-    //             question3RU: "Can I cancel the subscription auto-renewal?",
-    //             question4RU: "How can I stay updated on new articles and courses?",
-    //             titleRU: "Unfortunately, we have already lost count of the material after so many years of work, and there are already so many of them that they...",
-    //
-    //         }
-    //     }
-    // ];
-
-
     function AccordionItem({title, content}) {
         const [isExpanded, setIsExpanded] = useState(false);
 
