@@ -15,7 +15,8 @@ import {useContext} from "react";
 import {LanguageContext} from "../Context";
 
 const Footer = () => {
-    const {getLanguage} = useContext(LanguageContext)
+    const {getKG} = useContext(LanguageContext)
+    const {getRU} = useContext(LanguageContext)
     return (
         <>
             <div>
@@ -26,8 +27,8 @@ const Footer = () => {
                             <img className="foot--title__img" src={logo} alt=""/>
                             <h1>SELF DEVELOPING SCHOOL</h1>
                             <div className="foot--title__lang">
-                                <h2 className="foot--title__lang--h" onClick={getLanguage}>KG</h2>
-                                <p>РУ</p>
+                                <h2 className="foot--title__lang--h" onClick={getKG}>KG</h2>
+                                <p onClick={getRU}>РУ</p>
                             </div>
                         </div>
                         <div className="foot--link">
