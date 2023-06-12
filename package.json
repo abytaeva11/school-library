@@ -17,7 +17,7 @@
     "react-slick": "^0.29.0",
     "react-slider": "^2.0.5",
     "redux": "^4.2.1",
-    "sass": "^1.62.1",
+    "sass": "^1.63.3",
     "slick-carousel": "^1.8.1",
     "web-vitals": "^2.1.4"
   },
