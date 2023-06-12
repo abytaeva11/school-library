@@ -1,15 +1,21 @@
-import React, { useState } from "react";
-import fakeBackend from "./TabsCard";
-
+import React, {useContext, useState} from "react";
+import book1 from "./img/book1.png"
+import book2 from "./img/book2.png"
+import book3 from "./img/book3.png"
+import book4 from "./img/book4.png"
 import 'bootstrap/dist/css/bootstrap.css';
 import "./Tabs.scss"
 import {NavLink} from "react-router-dom";
 import line from "./img/Line 7.png";
+import {LanguageContext} from "../../components/Context";
 const Tabs = () => {
     const [selectedTab, setSelectedTab] = useState(1);
     const [addBooks, setAddBooks] = useState(false);
     const [count, setCount] = useState(false)
-
+    const {fakeBackend} = useContext(LanguageContext)
+    const {getKG} = useContext(LanguageContext)
+    const {getRU} = useContext(LanguageContext)
+    const {language} = useContext(LanguageContext)
     const handleTabClick = (index) => {
         setSelectedTab(index);
     };
@@ -17,9 +23,6 @@ const Tabs = () => {
     const handleButtonClick = (index) => {
         handleTabClick(index + 1);
     };
-
-
-
     return (
         <div id="tabs">
             <div className="container">
@@ -35,13 +38,12 @@ const Tabs = () => {
                                     handleTabClick(el.id);
                                 }}
                             >
-                                <button style={{margin:"0 10px"}}>{el.title}</button>
+                                <button style={{margin:"0 10px"}}>{ language ? el.titleKg : el.title}</button>
                             </div>
                         ))}
                     </div>
 
-                    <div className="tabs--img">
-                        <div className="row   " style={{ "--bs-gutter-x": "4.5rem"}}  >
+                    <div className="tabs--img">                   <div className="row   " style={{ "--bs-gutter-x": "4.5rem"}}  >
                             {fakeBackend.map((el) =>
                                 selectedTab === el.id ? (
                                     el.books.slice(0,8).map((book, index) => (
@@ -59,12 +61,12 @@ const Tabs = () => {
                                         >
                                             <div className="" style={{margin:" 15px"}}>
                                                 <div>
-                                                    <h5>{book.title}</h5>
+                                                    <h5 style={{fontSize:language? "16px":""}}>{ language? book.titleKg:book.title}</h5>
                                                     <div className="tabs__img--top">
-                                                        <h6>{book.text}</h6>
-                                                        <button >{book.textAll}</button>
-                                                        <button >{book.textNew}</button>
-                                                        <button>{book.textBooks}</button>
+                                                        <h6 style={{fontSize:language? "13px":"15px"}}>{book.text}</h6>
+                                                        <button  >{ language ? book.textAllKg:book.textAll}</button>
+                                                        <button >{ language ? book.textNewKg:book.textNew}</button>
+                                                        <button>{ language ? book.textBooksKg:book.textBooks}</button>
                                                     </div>
                                                 </div>
                                                 <div className="tabs--img__right">
@@ -73,7 +75,7 @@ const Tabs = () => {
                                                 </div>
                                                 <img src={line} alt="" className="lines" />
                                                 <div className="tabs__img--bottom text-white d-flex align-items-center justify-content-between">
-                                                    <h6>{book.author}</h6>
+                                                    <h6>{language ? book.authorKg : book.author}</h6>
                                                     <h6>{book.data}</h6>
                                                 </div>
                                             </div>
@@ -95,13 +97,13 @@ const Tabs = () => {
                             )}
                         </div>
                     </div>
-                    {/*<div className="baby__face">*/}
-                    {/*    <img className="baby__face1" src={book1} alt=""/>*/}
-                    {/*    <img className="baby__face2" src={book2} alt=""/>*/}
-                    {/*    <img className="baby__face3" src={book3} alt=""/>*/}
-                    {/*    <img className="baby__face4" src={book4} alt=""/>*/}
+                    <div className="baby__face">
+                        <img className="baby__face1" src={book1} alt=""/>
+                        <img className="baby__face2" src={book2} alt=""/>
+                        <img className="baby__face3" src={book3} alt=""/>
+                        <img className="baby__face4" src={book4} alt=""/>
 
-                    {/*</div>*/}
+                    </div>
                     <NavLink to="/many">  <button    className="buttonTabs"> показать больше</button></NavLink>
                 </div>
             </div>

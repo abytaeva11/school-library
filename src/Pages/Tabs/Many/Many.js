@@ -1,13 +1,18 @@
-import React, { useState } from "react";
-import fakeBackend from "../TabsCard";
+import React, {useContext, useState} from "react";
 import "./Many.scss";
 import Slider from "react-slick";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import line from "../img/Line 7.png"
+import {LanguageContext} from "../../../components/Context";
 
 
 const Many = () => {
+    const {fakeBackend} = useContext(LanguageContext)
+    const {getKG} = useContext(LanguageContext)
+    const {getRU} = useContext(LanguageContext)
+    const {language} = useContext(LanguageContext)
+
     const [selectTab, setSelectTab] = useState(1);
     const [add, setAdd] = useState(false);
     const [showPrevButton, setShowPrevButton] = useState(false);
@@ -70,7 +75,7 @@ const Many = () => {
                                             handleTab(el.id);
                                         }}
                                     >
-                                        <button>{el.title}</button>
+                                        <button>{language ? el.titleKg : el.title}</button>
                                     </div>
                                 ))}
                             </div>
@@ -98,12 +103,15 @@ const Many = () => {
                                             >
                                                 <div>
                                                     <div className="title">
-                                                        <h5>{book.title}</h5>
+                                                        <div className=" d-flex align-items-center justify-content-between">
+                                                                <h5 style={{ fontSize: language ? "16px" : "" }}>{language ? book.titleKg : book.title}</h5>
+                                                            <button style={{background:book.id === 1 || book.id === 4 || book.id === 7 ? "#fff":" " }} className="buttons">{book.id === 1 || book.id === 4 || book.id === 7 ? "Новое" : " "}</button>
+                                                            </div>
                                                         <div className="many--text">
-                                                            <h6>{book.text}</h6>
-                                                            <button>{book.textAll}</button>
-                                                            <button>{book.textNew}</button>
-                                                            <button>{book.textBooks}</button>
+                                                            <h6 style={{fontSize:language?"11px":""}}>{language?book.textKg: book.text}</h6>
+                                                            <button>{language?book.textAllKg:book.textAll}</button>
+                                                            <button>{language?book.textNewKg :book.textNew}</button>
+                                                            <button>{language?book.textBooksKg:book.textBooks}</button>
                                                         </div>
                                                     </div>
                                                     <div className="many--img">
@@ -115,8 +123,8 @@ const Many = () => {
                                                     </div>
                                                     <img src={line} alt="" className=" pt-2"/>
                                                     <div className="tabs__img--bottom">
-                                                        <h6>{book.author}</h6>
-                                                        <h6>{book.data}</h6>
+                                                        <h6>{language?book.authorKg : book.author}</h6>
+                                                        <h6>{ book.data}</h6>
                                                     </div>
                                                 </div>
                                             </div>
