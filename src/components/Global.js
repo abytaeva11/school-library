@@ -9,7 +9,6 @@ const Global=()=>{
         <div>
             <Hero/>
             <Tabs/>
-            {/*<InfoFollowers/>*/}
             <Questions/>
         </div>
     )
