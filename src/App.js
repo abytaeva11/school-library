@@ -4,8 +4,6 @@ import Global from "./components/Global";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/header/Header";
 import {Route, Routes} from "react-router-dom";
-import Many from "./Pages/Tabs/Many/Many";
-
 
 function App() {
   return (
@@ -20,4 +18,5 @@ function App() {
     </div>
   );
 }
+
 export default App;
