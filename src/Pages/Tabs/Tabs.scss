@@ -1,16 +1,11 @@
+@import "mixin";
+
 body {
   margin: 0 auto;
 }
 
 #tabs {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 100px;
-}
-
-.tab--global {
-  display: flex;
-
+  margin-top: 100px;
 }
 
 .tab--global__all {
@@ -20,102 +15,92 @@ body {
 }
 
 .tab {
-  padding: 8px;
-  background: #f1f1f1;
-  border-radius: 10px 10px 0 0;
+  padding: 6px;
   cursor: pointer;
-  margin-right: 8px;
+  margin-right: 15px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  @include tab;
 }
 
 .tab:last-child {
   margin-right: 0;
 }
 
-.tab button {
-  border: none;
-  background: transparent;
-  outline: none;
-  font-size: 18px;
-  font-weight: bold;
-  color: #555;
-}
-
 .tab.active {
   background: #fff;
+  color: #595FEB;
 }
-.shared-border {
 
-}
-.tabs--img h5{
-  font-family: 'Montserrat';
+.tabs--img h5 {
+  width: 285px;
+  height: 29px;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 500;
-  font-size: 24px;
+  font-size: 21px;
   color: #FFFFFF;
-  padding: 25px 0 5px 0;
+  padding: 25px 0;
 }
 
-.tabs--img{
+.tabs--img {
+  border: #FFFFFF;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.tabs__img--top{
+
+.tabs__img--top {
   display: flex;
   align-items: center;
   justify-content: space-between;
   color: white;
   border: #FFFFFF;
-  font-family: 'Montserrat';
+  font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   font-size: 16px;
-  padding:10px 0;
+  padding: 10px 0;
 }
-.tabs__img--top h6{
-  font-family: 'Montserrat';
+
+.tabs__img--top h6 {
+  font-family: 'Montserrat',sans-serif;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 15px;
+  line-height: 20px;
+  width: 148px;
+  height: 20px;
+  color: #FFFFFF;
 }
 
 .tabs__img--top button {
-  color: white;
-  background: rgba(173, 170, 170, 0.5);
   cursor: pointer;
   margin-left: 10px;
-  padding: 5px 10px;
-  border-radius: 10px;
+  padding: 2px 5px;
   font-weight: 400;
   font-size: 16px;
-  border-color: #FFFFFF;
-  backdrop-filter: blur(6px);
+  border-radius: 5px;
+  @include btn;
 }
-.tabs__img--left.special-style {
-  margin-top: 500px;
-  background: red;
-}
-.tabs__baby{
+
+.tabs__baby {
   position: relative;
   z-index: -10;
+}
 
+.buttonTabs {
+  width: 181px;
+  height: 46px;
+  border-radius: 10px;
+  @include btn;
 }
-.baby__face1{
-  position: absolute;
-  top: 1440px;
-  left: 355px;
 
+.tabs--tab {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
-.baby__face2{
-  position: absolute;
-  top: 1720px;
-  left: 1140px;
+
+.tabs--img__right{
+  margin-bottom: -20px;
 }
-.baby__face3{
-  position: absolute;
-  top: 2560px;
-  left: 940px;
-}
-.baby__face4{
-  position: absolute;
-  top: 2560px;
-  left: 240px;
-  padding: 50px 0;
-}
+
