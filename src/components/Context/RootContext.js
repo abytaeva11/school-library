@@ -29,8 +29,8 @@ const RootContext = ({children}) => {
                 question1KG: "Жалпыда жеткиликтүү материалдар канча?",
                 question2KG: "Бул бүтөн болгондон мурун калган убактылууга четкилештиргем?",
                 question3KG: "Абоненттикти авто-жаңылоо жөнүндө токтотуу болуу мүмкүнмү?",
-                question4KG: "Жаңы макалалар жана курстар тууралуу кабардарымдан какта каламынбы?",
-                titleKG: "Кечиресиз, биз жумуш жылдарынан кийин материалдардын санын өзүмүз чыгарып кеттік, жана алар азайы көп болду, алар..."
+                question4KG: "Жаңы макалалар жана курстар тууралуу кайсыл жактан кабар ала алам?",
+                titleKG: "Кечиресиз, биз жумуш жылдарынан кийин материалдардын санын өзүмүз чыгарып кеттик, жана алар азайы көп болду, алар..."
             },
 
         }
@@ -880,7 +880,7 @@ const RootContext = ({children}) => {
         {
             id:5,
             title:"Окружение",
-            titleKg: "Курчап",
+            titleKg: "Курчоо",
             isDone:false,
             books:[
                 {
@@ -915,7 +915,7 @@ const RootContext = ({children}) => {
                     textKg:"Пайдалуу макалалар",
                     textAllKg:"Баары",
                     textNewKg:"Жаны",
-                    textBooksKg:"Книги",
+                    textBooksKg:"Китептер",
                     authorKg:"Автор: Абытаева Савия",
                 },
                 {
@@ -933,7 +933,7 @@ const RootContext = ({children}) => {
                     textKg:"Пайдалуу макалалар",
                     textAllKg:"Баары",
                     textNewKg:"Жаны",
-                    textBooksKg:"Книги",
+                    textBooksKg:"Китептер",
                     authorKg:"Автор: Абытаева Савия",
                 },
                 {
@@ -1103,6 +1103,12 @@ const RootContext = ({children}) => {
         }
 
 
+    ]
+
+    const back = [
+        {
+
+        }
     ]
     const [language, setLanguage] = useState(false)
     const getKG = () =>{
