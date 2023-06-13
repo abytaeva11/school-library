@@ -92,7 +92,7 @@ const RootContext = ({children}) => {
                 Choose: "Выбрать"
             }
         },
-
+]
     const fakeBackend=[
         {
             id:1,
@@ -1183,11 +1183,8 @@ const RootContext = ({children}) => {
             data,
             getKG,
             getRU,
-
-            subscribe
-
-            fakeBackend
-
+            subscribe,
+            fakeBackend,
         }}>
             {children}
         </LanguageContext.Provider>

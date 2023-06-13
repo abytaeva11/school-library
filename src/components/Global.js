@@ -12,7 +12,7 @@ const Global=()=>{
             <Tabs/>
             <Questions/>
 
-            <Paket/>
+
 
         </div>
     )
