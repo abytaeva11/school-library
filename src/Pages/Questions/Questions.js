@@ -1,30 +1,14 @@
-import React, {useState} from "react";
-import "./Questions.scss"
-import sub1 from "../../pages/Questions/img/sub1.png"
-import sub2 from "../../pages/Questions/img/sub2.png"
-import query from "../../pages/Questions/img/bigQuery.png"
-import ques from "../../pages/Questions/img/ques.png"
+import React, { useContext, useState } from "react";
+import sub1 from "../../Pages/Questions/img/sub1.png";
+import sub2 from "../../Pages/Questions/img/sub2.png";
+import query from "../../Pages/Questions/img/bigQuery.png";
+import { LanguageContext } from "../../components/Context";
+import { useNavigate } from "react-router-dom";
+import "../Questions/Question.scss"
 const Questions = () => {
-
-    const data = [
-        {
-            card: {
-                title: "Подпишитесь сейчас за 250,00 $ / год",
-                desc: "И получи доступ ко всем нашим материалам и начинай развиваться сейчас вместе со всеми",
-                sub: "Подписаться",
-                know: "Узнать больше"
-            },
-            accord: {
-                name: "Появились вопросы?",
-                question1: "Сколько всего насчитывается материала всего?",
-                question2: "Потеряю ли я оставшесея время если перейду на другой до окончания этого?",
-                question3: "Могу ли я отказаться от автопродления подписки?",
-                question4: "Откуда мне узнавать про новые статьи и курсы?",
-                title: "К сожелению мы уже утратили счет материала спустьа столько лет работы и уже их настолько много что их уже не"
-
-            }
-        }
-    ];
+    const { language } = useContext(LanguageContext);
+    const { data } = useContext(LanguageContext);
+    const navigate = useNavigate();
 
     function AccordionItem({ title, content }) {
         const [isExpanded, setIsExpanded] = useState(false);
@@ -34,16 +18,24 @@ const Questions = () => {
         };
 
         return (
-            <div className={`accordion-item relative border-b border-gray-300 mb-2 ${isExpanded ? 'expanded' : ''}`}>
-                <h2 className="accordion-heading ">
+            <div
+                className={`relative border-b border-gray-300 mb-2 ${
+                    isExpanded ? "expanded" : ""
+                }`}
+            >
+                <h2 className="">
                     <button
-                        className="accordion-button flex items-center relative   justify-between w-full p-[0.4rem]  text-left  "
+                        className="flex items-center relative justify-between w-full p-[0.4rem] text-left"
                         onClick={toggleAccordion}
                         aria-expanded={isExpanded}
                     >
-                        <span className="text-white font-[400] text-[25px] font-sans w-[540px] ">{title}</span>
+            <span className="text-white font-[300] text-[25px] font-sans w-[540px]">
+              {title}
+            </span>
                         <svg
-                            className={`accordion-icon w-9 h-9 rotate-0 shrink-0 text-white mb-[30px] ${isExpanded ? 'rotate-[-180deg] duration-500 ' : ' rotate-0 duration-500'}`}
+                            className={`accordion-icon w-9 h-9 rotate-0 shrink-0 text-white mb-[30px] ${
+                                isExpanded ? "rotate-[-180deg] duration-500 " : "rotate-0 duration-500"
+                            }`}
                             fill="currentColor"
                             viewBox=" 0 0 20 20"
                             xmlns="http://www.w3.org/2000/svg"
@@ -57,81 +49,361 @@ const Questions = () => {
                     </button>
                 </h2>
                 {isExpanded && (
-                    <div className="accordion-content p-[0.7rem] text-white text-[16px] w-[570px] font-sans  ">
+                    <div className="accordion-content p-[0.7rem] text-white text-[16px] w-[570px] font-sans">
                         {content}
                     </div>
                 )}
             </div>
-
         );
     }
 
     return (
-        <div className="question  pt-[90px] pb-[200px]  px-[0]   bg-[#595FEB]">
+        <div className="question pt-[90px] pb-[200px] px-[0]">
             <div className="container mx-auto">
-                {
-                    data?.map((el) => (
-                        <div className=" py-[50px] backdrop-blur-lg relative px-[53px] flex  rounded-[10px] border border-indigo-50">
-                            <img src={sub1} className="absolute top-0 left-0 w-[80px]" alt=""/>
-                            <div className="flex flex-col  mr-[210px]">
-                                <h2 className="text-white font-[600] text-[32px] mb-[5px]  font-sans ">{el.card.title}</h2>
-                                <h4 className="text-white font-[300] text-[25px] space-x-0.5  font-sans w-[635px]">{el.card.desc}</h4>
-                            </div>
-                            <div className="flex flex-col ">
-                                <button className="py-[8px] px-[17px] mt-[10px] mb-[20px]  text-[#595FEB] font-sans font-[500] bg-white rounded-[10px] ">{el.card.sub}</button>
-                                <button className="py-[8px] px-[17px]  text-white border  font-sans font-[800] border-fuchsia-50 rounded-[10px]  ">{el.card.know}</button>
-                            </div>
-                            <img src={sub2} className="absolute bottom-0 right-[250px] w-[200px] " alt=""/>
-                        </div>
-                    ))
-                }
-                {
-                    data.map((el)=>(
-                        <div className="pt-[230px]  items-center ">
-                            <h2 className="text-white text-[30px] font-[600] font-sans ">{el.accord.name}</h2>
-                            <div className="flex  ">
-                                <div className="relative">
-                                    <img src={ques} className='absolute left-0 top-[120px]' alt=""/>
-                                    <img src={query} className="ml-[200px] mt-[50px] "  width={250}  alt=""/>
-                                </div>
-                                <div className="ml-[120px] ">
+                {data?.map((el) => (
+                    <div
+                        className="backdrop-blur-lg relative px-6 flex rounded-lg border border-indigo-50 transition-transform duration-300 pt-[41px] pb-[35px]"
+                        onMouseEnter={(e) => {
+                            const card = e.currentTarget;
+                            const images = card.querySelector(".card-image1");
+                            images.classList.add("scale-150");
+                            const card2 = e.currentTarget;
+                            const images2 = card2.querySelector(".card-image2");
+                            images2.classList.add("scale-1502");
 
-                                    <div id="accordion-collapse" className="accordion ">
-                                        <AccordionItem
-                                            title={el.accord.question1}
-                                            content={
-                                                el.accord.title
-                                            }
-                                        />
-                                        <AccordionItem
-                                            title={el.accord.question2}
-                                            content={
-                                                el.accord.title
-                                            }
-                                        />
-                                        <AccordionItem
-                                            title={el.accord.question3}
-                                            content={
-                                                el.accord.title
-                                            }
-                                        />
-                                        <AccordionItem
-                                            title={el.accord.question4}
-                                            content={
-                                                el.accord.title
-                                            }
-                                        />
-                                    </div>
+                        }}
+                        onMouseLeave={(e) => {
+                            const card = e.currentTarget;
+                            const images = card.querySelector(".card-image1");
+                            images.classList.remove("scale-150");
+                            const card2 = e.currentTarget;
+                            const images2 = card2.querySelector(".card-image2");
+                            images2.classList.remove("scale-1502");
+                        }}
+                    >
+                        <img src={sub1} className="absolute top-0 left-0 w-16 card-image1 animate-card-image1" alt="" />
+                        <div className="flex flex-col mr-[2rem] w-[802px] ml-[25px] ">
+                            <h2 className="text-white tracking-[1.5px] font-semibold text-[35px] mb-[0.95rem] ">
+                                {language ? el.card.titleKG : el.card.title}
+                            </h2>
+                            <h4 className="text-white tracking-[1.5px] font-[350] text-[28.2px] w-[669px] leading-[28px]  ">
+                                {language ? el.card.descKG : el.card.desc}
+                            </h4>
+                        </div>
+                        <div className="flex flex-col">
+                            <button
+                                className="py-[0.5rem] px-4 mt-2 mb-[23px] text-[16px] font-[600] bg-white rounded font-sans"
+                                style={{ color: "#595FEB" }}
+                                onClick={() => navigate("/subscribe")}
+                            >
+                                {language ? el.card.subKG : el.card.sub}
+                            </button>
+                            <button className="py-[0.5rem] px-4 text-white border text-[16px] font-bold border-fuchsia-50 font-sans rounded">
+                                {language ? el.card.knowKG : el.card.know}
+                            </button>
+                        </div>
+                        <img src={sub2} className="absolute bottom-0 right-[15.5rem] w-40 card-image2 animate-card-image2" alt="" />
+                    </div>
+                ))}
+                {data.map((el) => (
+                    <div className="pt-12 items-center" key={el.accord.name}>
+                        <h2 className="text-white text-3xl font-semibold">{language ? el.accord.nameKG : el.accord.name}</h2>
+                        <div className="flex">
+                            <div className="relative">
+                                <img src={query} className="ml-20 mt-8 " width={280} alt="" />
+                            </div>
+                            <div className="ml-12 mt-4">
+                                <div id="accordion-collapse" className="accordion">
+                                    <AccordionItem
+                                        title={language ? el.accord.question1KG : el.accord.question1}
+                                        content={language ? el.accord.titleKG : el.accord.title}
+                                    />
+                                    <AccordionItem
+                                        title={language ? el.accord.question2KG : el.accord.question2}
+                                        content={language ? el.accord.titleKG : el.accord.title}
+                                    />
+                                    <AccordionItem
+                                        title={language ? el.accord.question3KG : el.accord.question3}
+                                        content={language ? el.accord.titleKG : el.accord.title}
+                                    />
+                                    <AccordionItem
+                                        title={language ? el.accord.question4KG : el.accord.question4}
+                                        content={language ? el.accord.titleKG : el.accord.title}
+                                    />
                                 </div>
                             </div>
-
                         </div>
-                    ))
-                }
+                    </div>
+                ))}
             </div>
-
         </div>
     );
-}
+};
 
 export default Questions;
+
+// import React, { useContext, useState } from "react";
+// import sub1 from "../../Pages/Questions/img/sub1.png";
+// import sub2 from "../../Pages/Questions/img/sub2.png";
+// import query from "../../Pages/Questions/img/bigQuery.png";
+// import { LanguageContext } from "../../components/Context";
+// import { useNavigate } from "react-router-dom";
+//
+// const Questions = () => {
+//     const { language } = useContext(LanguageContext);
+//     const { data } = useContext(LanguageContext);
+//     const navigate = useNavigate();
+//
+//     function AccordionItem({ title, content }) {
+//         const [isExpanded, setIsExpanded] = useState(false);
+//
+//         const toggleAccordion = () => {
+//             setIsExpanded(!isExpanded);
+//         };
+//
+//         return (
+//             <div
+//                 className={`relative border-b border-gray-300 mb-2 ${
+//                     isExpanded ? "expanded" : ""
+//                 }`}
+//             >
+//                 <h2 className="">
+//                     <button
+//                         className="flex items-center relative justify-between w-full p-[0.4rem] text-left"
+//                         onClick={toggleAccordion}
+//                         aria-expanded={isExpanded}
+//                     >
+//             <span className="text-white font-[300] text-[25px] font-sans w-[540px]">
+//               {title}
+//             </span>
+//                         <svg
+//                             className={`accordion-icon w-9 h-9 rotate-0 shrink-0 text-white mb-[30px] ${
+//                                 isExpanded ? "rotate-[-180deg] duration-500 " : "rotate-0 duration-500"
+//                             }`}
+//                             fill="currentColor"
+//                             viewBox=" 0 0 20 20"
+//                             xmlns="http://www.w3.org/2000/svg"
+//                         >
+//                             <path
+//                                 fillRule="evenodd"
+//                                 d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+//                                 clipRule="evenodd"
+//                             ></path>
+//                         </svg>
+//                     </button>
+//                 </h2>
+//                 {isExpanded && (
+//                     <div className="accordion-content p-[0.7rem] text-white text-[16px] w-[570px] font-sans">
+//                         {content}
+//                     </div>
+//                 )}
+//             </div>
+//         );
+//     }
+//
+//     return (
+//         <div className="question pt-[90px] pb-[200px] px-[0]">
+//             <div className="container mx-auto">
+//                 {data?.map((el) => (
+//                     <div
+//                         className=" backdrop-blur-lg relative px-6 flex rounded-lg border border-indigo-50 transition-transform duration-300 pt-[41px] pb-[35px]"
+//                         onMouseEnter={(e) => {
+//                             const card = e.currentTarget;
+//                             const images = card.querySelectorAll(".card-image");
+//                             images.forEach((image) => {
+//                                 image.classList.add("scale-150");
+//                             });
+//                         }}
+//                         onMouseLeave={(e) => {
+//                             const card = e.currentTarget;
+//                             const images = card.querySelectorAll(".card-image");
+//                             images.forEach((image) => {
+//                                 image.classList.remove("scale-150");
+//                             });
+//                         }}
+//                     >
+//                         <img src={sub1} className="absolute top-0 left-0 w-16 card-image" alt="" />
+//                         <div className="flex flex-col mr-[2rem] w-[802px] ml-[25px] ">
+//                             <h2 className="text-white tracking-[1.5px] font-semibold text-[35px] mb-[0.95rem] ">
+//                                 {language ? el.card.titleKG : el.card.title}
+//                             </h2>
+//                             <h4 className="text-white tracking-[1.5px] font-[350] text-[28.2px] w-[669px] leading-[28px]  ">
+//                                 {language ? el.card.descKG : el.card.desc}
+//                             </h4>
+//                         </div>
+//                         <div className="flex flex-col">
+//                             <button
+//                                 className="py-[0.5rem] px-4 mt-2 mb-[23px] text-[16px] font-[600] bg-white rounded font-sans"
+//                                 style={{ color: "#595FEB" }}
+//                                 onClick={() => navigate("/subscribe")}
+//                             >
+//                                 {language ? el.card.subKG : el.card.sub}
+//                             </button>
+//                             <button className="py-[0.5rem] px-4 text-white border text-[16px] font-bold border-fuchsia-50 font-sans rounded">
+//                                 {language ? el.card.knowKG : el.card.know}
+//                             </button>
+//                         </div>
+//                         <img src={sub2} className="absolute bottom-0 right-[15.5rem] w-40 card-image" alt="" />
+//                     </div>
+//                 ))}
+//                 {data.map((el) => (
+//                     <div className="pt-12 items-center" key={el.accord.name}>
+//                         <h2 className="text-white text-3xl font-semibold">{language ? el.accord.nameKG : el.accord.name}</h2>
+//                         <div className="flex">
+//                             <div className="relative">
+//                                 <img src={query} className="ml-20 mt-8 " width={280} alt="" />
+//                             </div>
+//                             <div className="ml-12 mt-4">
+//                                 <div id="accordion-collapse" className="accordion">
+//                                     <AccordionItem
+//                                         title={language ? el.accord.question1KG : el.accord.question1}
+//                                         content={language ? el.accord.titleKG : el.accord.title}
+//                                     />
+//                                     <AccordionItem
+//                                         title={language ? el.accord.question2KG : el.accord.question2}
+//                                         content={language ? el.accord.titleKG : el.accord.title}
+//                                     />
+//                                     <AccordionItem
+//                                         title={language ? el.accord.question3KG : el.accord.question3}
+//                                         content={language ? el.accord.titleKG : el.accord.title}
+//                                     />
+//                                     <AccordionItem
+//                                         title={language ? el.accord.question4KG : el.accord.question4}
+//                                         content={language ? el.accord.titleKG : el.accord.title}
+//                                     />
+//                                 </div>
+//                             </div>
+//                         </div>
+//                     </div>
+//                 ))}
+//             </div>
+//         </div>
+//     );
+// };
+//
+// export default Questions;
+// // import React, {useContext, useState} from "react";
+// // import sub1 from "../../Pages/Questions/img/sub1.png"
+// // import sub2 from "../../Pages/Questions/img/sub2.png"
+// // import query from "../../Pages/Questions/img/bigQuery.png"
+// // // import ques from "../../Pages/Questions/img/ques.png"
+// // import {LanguageContext} from "../../components/Context";
+// // import {useNavigate} from "react-router-dom";
+// //
+// // const Questions = () => {
+// //
+// //     const {language} =  useContext(LanguageContext)
+// // const {data} = useContext(LanguageContext)
+// //     const navigate = useNavigate();
+// //     function AccordionItem({title, content}) {
+// //         const [isExpanded, setIsExpanded] = useState(false);
+// //
+// //         const toggleAccordion = () => {
+// //             setIsExpanded(!isExpanded);
+// //         };
+// //
+// //
+// //         return (
+// //             <div className={` relative border-b border-gray-300 mb-2 ${isExpanded ? 'expanded' : ''}`}>
+// //                 <h2 className=" ">
+// //                     <button
+// //                         className=" flex items-center relative   justify-between w-full p-[0.4rem]  text-left  "
+// //                         onClick={toggleAccordion}
+// //                         aria-expanded={isExpanded}
+// //                     >
+// //                         <span className="text-white font-[300] text-[25px] font-sans w-[540px] ">{title}</span>
+// //                         <svg
+// //                             className={`accordion-icon w-9 h-9 rotate-0 shrink-0 text-white mb-[30px] ${isExpanded ? 'rotate-[-180deg] duration-500 ' : ' rotate-0 duration-500'}`}
+// //                             fill="currentColor"
+// //                             viewBox=" 0 0 20 20"
+// //                             xmlns="http://www.w3.org/2000/svg"
+// //                         >
+// //                             <path
+// //                                 fillRule="evenodd"
+// //                                 d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+// //                                 clipRule="evenodd"
+// //                             ></path>
+// //                         </svg>
+// //                     </button>
+// //                 </h2>
+// //                 {isExpanded && (
+// //                     <div className="accordion-content p-[0.7rem] text-white text-[16px] w-[570px] font-sans  ">
+// //                         {content}
+// //                     </div>
+// //                 )}
+// //             </div>
+// //
+// //         );
+// //     }
+// //
+// //     return (
+// //         <div className="question  pt-[90px] pb-[200px]  px-[0]">
+// //             <div className="container mx-auto">
+// //                 {
+// //                     data?.map((el) => (
+// //                         <div
+// //                             className=" py-[50px] backdrop-blur-lg relative px-[53px] flex  rounded-[10px] border border-indigo-50">
+// //                             <img src={sub1} className="absolute top-0 left-0 w-[80px]" alt=""/>
+// //                             <div className="flex flex-col  mr-[210px]">
+// //                                 <h2 className="text-white font-[500] text-[32px] mb-[5px]   ">{ language ?  el.card.titleKG : el.card.title }</h2>
+// //                                 <h4 className="text-white font-[400] text-[25px] space-x-0.5  font-sans w-[635px]">{ language ?  el.card.descKG : el.card.desc}</h4>
+// //                             </div>
+// //                             <div className="flex flex-col ">
+// //
+// //                                     <button
+// //                                         className="py-[8px] px-[17px] mt-[10px] mb-[20px] text-[16px]  font-sans font-[700] bg-white rounded-[10px] "
+// //                                         style={{color: "#595FEB",}}
+// //                                         onClick={() => navigate("/subscribe")}>
+// //                                         { language ?  el.card.subKG : el.card.sub}
+// //                                     </button>
+// //
+// //
+// //                                 <button
+// //                                     className="py-[8px] px-[17px]  text-white border text-[16px] font-sans font-[800] border-fuchsia-50 rounded-[10px]  ">{language ?  el.card.knowKG : el.card.know}</button>
+// //                             </div>
+// //                             <img src={sub2} className="absolute bottom-0 right-[250px] w-[200px] " alt=""/>
+// //                         </div>
+// //                     ))
+// //                 }
+// //                 {
+// //                     data.map((el) => (
+// //                         <div className="pt-[230px]  items-center ">
+// //                             <h2 className="text-white text-[30px] font-[500] font-sans ">{language ?  el.accord.nameKG : el.accord.name}</h2>
+// //                             <div className="flex  ">
+// //                                 <div className="relative">
+// //                                     {/*<img src={ques} className='absolute left-0 top-[120px]' alt=""/>*/}
+// //                                     <img src={query} className="ml-[150px] mt-[50px] " width={280} alt=""/>
+// //                                 </div>
+// //                                 <div className="ml-[120px] mt-[17px] ">
+// //
+// //                                     <div id="accordion-collapse" className="accordion ">
+// //                                         <AccordionItem
+// //                                             title={language ?  el.accord.question1KG : el.accord.question1}
+// //                                             content={language ?  el.accord.titleKG : el.accord.title}
+// //                                         />
+// //                                         <AccordionItem
+// //                                             title={language ?  el.accord.question2KG : el.accord.question2}
+// //                                             content={language ?  el.accord.titleKG : el.accord.title}
+// //                                         />
+// //                                         <AccordionItem
+// //                                             title={language ?  el.accord.question3KG : el.accord.question3}
+// //                                             content={language ?  el.accord.titleKG : el.accord.title}
+// //                                         />
+// //                                         <AccordionItem
+// //                                             title={language ?  el.accord.question4KG : el.accord.question4}
+// //                                             content={language ?  el.accord.titleKG : el.accord.title}
+// //                                         />
+// //                                     </div>
+// //                                 </div>
+// //                             </div>
+// //
+// //                         </div>
+// //                     ))
+// //                 }
+// //             </div>
+// //
+// //         </div>
+// //     );
+// // }
+// //
+// // export default Questions;

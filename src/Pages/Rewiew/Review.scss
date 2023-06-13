@@ -1,0 +1,121 @@
+.slide-content p{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 17px;
+    line-height: 24px;
+    color: #FFFFFF;
+    margin: 32px;
+  }
+.slide-content span{
+  margin-left: 50px;
+}
+
+  .drive button{
+    color: #FFFFFF;
+    font-size: 24px;
+    margin: 15px 0 0 15px ;
+  }
+  .slick-prev,
+  .slick-next {
+    display: none !important;
+  }
+  .btn--left {
+    z-index: 999;
+    position: absolute;
+    top: 25%;
+    left: 70px;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid #FFFFFF;
+    backdrop-filter: blur(1.5px);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+  }
+
+
+  .slicing{
+    position: relative;
+
+  }
+
+
+  .btn--right {
+    position: absolute;
+    top: 25%;
+    right: 60px;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid #FFFFFF;
+    backdrop-filter: blur(1.5px);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+  }
+
+  .source h2{
+    font-family: 'Montserrat',sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 21px;
+    line-height: 29px;
+    color: #FFFFFF;
+    width: 237px;
+  }
+  .source img{
+    border: 1px solid #FFFFFF;
+  }
+  .source {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 32px 32px;
+  }
+  .source img {
+    width: 475px;
+    height: 1px;
+    margin: 0 10px;
+  }
+  .drive h7{
+    font-family: 'Montserrat',sans-serif;
+    font-weight: 600;
+    font-size: 40px;
+    color: #FFFFFF;
+    margin-left: 110px;
+  }
+
+.drive--text {
+  font-family: 'Montserrat',sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 49px;
+  color: #FFFFFF;
+  margin-left: 120px;
+}
+.slide{
+  margin-left: 495px;
+}
+  .drive .slick-slide {
+    margin: 0 19px;
+  }
+
+  .slide {
+    background: #595FEB;
+    border: black;
+
+  }
+
+  .slide.active {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid #FFFFFF;
+    border-radius: 10px;
+  }
+
+  .slide:nth-child(-n + 2):not(.active),
+  .slide:nth-last-child(-n + 2):not(.active) {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), linear-gradient(270deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 27.1%);    border: 1px solid #FFFFFF;
+    border-radius: 10px;
+    backdrop-filter: blur(12px);
+
+
+  }

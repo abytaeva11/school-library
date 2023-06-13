@@ -1,0 +1,25 @@
+.animate-card-image1 {
+  transition: transform 1s ease;
+
+
+}
+.animate-card-image2 {
+  transition: transform 1s ease;
+
+
+}
+.backdrop-blur-lg {
+  overflow: hidden;
+}
+.card-image1.scale-150 {
+  transform: scale(200%);
+  position: absolute;
+
+
+}
+.card-image2.scale-1502 {
+  transform: scale(200%);
+  position: absolute;
+  top: 110px;
+  rotate: 10deg;
+}
