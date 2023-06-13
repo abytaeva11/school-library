@@ -26,6 +26,7 @@ const Login = () => {
 
 
 
+
     const emailHandler = (e) => {
         setEmail(e.target.value)
         const re = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
@@ -49,6 +50,7 @@ const Login = () => {
 
     }
 
+
     const passwordHandler = (e) => {
         setPassword(e.target.value)
         if (e.target.value.length < 8 || e.target.value.length > 15) {
@@ -63,14 +65,12 @@ const Login = () => {
 
 
 
-
-
     return (
         <div>
             <section id="hero">
                 <div className="container">
-                    <div className="hero">
-                        <center className={'mt-20 '}>
+                    <div className="hero flex flex-column">
+                        <center className={'mt-2 '}>
                             <img src={log1} alt="img"/>
                             <h1 className={''}>SELF DEVELOPING SCHOOL</h1>
                         </center>
@@ -81,20 +81,20 @@ const Login = () => {
                                 <input onChange={e => emailHandler(e)} value={email} onBlur={e => blurHundler(e)} className="hero-in" name='email' type="email" placeholder="Email" required/>
                                 {(passwordDirty && passwordError) && <div style={{color:'red'}}>{passwordError}</div>}
                                 <input onChange={e => passwordHandler(e)} value={password} onBlur={e => blurHundler(e)} className="hero-in" name='password'  type="password" placeholder="Password" required/>
-                                <button onClick={() => navigate('/header')} disabled={!formValid} className="hero-btn" type="submit">Войти</button>
+                                <button onClick={() => navigate('/')} disabled={!formValid} className="hero-btn" type="submit">Войти</button>
                                 <a href="#">Забыли пароль?</a>
                             </div>
                         </center>
 
-
-
                     </div>
                 </div>
             </section>
-
         </div>
     );
 };
+
+
+
 
 
 export default Login;
