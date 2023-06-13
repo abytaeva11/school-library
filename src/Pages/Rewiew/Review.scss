@@ -5,6 +5,9 @@
     color: #FFFFFF;
     margin: 32px;
   }
+.drive{
+  position: relative;
+}
 .slide-content span{
   margin-left: 50px;
 }
@@ -18,10 +21,11 @@
   .slick-next {
     display: none !important;
   }
+
   .btn--left {
     z-index: 999;
     position: absolute;
-    top: 25%;
+    bottom: 60px;
     left: 70px;
     transform: translateY(-50%);
     background: rgba(255, 255, 255, 0.1);
@@ -41,7 +45,7 @@
 
   .btn--right {
     position: absolute;
-    top: 25%;
+    bottom: 60px;
     right: 60px;
     transform: translateY(-50%);
     background: rgba(255, 255, 255, 0.1);
