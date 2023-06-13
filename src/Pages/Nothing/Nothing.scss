@@ -115,6 +115,16 @@
       }
 
     }
+    .second--all:hover{
+      transform: scale(1.1);
+
+      //width: 303px;
+      //height: 578px;
+    }
+    .second--all{
+      transition: .4s;
+    }
+
 
     .second{
       display: flex;
@@ -123,8 +133,9 @@
       border-radius: 13px;
       width: 268px;
       height: 100%;
-      border: 1px solid #FFFFFF;
+      border: 1px solid #DFAC4D;
       background: rgba(255, 255, 255, 0.2);
+
       h4,h6,h2,h5{
         color: rgba(255, 255, 255, 0.6);
         margin-left: 5px;
