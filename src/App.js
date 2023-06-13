@@ -19,7 +19,7 @@ function App() {
         <div className="App">
             <Header/>
             <Routes>
-                <Route path={'/'} element={<Global/>}/>
+                {/*<Route path={'/'} element={<Global/>}/>*/}
                 <Route path={'/login'} element={<Login/>}/>
                 <Route path={'/tellegram'} element={<WeAre/>}/>
                 <Route path={"/subscribe"} element={<Subscribing/>}/>
