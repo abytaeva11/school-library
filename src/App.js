@@ -4,6 +4,8 @@ import Global from "./components/Global";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/header/Header";
 import {Route, Routes} from "react-router-dom";
+import Many from "./Pages/Tabs/Many/Many";
+import Nothing from "./Pages/Nothing/Nothing";
 
 function App() {
   return (
