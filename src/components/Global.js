@@ -11,7 +11,9 @@ const Global=()=>{
             <Hero/>
             <Tabs/>
             <Questions/>
+
             <Paket/>
+
         </div>
     )
 }

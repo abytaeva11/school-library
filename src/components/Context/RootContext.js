@@ -1,4 +1,3 @@
-
 import {LanguageContext} from "./index"
 import {useState} from "react";
 import wizards from "../../Pages/Tabs/img/image 1.png";
@@ -35,6 +34,65 @@ const RootContext = ({children}) => {
 
         }
     ];
+
+    const subscribe = [
+        {
+            decor: "Оформление подписки",
+            name: {
+                title: "ФИО",
+                input: "Muslim Bolot Joodarovich"
+            },
+            email: {
+                title: "Електронная почта",
+                input: "Example@gmail.com"
+            },
+            number: {
+                title: "Номер телефона",
+                input: "+996 770 55 55 55 "
+            },
+            password: {
+                title: "Промокод",
+                input: "If you do have"
+            },
+            pay: {
+                title: "Оплата",
+                visa: "Visa",
+                card: "Master Card"
+            },
+            cart: {
+                title: "Номер карты",
+                number: "1234 4567 7788 9210",
+                term: "Срок",
+                time: "12/25",
+                cvv: "398"
+            },
+
+            average: {
+                title: "Уровень пакета",
+                usual: "Обычный",
+                usual2: "Ежемесячно",
+                usual3: "Ежегодно",
+                usual4: "Все новые статьи",
+                usual5: "Все мастер классы по саморозвитию",
+                usual6: "Цена: 225$",
+                usual7: "Выбрано",
+            },
+            Intensive: {
+                title2: "Интенсив",
+                careful: "Ежемесячно",
+                careful1: "Ежегодно",
+                careful2: "Все новые статьи",
+                careful3: "Все мастер классы по саморозвитию",
+                careful4: "Курс по чтению языка тела",
+                careful5: "Курс по накоплению средств с выполотой долгов",
+                careful6: "Курс по быстрому карьерному росту",
+                careful7: "Курс по одолеванию страха потери",
+                coin: "Цена: 500$",
+                coin2: "750$",
+                Choose: "Выбрать"
+            }
+        },
+
     const fakeBackend=[
         {
             id:1,
@@ -1109,12 +1167,13 @@ const RootContext = ({children}) => {
         {
 
         }
+
     ]
     const [language, setLanguage] = useState(false)
-    const getKG = () =>{
+    const getKG = () => {
         setLanguage(true)
     }
-    const getRU = () =>{
+    const getRU = () => {
         setLanguage(false)
     }
     return (
@@ -1124,7 +1183,11 @@ const RootContext = ({children}) => {
             data,
             getKG,
             getRU,
+
+            subscribe
+
             fakeBackend
+
         }}>
             {children}
         </LanguageContext.Provider>
