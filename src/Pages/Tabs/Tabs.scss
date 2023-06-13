@@ -5,7 +5,7 @@ body {
 }
 
 #tabs {
-  margin-top: 100px;
+  margin: 100px 0;
 }
 
 .tab--global__all {
@@ -102,4 +102,30 @@ body {
 .tabs--img__right{
   margin-bottom: -20px;
 }
+.tabs__baby{
+  position: relative;
+  z-index: -10;
 
+}
+.baby__face1{
+  position: absolute;
+  top: 1620px;
+  left: 325px;
+
+}
+.baby__face2{
+  position: absolute;
+  top: 1880px;
+  left: 1140px;
+}
+.baby__face3{
+  position: absolute;
+  top: 2690px;
+  left: 952px;
+}
+.baby__face4{
+  position: absolute;
+  top: 2730px;
+  left: 230px;
+  padding: 50px 0;
+}
