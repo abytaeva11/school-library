@@ -20,64 +20,71 @@ const Footer = () => {
     return (
         <>
             <div>
-            <section id="footer">
-                <div className="container">
-                    <div className="foot">
-                        <div className="foot--title">
-                            <img className="foot--title__img" src={logo} alt=""/>
-                            <h1>SELF DEVELOPING SCHOOL</h1>
-                            <div className="foot--title__lang">
-                                <h2 className="foot--title__lang--h" onClick={getKG}>KG</h2>
-                                <p onClick={getRU}>РУ</p>
-                            </div>
-                        </div>
-                        <div className="foot--link">
-                            <h2>Быстрые ссылки</h2>
-                            <div className="foot--link__line1"></div>
-                            <a href="">Главная</a>
-                            <a href="">Школа</a>
-                            <a href="">О нас</a>
-                        </div>
+                <section id="footer">
+                    <div className="container">
 
-                        <div className="foot--wifi">
-                            <h2>Социальные сети</h2>
-                            <div className="foot--link__line1"></div>
-                            <div className="foot--wifi__ion" style={{
-                                width: '180px'
-                            }}>
-                                < AiOutlineInstagram className="foot--wifi__icon"/>
-                                < AiOutlineYoutube className="foot--wifi__icon"/>
-                                < BsFacebook className="foot--wifi__icon"/>
-                                < BsTwitter className="foot--wifi__icon"/>
-                                < FaTiktok className="foot--wifi__icon"/>
-                                < SlSocialVkontakte className="foot--wifi__icon"/>
-                                < BsTelegram className="foot--wifi__icon"/>
+
+
+                        <div className="foot">
+                            <div>
+                                <div className="foot-title">
+                                    <img className="foot-title-img" src={logo} alt=""/>
+                                    <h1>SELF DEVELOPING SCHOOL</h1>
+                                    <div className="lang">
+                                        <h2 className="foot-title-lang-hh" onClick={getKG}>KG</h2>
+                                        <p onClick={getRU}>РУ</p>
+                                    </div>
+                                </div>
                             </div>
 
+                            <div className="all">
+                                <div className="link">
+                                    <h2>Быстрые ссылки</h2>
+                                    <div className="line1"></div>
+                                    <a href="">Главная</a>
+                                    <a href="">Школа</a>
+                                    <a href="">О нас</a>
+                                </div>
 
-                        </div>
-                        <div className="foot--call">
-                            <h2>Контакты</h2>
-                            <div className="foot--link__line1"></div>
-                            <p><BsTelephone className="foot--call__icon2"/>0500 678 876</p>
-                            <p>< AiOutlineMail className="foot--call__icon2"/>Self_dev_school@gmail.com</p>
-                        </div>
-                        <div className="foot--location">
-                            <h1>Адрес</h1>
-                            <div className="foot--link__line1"></div>
-                            <p><BiLocationPlus className="foot--location__icon3"/> ИП Сейсембай, г.Алматы, <br/>мкр.
-                                Нурлытау, ул. Мерген, <br/>93.</p>
-                            <p><Tb123 className="foot--location__icon3"/>Идентификационный код: <br/>661102300013</p>
+                                <div className="wifi m-5 mt-0">
+                                    <h2>Социальные сети</h2>
+                                    <div className="line1"></div>
+                                    <div className="ion mt-3" style={{
+                                        width: '180px'
+                                    }}>
+                                        < AiOutlineInstagram className="icon"/>
+                                        < AiOutlineYoutube className="icon"/>
+                                        < BsFacebook className="icon"/>
+                                        < BsTwitter className="icon"/>
+                                        < FaTiktok className="icon"/>
+                                        < SlSocialVkontakte className="icon"/>
+                                        < BsTelegram className="icon"/>
+                                    </div>
+
+
+                                </div>
+                                <div className="call">
+                                    <h2>Контакты</h2>
+                                    <div className="line1"></div>
+                                    <p><BsTelephone className="icon2 mr-2"/>0500 678 876</p>
+                                    <p>< AiOutlineMail className="icon2 mr-2"/>Self_dev_school@gmail.com</p>
+                                </div>
+                                <div className="location">
+                                    <h1>Адрес</h1>
+                                    <div className="line1"></div>
+                                    <p><BiLocationPlus className="icon3"/> ИП Сейсембай, г.Алматы, <br/>мкр.
+                                        Нурлытау, ул. Мерген, <br/>93.</p>
+                                    <p><Tb123 className="icon3"/>Идентификационный код: <br/>661102300013</p>
+                                </div>
+                            </div>
                         </div>
 
+                        <img className="logo3" src={visa} alt=""/> <img className="logo4" src={maestro} alt=""/>
+                        <img className="books" src={book} alt=""/>
                     </div>
+                </section>
 
-                    <img className="logo3" src={visa} alt=""/> <img className="logo4" src={maestro} alt=""/>
-                    <img className="books" src={book} alt=""/>
-                </div>
-            </section>
-
-        </div>
+            </div>
 
         </>
 
