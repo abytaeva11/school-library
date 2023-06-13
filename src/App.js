@@ -16,7 +16,6 @@ function App() {
             <Route path={"/many"} element={<Many/>}/>
         </Routes>
         <Footer/>
-
     </div>
   );
 }
