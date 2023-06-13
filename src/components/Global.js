@@ -11,6 +11,7 @@ const Global=()=>{
             <Tabs/>
             {/*<InfoFollowers/>*/}
             <Questions/>
+
         </div>
     )
 }
