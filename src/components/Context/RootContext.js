@@ -61,10 +61,8 @@ const RootContext = ({children}) => {
             },
             cart: {
                 title: "Номер карты",
-                number: "1234 4567 7788 9210",
                 term: "Срок",
-                time: "12/25",
-                cvv: "398"
+                time: "CVV",
             },
 
             average: {

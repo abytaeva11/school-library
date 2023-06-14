@@ -1,6 +1,6 @@
 import './App.css';
 import React from "react";
-import Subscribing from "./Pages/Questions/Subscribing/index";
+import Subscribing from "./Pages/Questions/Subscribing/Subscribing";
 import Global from "./components/Global";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/header/Header";

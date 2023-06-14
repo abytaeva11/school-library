@@ -5,30 +5,26 @@
 
   .cribe {
     background: rgba(255, 255, 255, 0.3);
-    border: 1px solid #FFFFFF;
+    border: 1px solid #ffffff;
     backdrop-filter: blur(2px);
     border-radius: 10px;
-    width: 519px;
+    width: 635px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    padding: 33px 50px 14px 50px;
+    padding: 33px 70px 25px 70px;
 
     .registration {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
       width: 100%;
-      max-width: 400px;
 
-      h1 {
+      h3 {
         font-family: 'Montserrat', sans-serif;
         font-style: normal;
         font-weight: 600;
         font-size: 24px;
-        color: #FFFFFF;
-        margin-bottom: 10px;
+        color: #ffffff;
+        margin-bottom: 12px;
       }
 
       h2 {
@@ -36,20 +32,20 @@
         font-style: normal;
         font-weight: 500;
         font-size: 16px;
-        color: #FFFFFF;
-        margin-bottom: 5px;
+        color: #ffffff;
+        margin: 2px 0 -5px 0;
+        letter-spacing: 0.5px;
       }
 
       &--login {
-        border: 1px solid #FFFFFF;
+        border: 1px solid #ffffff;
         border-radius: 10px;
         outline: none;
         color: rgba(255, 255, 255, 0.5);
-
         width: 100%;
         padding: 8px;
         height: 40px;
-        margin-bottom: 10px;
+        margin-bottom: 5px;
         font-size: 14px;
         background: transparent;
       }
@@ -60,7 +56,6 @@
         font-weight: 400;
         font-size: 14px;
         color: rgba(255, 255, 255, 0.5);
-
       }
 
       &--master {
@@ -69,8 +64,8 @@
           font-style: normal;
           font-weight: 500;
           font-size: 16px;
-          color: #FFFFFF;
-          margin-bottom: 5px;
+          color: #ffffff;
+          margin-bottom: -8px;
         }
 
         &__payment {
@@ -85,20 +80,106 @@
               font-style: normal;
               font-weight: 400;
               font-size: 14px;
-              color: #FFFFFF;
+              color: #ffffff;
+            }
+          }
+        }
 
+        &__numbercart {
+          display: flex;
+          align-items: center;
+          margin: -22px 0 0 0;
+          &--date1 {
+            margin: 0 20px 0 0;
+            h2 {
+
+            }
+
+            input {
+              border: 1px solid #ffffff;
+              border-radius: 10px;
+              outline: none;
+              color: rgba(255, 255, 255, 0.5);
+              width: 175px;
+              padding: 0 15px;
+              height: 40px;
+              margin-bottom: 5px;
+              font-size: 14px;
+              background: transparent;
             }
           }
 
+          &--date2 {
+            margin: 0 20px 0 0;
+            h2 {
 
+            }
+
+            input {
+              border: 1px solid #ffffff;
+              border-radius: 10px;
+              outline: none;
+              color: rgba(255, 255, 255, 0.5);
+              width: 77px;
+              padding: 0 20px;
+              height: 40px;
+              margin-bottom: 5px;
+              font-size: 14px;
+              background: transparent;
+            }
+          }
+
+          &--date3 {
+            margin: 0 20px 0 0;
+            h2 {
+
+            }
+
+            input {
+              border: 1px solid #ffffff;
+              border-radius: 10px;
+              outline: none;
+              color: rgba(255, 255, 255, 0.5);
+              width: 61px;
+              padding: 0 16px;
+              height: 40px;
+              margin-bottom: 5px;
+              font-size: 14px;
+              background: transparent;
+            }
+          }
         }
       }
     }
   }
 }
 
+.checkbox-input {
+  appearance: none;
+  background: transparent;
+  border: 1px solid white;
+  width: 18px;
+  height: 18px;
+  position: relative;
+  cursor: pointer;
+  border-radius: 50%;
+  margin: 0 5px 0 0;
 
+  &:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
 
+  }
 
-
-
+  &:checked:before {
+    background-color: #ffffff;
+  }
+}
