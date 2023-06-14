@@ -11,7 +11,6 @@ const WeAre = () => {
             <Paket/>
             <Course/>
             <Reviews/>
-            <Questions/>
             <Tell/>
         </div>
     );
