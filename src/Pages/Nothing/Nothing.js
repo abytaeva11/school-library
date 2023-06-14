@@ -9,13 +9,15 @@ import "./Nothing.scss"
 const Nothing = () => {
     const {language} = useContext(LanguageContext);
     const {data} = useContext(LanguageContext);
-    const navigate = useNavigate();
-    function AccordionItem({title, content}) {
-        const [isExpanded, setIsExpanded] = useState(false);
+    const [expandedItems, setExpandedItems] = useState(null);
+
+    function AccordionItem({ id, title, content, activeItemId }) {
+        const isExpanded = expandedItems === id;
 
         const toggleAccordion = () => {
-            setIsExpanded(!isExpanded);
+            setExpandedItems(isExpanded ? null : id);
         };
+
         return (
             <div
                 className={`relative border-b border-gray-300 mb-2 ${
@@ -28,9 +30,9 @@ const Nothing = () => {
                         onClick={toggleAccordion}
                         aria-expanded={isExpanded}
                     >
-                <span className="text-white font-[300] text-[25px] font-sans w-[540px]">
-            {title}
-                </span>
+            <span className="text-white font-[300] text-[25px] font-sans w-[540px]">
+              {title}
+            </span>
                         <svg
                             className={`accordion-icon w-9 h-9 rotate-0 shrink-0 text-white mb-[30px] ${
                                 isExpanded ? "rotate-[-180deg] duration-500 " : "rotate-0 duration-500"
@@ -158,30 +160,40 @@ const Nothing = () => {
                     </div>
                     <div className="question pt-[90px] pb-[200px] px-[0]">
                         <div className="container mx-auto">
-                            {data.map((el) => (
+                            {data.map((el, index) => (
                                 <div className="pt-12 items-center" key={el.accord.name}>
-                                    <h2 className="text-white text-3xl font-semibold">{language ? el.accord.nameKG : el.accord.name}</h2>
+                                    <h2 className="text-white text-3xl font-semibold">
+                                        {language ? el.accord.nameKG : el.accord.name}
+                                    </h2>
                                     <div className="flex">
                                         <div className="relative">
-                                            <img src={query} className="ml-20 mt-8 " width={280} alt=""/>
+                                            <img src={query} className="ml-20 mt-8" width={280} alt="" />
                                         </div>
                                         <div className="ml-12 mt-4">
-                                            <div id="accordion-collapse" className="accordion">
+                                            <div id={`accordion-${index}`} className="accordion">
                                                 <AccordionItem
+                                                    id={`accordion-item-${index}-1`}
                                                     title={language ? el.accord.question1KG : el.accord.question1}
                                                     content={language ? el.accord.titleKG : el.accord.title}
+                                                    activeItemId={expandedItems}
                                                 />
                                                 <AccordionItem
+                                                    id={`accordion-item-${index}-2`}
                                                     title={language ? el.accord.question2KG : el.accord.question2}
                                                     content={language ? el.accord.titleKG : el.accord.title}
+                                                    activeItemId={expandedItems}
                                                 />
                                                 <AccordionItem
+                                                    id={`accordion-item-${index}-3`}
                                                     title={language ? el.accord.question3KG : el.accord.question3}
                                                     content={language ? el.accord.titleKG : el.accord.title}
+                                                    activeItemId={expandedItems}
                                                 />
                                                 <AccordionItem
+                                                    id={`accordion-item-${index}-4`}
                                                     title={language ? el.accord.question4KG : el.accord.question4}
                                                     content={language ? el.accord.titleKG : el.accord.title}
+                                                    activeItemId={expandedItems}
                                                 />
                                             </div>
                                         </div>
