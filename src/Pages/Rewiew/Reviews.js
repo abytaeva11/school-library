@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, {useState, useRef, useContext} from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -6,10 +6,19 @@ import { BsArrowRight, BsArrowLeft } from 'react-icons/bs';
 import "./Review.scss";
 import line from "./img/Line 8.png";
 
+import {LanguageContext} from "../../components/Context";
+
 const Reviews = () => {
     const [showButton, setShowButton] = useState(false);
     const sliderRef = useRef(null);
     const [currentSlide, setCurrentSlide] = useState(0);
+
+    const {reviews}=useContext(LanguageContext)
+    const {language}=useContext(LanguageContext)
+    const {getKG}=useContext(LanguageContext)
+    const {getRU}=useContext(LanguageContext)
+
+
 
     const NextClick = () => {
         if (sliderRef.current) {
@@ -55,34 +64,10 @@ const Reviews = () => {
         ],
     };
 
-    // Фейковые данные отзывов
-    const reviews = [
-        {
-            title: "Твой опыт бесценен! Ты бьешь в самое сердце и в этом твой успех, любого бизнесмена! У меня есть шанс научиться на твоих ошибках. Этот опыт бесценен!",
-            text: "Смотреть полностью",
-            name: "Muslim Bolot",
-            lastTitle: "Предпрениматель",
-            img: line
-        },
-        {
-            title: "Твой опыт бесценен! Ты бьешь в самое сердце и в этом твой успех, любого бизнесмена! У меня есть шанс научиться на твоих ошибках. Этот опыт бесценен!",
-            text: "Смотреть полностью",
-            name: "Muslim Bolot",
-            lastTitle: "Предпрениматель",
-            img: line
-        },
-        {
-            title: "Твой опыт бесценен! Ты бьешь в самое сердце и в этом твой успех, любого бизнесмена! У меня есть шанс научиться на твоих ошибках. Этот опыт бесценен!",
-            text: "Смотреть полностью",
-            name: "Muslim Bolot",
-            lastTitle: "Предпрениматель",
-            img: line
-        },
-    ];
 
     return (
         <div className="drive">
-            <h2 className="drive--text">Отзывы</h2>
+            <h2 className="drive--text">{language? "Сын-пикир" : " Отзывы"}</h2>
             <div className="btn--left">
                 <button onClick={PrevClick}>
                     <BsArrowLeft />
@@ -94,15 +79,15 @@ const Reviews = () => {
                         <div className={`slide ${index === currentSlide ? 'active' : ''}`} key={index}>
                             <div className="slide-content">
                                 <div>
-                                    <p>{review.title}
-                                        <span>{review.text}</span>
+                                    <p>{language? review.titleKG : review.title}
+                                        <span >{language? review.textKG : review.text}</span>
                                     </p>
 
                                 </div>
                                 <div className="source">
-                                    <h2>{review.name}</h2>
+                                    <h2 style={{fontSize : language ? "17px" : " "}}>{language? review.nameKG: review.name}</h2>
                                     <img src={review.img} alt="" />
-                                    <h2>{review.lastTitle}</h2>
+                                    <h2 >{language? review.lastTitleKG : review.lastTitle}</h2>
                                 </div>
                             </div>
                         </div>

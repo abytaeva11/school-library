@@ -11,6 +11,8 @@ import Paket from "./Pages/Paket/paket";
 import { Route, Routes, useLocation } from "react-router-dom";
 import WeAre from "./components/WeAre";
 import Nothing from "./Pages/Nothing/Nothing";
+import Third from "./Pages/Third/Third";
+import AccordionWe from "./Pages/accordionWe/AccordionWe";
 
 
 function App() {
@@ -21,9 +23,11 @@ function App() {
             <Routes>
                 {/*<Route path={'/'} element={<Global/>}/>*/}
                 <Route path={'/login'} element={<Login/>}/>
-                <Route path={'/tellegram'} element={<WeAre/>}/>
-                <Route path={"/subscribe"} element={<Subscribing/>}/>
+                <Route path={'/courses'} element={<WeAre/>}/>
+                <Route path={'/third'} element={<Third/>}/>
 
+
+                <Route path={"/subscribe"} element={<Subscribing/>}/>
                 <Route path={"/many"} element={<Many/>}/>
                 <Route path={"/many"} element={<Paket/>}/>
                 <Route path={"/buttons"} element={<Nothing/>}/>
@@ -36,6 +40,7 @@ function App() {
                     </Routes>
                 </>
             )}
+            <AccordionWe/>
             <Footer/>
         </div>
     );

@@ -61,9 +61,8 @@ const Many = () => {
             <div className="container ">
                 <div className="row  justify-content-center">
 
-                    <p>Наши курсы</p>
-                    <h1> Статьи</h1>
-
+                    <p>{language? " Биздин курстар" : "Наши курсы"}</p>
+                    <h1> {language ? "Макалалар " : "Статьи" }</h1>
                     <div className="many">
                         <div className="many--tab">
                             <div className="many--right  ">
@@ -105,7 +104,7 @@ const Many = () => {
                                                     <div className="title">
                                                         <div className=" d-flex align-items-center justify-content-between">
                                                                 <h5 style={{ fontSize: language ? "16px" : "" }}>{language ? book.titleKg : book.title}</h5>
-                                                            <button style={{background:book.id === 1 || book.id === 4 || book.id === 7 ? "#fff":" " }} className="buttons">{book.id === 1 || book.id === 4 || book.id === 7 ? "Новое" : " "}</button>
+                                                            <button style={{background:book.id === 1 || book.id === 4 || book.id === 7 ? "#fff":" " }} className="buttons">{book.id === 1 || book.id === 4 || book.id === 7 ? "Новое " : " "  }</button>
                                                             </div>
                                                         <div className="many--text">
                                                             <h6 style={{fontSize:language?"11px":""}}>{language?book.textKg: book.text}</h6>
