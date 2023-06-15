@@ -17,8 +17,8 @@ const Header = () => {
                 <div className="header">
                     <div className="header-logo ">
                         <Link to='/'>
-                                <img src={Head} alt="img" className="ml-14"/>
-                                <h1 className="m-0">SELF DEVELOPING SCHOOL </h1>
+                                <img src={Head} alt="img" className="ml-10"/>
+                                <h1>SELF DEVELOPING SCHOOL </h1>
                         </Link>
                     </div>
                 <div className="header-title flex items-center">
