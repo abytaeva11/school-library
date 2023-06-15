@@ -22,7 +22,7 @@ const Questions = () => {
 
         return (
             <div
-                className={`relative border-b border-gray-300 mb-2 ${
+                className={`relative border-b border-gray-300 mb-2  ${
                     isExpanded ? "expanded" : ""
                 }`}
             >
@@ -52,7 +52,7 @@ const Questions = () => {
                     </button>
                 </h2>
                 {isExpanded && (
-                    <div className="accordion-content p-[0.7rem] text-white text-[16px] w-[570px] font-sans">
+                    <div className="accordion-content p-[0.7rem] text-white text-[16px] w-[570px] font-sans ">
                         {content}
                     </div>
                 )}
