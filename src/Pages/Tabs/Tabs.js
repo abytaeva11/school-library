@@ -63,7 +63,7 @@ const Tabs = () => {
                                                 <div>
                                                     <h5 style={{fontSize:language? "16px":""}}>{ language? book.titleKg:book.title}</h5>
                                                     <div className="tabs__img--top">
-                                                        <h6 style={{fontSize:language? "13px":"15px"}}>{book.text}</h6>
+                                                        <h6 style={{fontSize:language? "10px":"15px"}}>{language ? "пайдалуу маалыматтар " : book . text}</h6>
                                                         <button  >{ language ? book.textAllKg:book.textAll}</button>
                                                         <button >{ language ? book.textNewKg:book.textNew}</button>
                                                         <button>{ language ? book.textBooksKg:book.textBooks}</button>
@@ -104,7 +104,7 @@ const Tabs = () => {
                         <img className="baby__face4" src={book4} alt=""/>
 
                     </div>
-                    <NavLink to="/many">  <button    className="buttonTabs"> показать больше</button></NavLink>
+                    <NavLink to="/many">  <button    className="buttonTabs"> { language?"Баардыгын корсотуу" : "показать больше"}</button></NavLink>
                 </div>
             </div>
         </div>
