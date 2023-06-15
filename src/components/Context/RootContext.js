@@ -75,7 +75,7 @@ const RootContext = ({children}) => {
                 usual6: "Цена: 225$",
                 usual7: "Выбрано",
             },
-            Intensive: {
+            intensive: {
                 title2: "Интенсив",
                 careful: "Ежемесячно",
                 careful1: "Ежегодно",
@@ -88,7 +88,9 @@ const RootContext = ({children}) => {
                 coin: "Цена: 500$",
                 coin2: "750$",
                 Choose: "Выбрать"
-            }
+            },
+            btn: "Оплатить 250$",
+            agree: "Я ознакомился и согласен с Условиями оказания услуг"
         },
 ]
     const fakeBackend=[
