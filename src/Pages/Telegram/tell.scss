@@ -1,85 +1,19 @@
 
-#tell{
-  padding: 100px 0;
-
-}
-.tell-block{
-  width: 555px;
-  height: 484px;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid #FFFFFF;
-  backdrop-filter: blur(12px);
-  border-radius: 10px;
-}
-
 .tell-title h1{
   font-style: normal;
   font-weight: 600;
   font-size: 40px;
   color: #FFFFFF;
-  margin-bottom: 35px;
+
+
 }
 .tell-title p {
-  padding: 0 10px;
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
   line-height: 24px;
   color: #FFFFFF;
 }
-.tell-block h3 {
-  padding: 10px 0 5px 5px;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  color: #FFFFFF;
-}
-.input{
-  width: 495px;
-  height: 40px;
-  border: 1px solid #FFFFFF;
-  border-radius: 10px;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  color: rgba(255, 255, 255, 0.99);
-  background: rgba(255, 255, 255, 0.1);
-  padding: 0 10px;
-}
-.tell-subTitle{
-  margin: 30px;
-}
-.in{
-  width: 495px ;
-  border: 1px solid #FFFFFF;
-  border-radius: 10px;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  color: rgba(255, 251, 251, 0.76);
-  background: rgba(255, 255, 255, 0.1);
-  height: 150px;
-}
-.tell-block button{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 10px 24px;
-  gap: 10px;
-  position: absolute;
-  width: 495px;
-  height: 44px;
-  left: 30px;
-  top: 410px;
-  background: #FFFFFF;
-  border-radius: 10px;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
-  color: #595FEB;
-  flex: none;
-  order: 0;
-  flex-grow: 0
-}
+
+
+
