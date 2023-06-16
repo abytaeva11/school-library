@@ -81,10 +81,17 @@ const RootContext = ({children}) => {
     ];
 
 
-
+const check = [
+    {
+        self: "SELF DEVELOPING SCHOOL",
+        panding: "Ожидание оплаты",
+        result: 'Спасибо за оплату.',
+        chek:'Чек был выслан на вашу электронную почту'
+    }
+]
 
     const subscribe = [
-        {
+        {   sub: "Подписаться",
             decor: "Оформление подписки",
             name: {
                 title: "ФИО",
@@ -1333,6 +1340,7 @@ const RootContext = ({children}) => {
             fakeBackend,
             accordion,
             reviews,
+            check
 
         }}>
             {children}

@@ -17,6 +17,7 @@ import Third from "./Pages/Third/Third";
 
 import AccordionWe from "./Pages/accordionWe/AccordionWe";
 import YouTube from "./Pages/YouTube/YouTube";
+import Check from "./Pages/Check/Check";
 
 
 
@@ -35,6 +36,7 @@ function App() {
 
                 <Route path={"/subscribe"} element={<Subscribing/>}/>
                 <Route path={"/many"} element={<Many/>}/>
+                <Route path={"/check"} element={<Check/>}/>
                 <Route path={"/many"} element={<Paket/>}/>
                 <Route path={"/buttons"} element={<Nothing/>}/>
 

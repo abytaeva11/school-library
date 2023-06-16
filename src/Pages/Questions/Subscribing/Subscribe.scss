@@ -326,12 +326,12 @@
             width: 245px;
             height: 523px;
             background: rgb(255 255 255 / 0%);
-            border: 1px solid #FFFFFF;
+            border: 1px solid #DFAC4D;
             backdrop-filter: blur(3px);
             border-radius: 10px;
-            margin: 0 0 0 20px;
 
             &--marge {
+              position: relative;
               margin: 0 0 0 21px;
               display: flex;
               align-items: flex-start;
@@ -671,7 +671,8 @@
   }
 }
 .error-message{
-  font-size: 14px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
   color: red;
   font-weight: 400;
   margin: -10px 0 0 0;
