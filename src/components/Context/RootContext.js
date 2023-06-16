@@ -122,6 +122,7 @@ const RootContext = ({children}) => {
                 usual5: "Все мастер классы по саморозвитию",
                 usual6: "Цена: 225$",
                 usual7: "Выбрано",
+                usualCoin: "250$"
             },
             intensive: {
                 title2: "Интенсив",
@@ -135,9 +136,10 @@ const RootContext = ({children}) => {
                 careful7: "Курс по одолеванию страха потери",
                 coin: "Цена: 500$",
                 coin2: "750$",
-                Choose: "Выбрать"
+                Choose: "Выбрать",
+                dollar: "500$"
             },
-            btn: "Оплатить 250$",
+            btn: "Оплатить ",
             agree: "Я ознакомился и согласен с Условиями оказания услуг"
         },
 ]

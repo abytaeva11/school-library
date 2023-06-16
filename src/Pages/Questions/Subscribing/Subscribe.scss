@@ -318,20 +318,7 @@
 
               }
 
-              button {
-                width: 210px;
-                height: 40px;
-                font-family: 'Montserrat', sans-serif;
-                font-style: normal;
-                font-weight: 500;
-                font-size: 20px;
-                color: #595FEB;
-                background: #FFFFFF;
-                border: 1px solid #FFFFFF;
-                border-radius: 10px;
-                margin: 10px 0 0 -6px;
-                letter-spacing: 0.2px;
-              }
+
             }
           }
 
@@ -556,20 +543,7 @@
                 }
               }
 
-              button {
-                width: 210px;
-                height: 40px;
-                font-family: 'Montserrat', sans-serif;
-                font-style: normal;
-                font-weight: 500;
-                font-size: 20px;
-                color: #ffffff;
-                background: transparent;
-                border: 1px solid #FFFFFF;
-                border-radius: 10px;
-                margin: 10px 0 0 -6px;
-                letter-spacing: 0.2px;
-              }
+
             }
           }
 
@@ -695,4 +669,96 @@
   &:checked:before {
     background-color: #ffffff;
   }
+}
+.error-message{
+  font-size: 14px;
+  color: red;
+  font-weight: 400;
+  margin: -10px 0 0 0;
+}
+.invalid {
+  border: 2px solid red;
+}
+.loading{
+  position: absolute;
+  top: 20%;
+  right: 20px;
+}
+.password-input{
+  position: relative;
+}
+$offset: 187;
+$duration: 1.4s;
+
+.spinner {
+  animation: rotator $duration linear infinite;
+}
+
+@keyframes rotator {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(270deg); }
+}
+
+.path {
+  position: absolute;
+  top: 20%;
+  right: 20px;
+  stroke-dasharray: $offset;
+  stroke-dashoffset: 0;
+  transform-origin: center;
+  animation:
+          dash $duration ease-in-out infinite,
+          colors ($duration*4) ease-in-out infinite;
+}
+
+@keyframes colors {
+  0% { stroke:
+          #60FF66; }
+  25% { stroke: #60FF66; }
+  50% { stroke:
+          #60FF66; }
+  75% { stroke:
+          #60FF66; }
+  100% { stroke:
+          #60FF66; }
+}
+
+@keyframes dash {
+  0% { stroke-dashoffset: $offset; }
+  50% {
+    stroke-dashoffset: $offset/4;
+    transform:rotate(135deg);
+  }
+  100% {
+    stroke-dashoffset: $offset;
+    transform:rotate(450deg);
+  }
+}
+.choose {
+  width: 210px;
+  height: 40px;
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  color: #595FEB;
+  background: #FFFFFF;
+  border: 1px solid #FFFFFF;
+  border-radius: 10px;
+  margin: 10px 0 0 -6px;
+  letter-spacing: 0.2px;
+}
+.choose1 {
+  width: 210px;
+  height: 40px;
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  color: #ffffff;
+  background: transparent;
+  border: 1px solid #FFFFFF;
+  border-radius: 10px;
+  margin: 10px 0 0 -6px;
+  letter-spacing: 0.2px;
 }
