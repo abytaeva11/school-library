@@ -3,7 +3,7 @@ import sub1 from "../../Pages/Questions/img/sub1.png";
 import sub2 from "../../Pages/Questions/img/sub2.png";
 import query from "../../Pages/Questions/img/bigQuery.png";
 import { LanguageContext } from "../../components/Context";
-import { useNavigate } from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import "../Questions/Question.scss";
 
 const Questions = () => {
@@ -105,9 +105,11 @@ const Questions = () => {
                             >
                                 {language ? el.card.subKG : el.card.sub}
                             </button>
-                            <button className="py-[0.5rem] px-4 text-white border text-[16px] font-bold border-fuchsia-50 font-sans rounded">
-                                {language ? el.card.knowKG : el.card.know}
-                            </button>
+                            <Link to={"/buttons"}>
+                                <button className="py-[0.5rem] px-4 text-white border text-[16px] font-bold border-fuchsia-50 font-sans rounded">
+                                    {language ? el.card.knowKG : el.card.know}
+                                </button>
+                            </Link>
                         </div>
                         <img
                             src={sub2}
