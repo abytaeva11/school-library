@@ -35,9 +35,22 @@ const Subscribing = () => {
     const [isMonthValid, setIsMonthValid] = useState(true);
     const [numInput, setNumInput] = useState('');
     const [isNumValid, setIsNumValid] = useState(true);
+
     const handleCartInputChange = (event) => {
         setCartInput(event.target.value);
         setIsCartValid(true); // Reset the validity when the input changes
+        const { value } = event.target;
+        const formattedValue = value.replace(/\s/g, '').slice(0, 16); // Удалить все пробелы и ограничить ввод до 16 символов
+
+        let formattedCart = '';
+        for (let i = 0; i < formattedValue.length; i++) {
+            formattedCart += formattedValue[i];
+            if (i === 3 || i === 7 || i === 11) {
+                formattedCart += ' '; // Добавить отступ после 4, 8 и 12 символов
+            }
+        }
+
+        setCartInput(formattedCart);
     };
 
     const handleKnowInputChange = (event) => {
@@ -49,12 +62,30 @@ const Subscribing = () => {
     const handleDateInputChange = (event) => {
         setDateInput(event.target.value);
         setIsDateValid(true); // Reset the validity when the input changes
+        const { value } = event.target;
+        const formattedValue = value
+            .replace(/\D/g, '') // Удалить все нецифровые символы
+            .slice(0, 4); // Ограничить ввод до 4 символов
+
+        let formattedDate = '';
+        if (formattedValue.length >= 3) {
+            // Добавить слеш после ввода двух символов
+            formattedDate = `${formattedValue.slice(0, 2)}/${formattedValue.slice(2)}`;
+        } else {
+            formattedDate = formattedValue;
+        }
+
+        setDateInput(formattedDate);
     };
 
 
     const handleNumInputChange = (event) => {
         setNumInput(event.target.value);
         setIsNumValid(true); // Reset the validity when the input changes
+        const { value } = event.target;
+        const formattedValue = value.slice(0, 3); // Ограничить ввод до 3 символов
+
+        setNumInput(formattedValue);
     };
 
 
@@ -281,10 +312,14 @@ const Subscribing = () => {
                                 <div className="registration--master__numbercart">
                                     <div className="registration--master__numbercart--date1">
                                         <h4>{el.cart.title}</h4>
-                                        <input type="tel" style={{border: !isCartValid ? "1px solid red" : ""}}
-                                               className={`registration--login ${!isCartValid ? 'invalid' : ''}`}
-                                               value={cartInput} onChange={handleCartInputChange}
-                                               placeholder="1234 4567 7788 9210"/>
+                                        <input
+                                            type="tel"
+                                            style={{ border: !isCartValid ? '1px solid red' : '' }}
+                                            className={`registration--login ${!isCartValid ? 'invalid' : ''}`}
+                                            value={cartInput}
+                                            onChange={handleCartInputChange}
+                                            placeholder="1234 4567 7788 9210"
+                                        />
                                     </div>
                                     <div className="registration--master__numbercart--date2">
                                         <h4>{el.cart.term}</h4>
@@ -295,10 +330,14 @@ const Subscribing = () => {
                                     </div>
                                     <div className="registration--master__numbercart--date3">
                                         <h4>{el.cart.time}</h4>
-                                        <input type="text" style={{border: !isNumValid ? "1px solid red" : ""}}
-                                               className={`registration--login ${!isNumValid ? 'invalid' : ''}`}
-                                               value={numInput} onChange={handleNumInputChange}
-                                               placeholder="398"/>
+                                        <input
+                                            type="text"
+                                            style={{ border: !isNumValid ? '1px solid red' : '' }}
+                                            className={`registration--login ${!isNumValid ? 'invalid' : ''}`}
+                                            value={numInput}
+                                            onChange={handleNumInputChange}
+                                            placeholder="398"
+                                        />
                                     </div>
 
                                 </div>
@@ -362,7 +401,9 @@ const Subscribing = () => {
                                                 </div>
 
                                             </div>
-                                            <div  className={isIntensiveSelected ? "cribe--level__just--column__usual" : "cribe--level__just--column__intensive"}>
+                                            <div style={{
+
+                                            }}  className={isIntensiveSelected ? "cribe--level__just--column__usual" : "cribe--level__just--column__intensive"}>
                                                 <div className="cribe--level__just--column__intensive--marge">
                                                     <h1>{el.intensive.title2}</h1>
                                                     <div
