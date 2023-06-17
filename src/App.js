@@ -1,5 +1,5 @@
 import './App.css';
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import Subscribing from "./Pages/Questions/Subscribing/Subscribing";
 import Global from "./components/Global";
 import Footer from "./components/Footer/Footer";
@@ -24,10 +24,21 @@ import Questions from "./Pages/Questions/Questions";
 function App() {
     const [loggedIn, setLoggedIn] = useState(false)
     const location = useLocation();
+
+    useEffect(() => {
+        window.scrollTo(0, 0); // Перемещение вверх страницы при каждом изменении маршрута
+    }, [location]);
     return (
             <UserContext.Provider value={{loggedIn,setLoggedIn}}>
 
         <div className="App">
+            {location.pathname !== "/" && (
+                <>
+                    <Routes>
+                        <Route path={"/check"} element={<Check/>}/>
+                    </Routes>
+                </>
+            )}
             <Header/>
             <Routes>
                 {/*<Route path={'/'} element={<Global/>}/>*/}
@@ -38,7 +49,6 @@ function App() {
 
                 <Route path={"/subscribe"} element={<Subscribing/>}/>
                 <Route path={"/many"} element={<Many/>}/>
-                <Route path={"/check"} element={<Check/>}/>
                 <Route path={"/many"} element={<Paket/>}/>
                 <Route path={"/buttons"} element={<Nothing/>}/>
                 <Route path={"/youtube"} element={<YouTube/>}/>
@@ -46,6 +56,7 @@ function App() {
 
 
             </Routes>
+
             {location.pathname !== "/subscribe" && (
                 <>
                     <Routes>

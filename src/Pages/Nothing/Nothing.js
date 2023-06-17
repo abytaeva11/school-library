@@ -358,7 +358,7 @@ const Nothing = () => {
                                                 <img className="cribe--level__just--column__usual2--book2" src={book2}
                                                      alt=""/>
                                                 <div className="cribe--level__just--column__usual2--marge">
-                                                    <h1>{el.average.usual}</h1>
+                                                    <h1>{ language ? el.average.usualKG : el.average.usual}</h1>
                                                     <div className="cribe--level__just--column__usual2--marge__input">
                                                         <input
                                                             type="checkbox"
@@ -381,23 +381,23 @@ const Nothing = () => {
                                                             className={`checkbox-input ${!isYearValid ? 'invalid' : ''}`}
 
                                                         />
-                                                        <h5>{el.average.usual3}</h5>
+                                                        <h5>{language ? el.average.usual3KG : el.average.usual3}</h5>
                                                     </div>
                                                     <div className="cribe--level__just--column__usual2--marge__check1">
                                                         <BsCheckLg className="iconka1"/>
-                                                        <h4>{el.average.usual4}</h4>
+                                                        <h4>{language ? average.usual4KG : el.average.usual4}</h4>
                                                     </div>
                                                     <div className="cribe--level__just--column__usual2--marge__check2">
                                                         <BsCheckLg className="iconka2"/>
-                                                        <h4>{el.average.usual5}</h4>
+                                                        <h4>{language ? el.average.usual5KG : el.average.usual5}</h4>
                                                     </div>
-                                                    <h2>{el.average.usual6}</h2>
+                                                    <h2>{language ? el.average.usual6KG  : el.average.usual6}</h2>
                                                     <Link to={"/subscribe"}>
                                                         {
                                                             isIntensiveSelected ? <button  onClick={handleUsualChooseClick}
-                                                                                           className="choose1">{el.sub}</button>
+                                                                                           className="choose1">{language ? el.subKG  : el.sub}</button>
                                                                 : <button  onClick={handleUsualChooseClick}
-                                                                           className="choose">{el.sub}</button>
+                                                                           className="choose">{language ? el.subKG  : el.sub}</button>
                                                         }
                                                     </Link>
 
@@ -406,7 +406,7 @@ const Nothing = () => {
                                             </div>
                                             <div   className={isIntensiveSelected ? "cribe--level__just--column__usual2" : "cribe--level__just--column__intensive2"}>
                                                 <div className="cribe--level__just--column__intensive2--marge">
-                                                    <h1>{el.intensive.title2}</h1>
+                                                    <h1>{language ? el.intensive.title2KG  : el.intensive.title2}</h1>
                                                     <div
                                                         className="cribe--level__just--column__intensive2--marge__input">
                                                         <input style={{border: !isMonthValid ? "1px solid red" : ""}}
@@ -416,7 +416,7 @@ const Nothing = () => {
                                                                onChange={handlePaymentChange2}
                                                                className={`checkbox-input2 ${!isMonthValid ? 'invalid' : ''}`}
                                                         />
-                                                        <h3 className="cribe--level__just--column__intensive2--marge__input--year">{el.average.usual2}</h3>
+                                                        <h3 className="cribe--level__just--column__intensive2--marge__input--year">{language ? el.average.usual2KG : el.average.usual2}</h3>
                                                     </div>
                                                     <div
                                                         className="cribe--level__just--column__intensive2--marge__input2">
@@ -428,48 +428,48 @@ const Nothing = () => {
                                                             onChange={handlePaymentChange2}
                                                             className={`checkbox-input2 ${!isMonthValid ? 'invalid' : ''}`}
                                                         />
-                                                        <h5>{el.intensive.careful}</h5>
+                                                        <h5>{language ? el.intensive.carefulKG  : el.intensive.careful}</h5>
                                                     </div>
                                                     <div
                                                         className="cribe--level__just--column__intensive2--marge__check1">
                                                         <BsCheckLg className="iconka1"/>
-                                                        <h4>{el.intensive.careful2}</h4>
+                                                        <h4>{language ? el.intentsive.careful2  : el.intensive.careful2}</h4>
                                                     </div>
                                                     <div
                                                         className="cribe--level__just--column__intensive2--marge__check2">
                                                         <BsCheckLg className="iconka2"/>
-                                                        <h4>{el.intensive.careful3}</h4>
+                                                        <h4>{language ? el.intentsive.careful3  : el.intensive.careful3}</h4>
                                                     </div>
                                                     <div
                                                         className="cribe--level__just--column__intensive2--marge__check3">
                                                         <BsCheckLg className="iconka3"/>
-                                                        <h4>{el.intensive.careful4}</h4>
+                                                        <h4>{language ? el.intentsive.careful4  : el.intensive.careful4}</h4>
                                                     </div>
                                                     <div
                                                         className="cribe--level__just--column__intensive2--marge__check4">
                                                         <BsCheckLg className="iconka4"/>
-                                                        <h4>{el.intensive.careful5}</h4>
+                                                        <h4>{language ? el.intentsive.careful5  : el.intensive.careful5}</h4>
                                                     </div>
                                                     <div
                                                         className="cribe--level__just--column__intensive2--marge__check5">
                                                         <BsCheckLg className="iconka5"/>
-                                                        <h4>{el.intensive.careful6}</h4>
+                                                        <h4>{language ? el.intentsive.careful6  : el.intensive.careful6}</h4>
                                                     </div>
                                                     <div
                                                         className="cribe--level__just--column__intensive2--marge__check6">
                                                         <BsCheckLg className="iconka6"/>
-                                                        <h4>{el.intensive.careful7}</h4>
+                                                        <h4>{language ? el.intentsive.careful7KG  : el.intensive.careful7}</h4>
                                                     </div>
                                                     <div className="cribe--level__just--column__intensive2--marge__coin">
-                                                        <h2>{el.intensive.coin} </h2><h6>{el.intensive.coin2}</h6>
+                                                        <h2>{language ? el.intensive.coinKG  : el.intensive.coin} </h2><h6>{language ? el.intensive.coin2KG : el.intensive.coin2}</h6>
                                                     </div>
                                                     <Link to={"/subscribe"}>
                                                         {
                                                             isIntensiveSelected ?
                                                                 <button  onClick={handleIntensiveChooseClick}
-                                                                         className="choose">{el.sub}</button> :
+                                                                         className="choose">{language ? el.subKG  : el.sub}</button> :
                                                                 <button onClick={handleIntensiveChooseClick}
-                                                                        className="choose1">{el.sub}</button>
+                                                                        className="choose1">{language ? el.subKG : el.sub}</button>
                                                         }
 
                                                     </Link>

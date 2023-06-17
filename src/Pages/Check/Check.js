@@ -12,6 +12,7 @@ const Check = () => {
     useEffect(() => {
         const timeout = setTimeout(() => {
             setDisplayResult(true);
+
             setTimeout(() => {
                 navigate('/'); // Переход на главную страницу через две секунды
             }, 3000);
