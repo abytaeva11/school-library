@@ -16,10 +16,8 @@ import UserContext from './components/HukContext/UserContext';
 
 import YouTube from "./Pages/YouTube/YouTube";
 import Check from "./Pages/Check/Check";
-import But from "./Pages/but/but";
-import Kurse from "./Pages/kurse/kurse";
-import Bolot from "./Pages/bolot/bolot";
-import Muslim from "./Pages/musli/muslim";
+import Course2 from "./Pages/Course/course2";
+import Questions from "./Pages/Questions/Questions";
 
 
 
@@ -31,27 +29,23 @@ function App() {
 
         <div className="App">
             <Header/>
-            <But/>
-            <Kurse/>
-            <Bolot/>
-            <Muslim/>
-            {/*<Routes>*/}
-            {/*    /!*<Route path={'/'} element={<Global/>}/>*!/*/}
-            {/*    /!*<Route path={'/login'} element={<Login/>}/>*!/*/}
-            {/*    /!*<Route path={'/courses'} element={<WeAre/>}/>*!/*/}
-            {/*    /!*<Route path={'/third'} element={<Third/>}/>*!/*/}
-            {/*    */}
-            {/*    */}
-            {/*    /!*<Route path={"/subscribe"} element={<Subscribing/>}/>*!/*/}
-            {/*    /!*<Route path={"/many"} element={<Many/>}/>*!/*/}
-            {/*    /!*<Route path={"/check"} element={<Check/>}/>*!/*/}
-            {/*    /!*<Route path={"/many"} element={<Paket/>}/>*!/*/}
-            {/*    /!*<Route path={"/buttons"} element={<Nothing/>}/>*!/*/}
-            {/*    /!*<Route path={"/youtube"} element={<YouTube/>}/>*!/*/}
-            {/*    */}
+            <Routes>
+                {/*<Route path={'/'} element={<Global/>}/>*/}
+                <Route path={'/login'} element={<Login/>}/>
+                <Route path={'/courses'} element={<WeAre/>}/>
+                <Route path={'/third'} element={<Third/>}/>
 
 
-            {/*</Routes>*/}
+                <Route path={"/subscribe"} element={<Subscribing/>}/>
+                <Route path={"/many"} element={<Many/>}/>
+                <Route path={"/check"} element={<Check/>}/>
+                <Route path={"/many"} element={<Paket/>}/>
+                <Route path={"/buttons"} element={<Nothing/>}/>
+                <Route path={"/youtube"} element={<YouTube/>}/>
+                <Route path={"/photo"} element={<Course2/>}/>
+
+
+            </Routes>
             {location.pathname !== "/subscribe" && (
                 <>
                     <Routes>
@@ -66,6 +60,10 @@ function App() {
     );
 }
 export default App;
+
+
+
+
 
 
 

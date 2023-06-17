@@ -1,6 +1,6 @@
 import {AiOutlineCheck} from 'react-icons/ai';
 import {GoX} from 'react-icons/go';
-import React, {useContext, useState} from "react";
+import React, {useContext, useRef, useState} from "react";
 import query from "../../Pages/Questions/img/bigQuery.png";
 import {LanguageContext} from "../../components/Context";
 import {Link, useNavigate} from "react-router-dom";
@@ -14,14 +14,216 @@ const Nothing = () => {
     const {data} = useContext(LanguageContext);
     const {subscribe} = useContext(LanguageContext)
     const [expandedItems, setExpandedItems] = useState(null);
+    const [selectedPayment, setSelectedPayment] = useState(null);
+    const [nameInput, setNameInput] = useState('');
+    const [emailInput, setEmailInput] = useState('');
+    const [isNameValid, setIsNameValid] = useState(true);
+    const [isEmailValid, setIsEmailValid] = useState(true);
+    const [telInput, setTelInput] = useState('');
+    const [isTelValid, setIsTelValid] = useState(true);
+    const passwordInputRef = useRef(null);
+    const [isLoading, setIsLoading] = useState(false);
     const [isIntensiveSelected, setIsIntensiveSelected] = useState(false);
+    const [cartInput, setCartInput] = useState('');
+    const [isCartValid, setIsCartValid] = useState(true);
+    const [yearInput, setYearInput] = useState('');
+    const [isYearValid, setIsYearValid] = useState(true);
+    const [knowInput, setKnowInput] = useState('');
+    const [isKnowValid, setIsKnowValid] = useState(true);
+    const [selectedMaster, setSelectedMaster] = useState(null)
+    const [masterInput, setMasterInput] = useState(true);
+    const [isMasterValid, setIsMasterValid] = useState(true);
+    const [dateInput, setDateInput] = useState('');
+    const [isDateValid, setIsDateValid] = useState(true);
+    const [monthInput, setMonthInput] = useState('');
+    const [isMonthValid, setIsMonthValid] = useState(true);
+    const [numInput, setNumInput] = useState('');
+    const [isNumValid, setIsNumValid] = useState(true);
+
+    const handleCartInputChange = (event) => {
+        setCartInput(event.target.value);
+        setIsCartValid(true); // Reset the validity when the input changes
+        const { value } = event.target;
+        const formattedValue = value.replace(/\s/g, '').slice(0, 16); // Удалить все пробелы и ограничить ввод до 16 символов
+
+        let formattedCart = '';
+        for (let i = 0; i < formattedValue.length; i++) {
+            formattedCart += formattedValue[i];
+            if (i === 3 || i === 7 || i === 11) {
+                formattedCart += ' '; // Добавить отступ после 4, 8 и 12 символов
+            }
+        }
+
+        setCartInput(formattedCart);
+    };
+
+    const handleKnowInputChange = (event) => {
+        setKnowInput(event.target.value);
+        setIsKnowValid(true); // Reset the validity when the input changes
+    };
+
+
+    const handleDateInputChange = (event) => {
+        setDateInput(event.target.value);
+        setIsDateValid(true); // Reset the validity when the input changes
+        const { value } = event.target;
+        const formattedValue = value
+            .replace(/\D/g, '') // Удалить все нецифровые символы
+            .slice(0, 4); // Ограничить ввод до 4 символов
+
+        let formattedDate = '';
+        if (formattedValue.length >= 3) {
+            // Добавить слеш после ввода двух символов
+            formattedDate = `${formattedValue.slice(0, 2)}/${formattedValue.slice(2)}`;
+        } else {
+            formattedDate = formattedValue;
+        }
+
+        setDateInput(formattedDate);
+    };
+
+
+    const handleNumInputChange = (event) => {
+        setNumInput(event.target.value);
+        setIsNumValid(true); // Reset the validity when the input changes
+        const { value } = event.target;
+        const formattedValue = value.slice(0, 3); // Ограничить ввод до 3 символов
+
+        setNumInput(formattedValue);
+    };
+
+
+
     const handleIntensiveChooseClick = () => {
         setIsIntensiveSelected(true);
-
+        setInChoose(false)
     };
+
+    const [choose, setChoose] = useState(false)
+    const [inChoose, setInChoose] = useState(true)
     const handleUsualChooseClick = () => {
         setIsIntensiveSelected(false);
-    }
+        setInChoose(true)
+
+    };
+    const handlePaymentChange = (event) => {
+        setSelectedPayment(event.target.value);
+        setYearInput(event.target.value);
+        setIsYearValid(true); // Reset the validity when the input changes
+
+
+    };
+
+    const handlePaymentChange2 = (event) => {
+        setSelectedPayment(event.target.value);
+        setMonthInput(event.target.value);
+        setIsMonthValid(true); // Reset the validity when the input changes
+    };
+    const handleMasterChange = (event) => {
+        setSelectedMaster(event.target.value)
+        setIsMasterValid(true)
+    };
+
+
+    const handleNameInputChange = (event) => {
+        setNameInput(event.target.value);
+        setIsNameValid(true); // Reset the validity when the input changes
+    };
+
+    const handleTelInputChange = (event) => {
+        setTelInput(event.target.value);
+        setIsTelValid(true); // Reset the validity when the input changes
+    };
+
+    const handleEmailInputChange = (event) => {
+        setEmailInput(event.target.value);
+        setIsEmailValid(true); // Reset the validity when the input changes
+    };
+    const handlePasswordInputChange = (event) => {
+        const passwordValue = event.target.value.trim();
+        setIsLoading(passwordValue === 'M83h82d');
+
+        if (passwordValue === '') {
+            passwordInputRef.current.style.border = '1px solid red';
+        } else if (passwordValue !== 'M83h82d') {
+            passwordInputRef.current.style.border = '1px solid red';
+        } else {
+
+            setIsLoading(true);
+
+            setTimeout(() => {
+                setIsLoading(false);
+            }, 3000);
+
+            setTimeout(() => {
+                setIsLoading(false);
+                passwordInputRef.current.style.border = '1px solid #60FF66';
+            }, 3500);
+        }
+    };
+    const handleSubscribeClick = () => {
+        if (knowInput.trim() !== '') {
+            setIsKnowValid(false)
+        }
+        if (nameInput.trim() === '') {
+            setIsNameValid(false);
+        }
+
+        if (dateInput.trim() === '') {
+            setIsDateValid(false);
+        }
+        if (numInput.trim() === '') {
+            setIsNumValid(false);
+        }
+        if (yearInput.trim() === '') {
+            setIsYearValid(false);
+        }
+        if (monthInput.trim() === '') {
+            setIsMonthValid(false);
+        }
+
+
+        if (!emailInput.endsWith('@gmail.com')) {
+            setIsEmailValid(false);
+        }
+
+        if (telInput.trim() === '') {
+            setIsTelValid(false);
+        }
+
+        const passwordValue = passwordInputRef.current.value.trim();
+
+        if (passwordValue === '') {
+            passwordInputRef.current.style.border = '1px solid red';
+        }
+
+        if (
+            nameInput.trim() !== '' &&
+            knowInput.trim() !== '' &&
+            dateInput.trim() !== '' &&
+            numInput.trim() !== '' &&
+            yearInput.trim() !== '' ||
+            monthInput.trim() !== '' &&
+            cartInput.trim() !== '' &&
+            emailInput.endsWith('@gmail.com') &&
+            telInput.trim() !== '' &&
+            passwordValue === 'M83h82d'
+        ) {
+            console.log('Subscribe clicked!');
+        }
+    };
+
+    const isFormValid =
+        nameInput.trim() !== '' &&
+        knowInput.trim() !== '' &&
+        dateInput.trim() !== '' &&
+        numInput.trim() !== '' &&
+        yearInput.trim() !== '' ||
+        monthInput.trim() !== '' &&
+        cartInput.trim() !== '' &&
+        emailInput.endsWith('@gmail.com') &&
+        telInput.trim() !== '' &&
+        passwordInputRef.current?.value === 'M83h82d';
         function AccordionItem({ id, title, content, activeItemId }) {
             const isExpanded = expandedItems === id;
 
@@ -147,109 +349,130 @@ const Nothing = () => {
                             {
                                 subscribe.map((el) => (
                                     <div className="cribe--level__just">
-                                        <h2>{el.average.title}</h2>
                                         <div className="cribe--level__just--column">
                                             <div style={{
-                                                marginRight: isIntensiveSelected ? "20px" : "20px"
-                                            }} className={isIntensiveSelected ? "cribe--level__just--column__intensive" : "cribe--level__just--column__usual" }>
-                                                <img className="cribe--level__just--column__usual--book1" src={book1}
+                                                margin: isIntensiveSelected ? " 0 100px 0 0" : "0 0 0 100px "
+                                            }} className={isIntensiveSelected ? "cribe--level__just--column__intensive2" : "cribe--level__just--column__usual2" }>
+                                                <img className="cribe--level__just--column__usual2--book1" src={book1}
                                                      alt=""/>
-                                                <img className="cribe--level__just--column__usual--book2" src={book2}
+                                                <img className="cribe--level__just--column__usual2--book2" src={book2}
                                                      alt=""/>
-                                                <div className="cribe--level__just--column__usual--marge">
-                                                    <h1>{el.average.usual}</h1>
-                                                    <div className="cribe--level__just--column__usual--marge__input">
+                                                <div className="cribe--level__just--column__usual2--marge">
+                                                    <h1>{ language ? el.average.usualKG : el.average.usual}</h1>
+                                                    <div className="cribe--level__just--column__usual2--marge__input">
                                                         <input
                                                             type="checkbox"
-                                                            className={`checkbox-input`}
+                                                            value={el.average.usual}
+                                                            checked={selectedPayment === el.average.usual}
+                                                            onChange={handlePaymentChange}
+                                                            className={`checkbox-input ${!isYearValid ? 'invalid' : ''}`}
+
                                                         />
 
 
-                                                        <h3 className="cribe--level__just--column__usual--marge__input--year">{el.average.usual2}</h3>
+                                                        <h3 className="cribe--level__just--column__usual2--marge__input--year">{el.average.usual2}</h3>
                                                     </div>
-                                                    <div className="cribe--level__just--column__usual--marge__input2">
+                                                    <div className="cribe--level__just--column__usual2--marge__input2">
                                                         <input
                                                             type="checkbox"
-                                                            className={`checkbox-input`}
+                                                            value={el.average.usual2}
+                                                            checked={selectedPayment === el.average.usual2}
+                                                            onChange={handlePaymentChange}
+                                                            className={`checkbox-input ${!isYearValid ? 'invalid' : ''}`}
 
                                                         />
-                                                        <h5>{el.average.usual3}</h5>
+                                                        <h5>{language ? el.average.usual3KG : el.average.usual3}</h5>
                                                     </div>
-                                                    <div className="cribe--level__just--column__usual--marge__check1">
+                                                    <div className="cribe--level__just--column__usual2--marge__check1">
                                                         <BsCheckLg className="iconka1"/>
-                                                        <h4>{el.average.usual4}</h4>
+                                                        <h4>{language ? average.usual4KG : el.average.usual4}</h4>
                                                     </div>
-                                                    <div className="cribe--level__just--column__usual--marge__check2">
+                                                    <div className="cribe--level__just--column__usual2--marge__check2">
                                                         <BsCheckLg className="iconka2"/>
-                                                        <h4>{el.average.usual5}</h4>
+                                                        <h4>{language ? el.average.usual5KG : el.average.usual5}</h4>
                                                     </div>
-                                                    <h2>{el.average.usual6}</h2>
-                                                    {
-                                                        isIntensiveSelected ? <button  onClick={handleUsualChooseClick}
-                                                                                       className="choose1">{el.sub}</button>
-                                                            : <button  onClick={handleUsualChooseClick}
-                                                                       className="choose">{el.sub}</button>
-                                                    }
+                                                    <h2>{language ? el.average.usual6KG  : el.average.usual6}</h2>
+                                                    <Link to={"/subscribe"}>
+                                                        {
+                                                            isIntensiveSelected ? <button  onClick={handleUsualChooseClick}
+                                                                                           className="choose1">{language ? el.subKG  : el.sub}</button>
+                                                                : <button  onClick={handleUsualChooseClick}
+                                                                           className="choose">{language ? el.subKG  : el.sub}</button>
+                                                        }
+                                                    </Link>
+
                                                 </div>
 
                                             </div>
-                                            <div  className={isIntensiveSelected ? "cribe--level__just--column__usual" : "cribe--level__just--column__intensive"}>
-                                                <div className="cribe--level__just--column__intensive--marge">
-                                                    <h1>{el.intensive.title2}</h1>
+                                            <div   className={isIntensiveSelected ? "cribe--level__just--column__usual2" : "cribe--level__just--column__intensive2"}>
+                                                <div className="cribe--level__just--column__intensive2--marge">
+                                                    <h1>{language ? el.intensive.title2KG  : el.intensive.title2}</h1>
                                                     <div
-                                                        className="cribe--level__just--column__intensive--marge__input">
-                                                        <input
-                                                               className={`checkbox-input2`}
+                                                        className="cribe--level__just--column__intensive2--marge__input">
+                                                        <input style={{border: !isMonthValid ? "1px solid red" : ""}}
+                                                               type="checkbox"
+                                                               value={el.intensive.careful2}
+                                                               checked={selectedPayment === el.intensive.careful2}
+                                                               onChange={handlePaymentChange2}
+                                                               className={`checkbox-input2 ${!isMonthValid ? 'invalid' : ''}`}
                                                         />
-                                                        <h3 className="cribe--level__just--column__intensive--marge__input--year">{el.average.usual2}</h3>
+                                                        <h3 className="cribe--level__just--column__intensive2--marge__input--year">{language ? el.average.usual2KG : el.average.usual2}</h3>
                                                     </div>
                                                     <div
-                                                        className="cribe--level__just--column__intensive--marge__input2">
+                                                        className="cribe--level__just--column__intensive2--marge__input2">
                                                         <input
-                                                            className={`checkbox-input2`}
+                                                            style={{border: !isMonthValid ? "1px solid red" : ""}}
+                                                            type="checkbox"
+                                                            value={el.intensive.careful3}
+                                                            checked={selectedPayment === el.intensive.careful3}
+                                                            onChange={handlePaymentChange2}
+                                                            className={`checkbox-input2 ${!isMonthValid ? 'invalid' : ''}`}
                                                         />
-                                                        <h5>{el.intensive.careful}</h5>
+                                                        <h5>{language ? el.intensive.carefulKG  : el.intensive.careful}</h5>
                                                     </div>
                                                     <div
-                                                        className="cribe--level__just--column__intensive--marge__check1">
+                                                        className="cribe--level__just--column__intensive2--marge__check1">
                                                         <BsCheckLg className="iconka1"/>
-                                                        <h4>{el.intensive.careful2}</h4>
+                                                        <h4>{language ? el.intentsive.careful2  : el.intensive.careful2}</h4>
                                                     </div>
                                                     <div
-                                                        className="cribe--level__just--column__intensive--marge__check2">
+                                                        className="cribe--level__just--column__intensive2--marge__check2">
                                                         <BsCheckLg className="iconka2"/>
-                                                        <h4>{el.intensive.careful3}</h4>
+                                                        <h4>{language ? el.intentsive.careful3  : el.intensive.careful3}</h4>
                                                     </div>
                                                     <div
-                                                        className="cribe--level__just--column__intensive--marge__check3">
+                                                        className="cribe--level__just--column__intensive2--marge__check3">
                                                         <BsCheckLg className="iconka3"/>
-                                                        <h4>{el.intensive.careful4}</h4>
+                                                        <h4>{language ? el.intentsive.careful4  : el.intensive.careful4}</h4>
                                                     </div>
                                                     <div
-                                                        className="cribe--level__just--column__intensive--marge__check4">
+                                                        className="cribe--level__just--column__intensive2--marge__check4">
                                                         <BsCheckLg className="iconka4"/>
-                                                        <h4>{el.intensive.careful5}</h4>
+                                                        <h4>{language ? el.intentsive.careful5  : el.intensive.careful5}</h4>
                                                     </div>
                                                     <div
-                                                        className="cribe--level__just--column__intensive--marge__check5">
+                                                        className="cribe--level__just--column__intensive2--marge__check5">
                                                         <BsCheckLg className="iconka5"/>
-                                                        <h4>{el.intensive.careful6}</h4>
+                                                        <h4>{language ? el.intentsive.careful6  : el.intensive.careful6}</h4>
                                                     </div>
                                                     <div
-                                                        className="cribe--level__just--column__intensive--marge__check6">
+                                                        className="cribe--level__just--column__intensive2--marge__check6">
                                                         <BsCheckLg className="iconka6"/>
-                                                        <h4>{el.intensive.careful7}</h4>
+                                                        <h4>{language ? el.intentsive.careful7KG  : el.intensive.careful7}</h4>
                                                     </div>
-                                                    <div className="cribe--level__just--column__intensive--marge__coin">
-                                                        <h2>{el.intensive.coin} </h2><h6>{el.intensive.coin2}</h6>
+                                                    <div className="cribe--level__just--column__intensive2--marge__coin">
+                                                        <h2>{language ? el.intensive.coinKG  : el.intensive.coin} </h2><h6>{language ? el.intensive.coin2KG : el.intensive.coin2}</h6>
                                                     </div>
-                                                    {
-                                                        isIntensiveSelected ?
-                                                            <button  onClick={handleIntensiveChooseClick}
-                                                                     className="choose">{el.sub}</button> :
-                                                            <button onClick={handleIntensiveChooseClick}
-                                                                    className="choose1">{el.sub}</button>
-                                                    }
+                                                    <Link to={"/subscribe"}>
+                                                        {
+                                                            isIntensiveSelected ?
+                                                                <button  onClick={handleIntensiveChooseClick}
+                                                                         className="choose">{language ? el.subKG  : el.sub}</button> :
+                                                                <button onClick={handleIntensiveChooseClick}
+                                                                        className="choose1">{language ? el.subKG : el.sub}</button>
+                                                        }
+
+                                                    </Link>
 
                                                 </div>
                                             </div>
