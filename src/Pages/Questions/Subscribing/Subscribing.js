@@ -1,20 +1,194 @@
-import React, { useState, useContext } from 'react';
-import { LanguageContext } from "../../../components/Context";
+import React, {useState, useContext, useRef} from 'react';
+import {LanguageContext} from "../../../components/Context";
 import "../Subscribing/Subscribe.scss";
 import {BsCheckLg} from "react-icons/bs";
-import book1 from "../../Questions/Subscribing/book1.svg"
-import book2 from "../../Questions/Subscribing/book2.svg"
+import book1 from "../../Questions/Subscribing/book1.svg";
+import book2 from "../../Questions/Subscribing/book2.svg";
+import {Link, Route} from "react-router-dom";
+import Check from "../../Check/Check";
 
 const Subscribing = () => {
-    const { subscribe } = useContext(LanguageContext);
-    const [selectedPayment, setSelectedPayment] = useState(null);
 
+    const {subscribe} = useContext(LanguageContext);
+    const [selectedPayment, setSelectedPayment] = useState(null);
+    const [nameInput, setNameInput] = useState('');
+    const [emailInput, setEmailInput] = useState('');
+    const [isNameValid, setIsNameValid] = useState(true);
+    const [isEmailValid, setIsEmailValid] = useState(true);
+    const [telInput, setTelInput] = useState('');
+    const [isTelValid, setIsTelValid] = useState(true);
+    const passwordInputRef = useRef(null);
+    const [isLoading, setIsLoading] = useState(false);
+    const [isIntensiveSelected, setIsIntensiveSelected] = useState(false);
+    const [cartInput, setCartInput] = useState('');
+    const [isCartValid, setIsCartValid] = useState(true);
+    const [yearInput, setYearInput] = useState('');
+    const [isYearValid, setIsYearValid] = useState(true);
+    const [knowInput, setKnowInput] = useState('');
+    const [isKnowValid, setIsKnowValid] = useState(true);
+    const [selectedMaster, setSelectedMaster] = useState(null)
+    const [masterInput, setMasterInput] = useState(true);
+    const [isMasterValid, setIsMasterValid] = useState(true);
+    const [dateInput, setDateInput] = useState('');
+    const [isDateValid, setIsDateValid] = useState(true);
+    const [monthInput, setMonthInput] = useState('');
+    const [isMonthValid, setIsMonthValid] = useState(true);
+    const [numInput, setNumInput] = useState('');
+    const [isNumValid, setIsNumValid] = useState(true);
+    const handleCartInputChange = (event) => {
+        setCartInput(event.target.value);
+        setIsCartValid(true); // Reset the validity when the input changes
+    };
+
+    const handleKnowInputChange = (event) => {
+        setKnowInput(event.target.value);
+        setIsKnowValid(true); // Reset the validity when the input changes
+    };
+
+
+    const handleDateInputChange = (event) => {
+        setDateInput(event.target.value);
+        setIsDateValid(true); // Reset the validity when the input changes
+    };
+
+
+    const handleNumInputChange = (event) => {
+        setNumInput(event.target.value);
+        setIsNumValid(true); // Reset the validity when the input changes
+    };
+
+
+
+    const handleIntensiveChooseClick = () => {
+        setIsIntensiveSelected(true);
+        setInChoose(false)
+    };
+
+    const [choose, setChoose] = useState(false)
+    const [inChoose, setInChoose] = useState(true)
+    const handleUsualChooseClick = () => {
+        setIsIntensiveSelected(false);
+        setInChoose(true)
+
+    };
     const handlePaymentChange = (event) => {
         setSelectedPayment(event.target.value);
+        setYearInput(event.target.value);
+        setIsYearValid(true); // Reset the validity when the input changes
+
+
     };
+
     const handlePaymentChange2 = (event) => {
         setSelectedPayment(event.target.value);
+        setMonthInput(event.target.value);
+        setIsMonthValid(true); // Reset the validity when the input changes
     };
+    const handleMasterChange = (event) => {
+        setSelectedMaster(event.target.value)
+        setIsMasterValid(true)
+    };
+
+
+    const handleNameInputChange = (event) => {
+        setNameInput(event.target.value);
+        setIsNameValid(true); // Reset the validity when the input changes
+    };
+
+    const handleTelInputChange = (event) => {
+        setTelInput(event.target.value);
+        setIsTelValid(true); // Reset the validity when the input changes
+    };
+
+    const handleEmailInputChange = (event) => {
+        setEmailInput(event.target.value);
+        setIsEmailValid(true); // Reset the validity when the input changes
+    };
+    const handlePasswordInputChange = (event) => {
+        const passwordValue = event.target.value.trim();
+        setIsLoading(passwordValue === 'M83h82d');
+
+        if (passwordValue === '') {
+            passwordInputRef.current.style.border = '1px solid red';
+        } else if (passwordValue !== 'M83h82d') {
+            passwordInputRef.current.style.border = '1px solid red';
+        } else {
+
+            setIsLoading(true);
+
+            setTimeout(() => {
+                setIsLoading(false);
+            }, 3000);
+
+            setTimeout(() => {
+                setIsLoading(false);
+                passwordInputRef.current.style.border = '1px solid #60FF66';
+            }, 3500);
+        }
+    };
+    const handleSubscribeClick = () => {
+        if (knowInput.trim() !== '') {
+            setIsKnowValid(false)
+        }
+        if (nameInput.trim() === '') {
+            setIsNameValid(false);
+        }
+
+        if (dateInput.trim() === '') {
+            setIsDateValid(false);
+        }
+        if (numInput.trim() === '') {
+            setIsNumValid(false);
+        }
+        if (yearInput.trim() === '') {
+            setIsYearValid(false);
+        }
+        if (monthInput.trim() === '') {
+            setIsMonthValid(false);
+        }
+
+
+        if (!emailInput.endsWith('@gmail.com')) {
+            setIsEmailValid(false);
+        }
+
+        if (telInput.trim() === '') {
+            setIsTelValid(false);
+        }
+
+        const passwordValue = passwordInputRef.current.value.trim();
+
+        if (passwordValue === '') {
+            passwordInputRef.current.style.border = '1px solid red';
+        }
+
+        if (
+            nameInput.trim() !== '' &&
+            knowInput.trim() !== '' &&
+            dateInput.trim() !== '' &&
+            numInput.trim() !== '' &&
+            yearInput.trim() !== '' ||
+            monthInput.trim() !== '' &&
+            cartInput.trim() !== '' &&
+            emailInput.endsWith('@gmail.com') &&
+            telInput.trim() !== '' &&
+            passwordValue === 'M83h82d'
+        ) {
+            console.log('Subscribe clicked!');
+        }
+    };
+
+    const isFormValid =
+        nameInput.trim() !== '' &&
+        knowInput.trim() !== '' &&
+        dateInput.trim() !== '' &&
+        numInput.trim() !== '' &&
+        yearInput.trim() !== '' ||
+        monthInput.trim() !== '' &&
+        cartInput.trim() !== '' &&
+        emailInput.endsWith('@gmail.com') &&
+        telInput.trim() !== '' &&
+        passwordInputRef.current?.value === 'M83h82d';
 
     return (
         <div>
@@ -24,23 +198,72 @@ const Subscribing = () => {
                         <div className="registration">
                             <h3>{el.decor}</h3>
                             <h2>{el.name.title}</h2>
-                            <input className="registration--login" type="text" placeholder={el.name.input} />
+                            <input
+                                style={{
+                                    border: !isNameValid ? "1px solid red" : ""
+                                }}
+                                className={`registration--login ${!isNameValid ? 'invalid' : ''}`}
+                                type="text"
+                                placeholder={el.name.input}
+                                value={nameInput}
+                                onChange={handleNameInputChange}
+                            />
+                            {!isNameValid && <p className="error-message">Please enter a valid name.</p>}
                             <h2>{el.email.title}</h2>
-                            <input className="registration--login" type="email" placeholder={el.email.input} />
+                            <input style={{
+                                border: !isEmailValid ? "1px solid red" : ""
+                            }}
+                                   className={`registration--login ${!isEmailValid ? 'invalid' : ''}`}
+                                   type="email"
+                                   placeholder={el.email.input}
+                                   value={emailInput}
+                                   onChange={handleEmailInputChange}
+                            />
+                            {!isEmailValid &&
+                                <p className="error-message">Please enter a valid email ending with '@gmail.com'.</p>}
                             <h2>{el.number.title}</h2>
-                            <input className="registration--login" type="tel" placeholder={el.number.input} />
+                            <input
+                                style={{
+                                    border: !isTelValid ? '1px solid red' : '',
+                                }}
+                                className={`registration--login ${!isTelValid ? 'invalid' : ''}`}
+                                value={telInput}
+                                onChange={handleTelInputChange}
+                                type="tel"
+                                placeholder={el.number.input}
+                            />
+                            {!isTelValid && <p className="error-message">Please enter a valid phone number.</p>}
+
                             <h2>{el.password.title}</h2>
-                            <input className="registration--login" type="password" placeholder={el.password.input} />
+                            <div className="password-input">
+                                <input
+                                    ref={passwordInputRef}
+                                    className="registration--login"
+                                    type="password"
+                                    placeholder="Enter password"
+                                    onChange={handlePasswordInputChange}
+                                />
+
+                                {isLoading && (
+                                    <div className="loading">
+                                        <svg className="spinner" width="20px" height="20px" viewBox="0 0 66 66"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <circle className="path" fill="none" strokeWidth="6" strokeLinecap="round"
+                                                    cx="33" cy="33" r="30"></circle>
+                                        </svg>
+                                    </div>
+                                )}
+                            </div>
                             <div className="registration--master">
                                 <h2>{el.pay.title}</h2>
                                 <div className="registration--master__payment">
                                     <div className="registration--master__payment--radios">
-                                        <input
-                                            type="checkbox"
-                                            value={el.pay.visa}
-                                            checked={selectedPayment === el.pay.visa}
-                                            onChange={handlePaymentChange}
-                                            className="checkbox-input"
+                                        <input style={{border: !isMasterValid ? "1px solid red" : ""}}
+                                               type="checkbox"
+                                               value={el.pay.visa}
+                                               checked={selectedMaster === el.pay.visa}
+                                               onChange={handleMasterChange}
+                                               className={`checkbox-input ${!isMasterValid ? "invalid" : "" } `}
                                         />
                                         <h3>{el.pay.visa}</h3>
                                     </div>
@@ -48,9 +271,9 @@ const Subscribing = () => {
                                         <input
                                             type="checkbox"
                                             value={el.pay.card}
-                                            checked={selectedPayment === el.pay.card}
-                                            onChange={handlePaymentChange}
-                                            className="checkbox-input"
+                                            checked={selectedMaster === el.pay.card}
+                                            onChange={handleMasterChange}
+                                            className={`checkbox-input ${!isMasterValid ? "invalid" : "" }  `}
                                         />
                                         <h3>{el.pay.card}</h3>
                                     </div>
@@ -58,15 +281,24 @@ const Subscribing = () => {
                                 <div className="registration--master__numbercart">
                                     <div className="registration--master__numbercart--date1">
                                         <h4>{el.cart.title}</h4>
-                                        <input type="tel" placeholder="1234 4567 7788 9210"/>
+                                        <input type="tel" style={{border: !isCartValid ? "1px solid red" : ""}}
+                                               className={`registration--login ${!isCartValid ? 'invalid' : ''}`}
+                                               value={cartInput} onChange={handleCartInputChange}
+                                               placeholder="1234 4567 7788 9210"/>
                                     </div>
                                     <div className="registration--master__numbercart--date2">
                                         <h4>{el.cart.term}</h4>
-                                        <input type="text" placeholder="12/25" />
+                                        <input type="text" style={{border: !isDateValid ? "1px solid red" : ""}}
+                                               className={`registration--login ${!isDateValid ? 'invalid' : ''}`}
+                                               value={dateInput} onChange={handleDateInputChange}
+                                               placeholder="12/25"/>
                                     </div>
                                     <div className="registration--master__numbercart--date3">
                                         <h4>{el.cart.time}</h4>
-                                        <input type="text" placeholder="398"/>
+                                        <input type="text" style={{border: !isNumValid ? "1px solid red" : ""}}
+                                               className={`registration--login ${!isNumValid ? 'invalid' : ''}`}
+                                               value={numInput} onChange={handleNumInputChange}
+                                               placeholder="398"/>
                                     </div>
 
                                 </div>
@@ -75,23 +307,30 @@ const Subscribing = () => {
 
                         <div className="cribe--level">
                             {
-                                subscribe.map((el)=>(
+                                subscribe.map((el) => (
                                     <div className="cribe--level__just">
                                         <h2>{el.average.title}</h2>
                                         <div className="cribe--level__just--column">
-                                            <div className="cribe--level__just--column__usual">
-                                                <img className="cribe--level__just--column__usual--book1" src={book1} alt=""/>
-                                                <img className="cribe--level__just--column__usual--book2" src={book2} alt=""/>
+                                            <div style={{
+                                                marginRight: isIntensiveSelected ? "20px" : "20px"
+                                            }} className={isIntensiveSelected ? "cribe--level__just--column__intensive" : "cribe--level__just--column__usual" }>
+                                                <img className="cribe--level__just--column__usual--book1" src={book1}
+                                                     alt=""/>
+                                                <img className="cribe--level__just--column__usual--book2" src={book2}
+                                                     alt=""/>
                                                 <div className="cribe--level__just--column__usual--marge">
                                                     <h1>{el.average.usual}</h1>
                                                     <div className="cribe--level__just--column__usual--marge__input">
                                                         <input
-                                                            type="checkbox"
-                                                            value={el.average.usual}
-                                                            checked={selectedPayment === el.average.usual}
-                                                            onChange={handlePaymentChange}
-                                                            className="checkbox-input"
+                                                               type="checkbox"
+                                                               value={el.average.usual}
+                                                               checked={selectedPayment === el.average.usual}
+                                                               onChange={handlePaymentChange}
+                                                               className={`checkbox-input ${!isYearValid ? 'invalid' : ''}`}
+                                                               disabled={!inChoose}
                                                         />
+
+
                                                         <h3 className="cribe--level__just--column__usual--marge__input--year">{el.average.usual2}</h3>
                                                     </div>
                                                     <div className="cribe--level__just--column__usual--marge__input2">
@@ -100,7 +339,8 @@ const Subscribing = () => {
                                                             value={el.average.usual2}
                                                             checked={selectedPayment === el.average.usual2}
                                                             onChange={handlePaymentChange}
-                                                            className="checkbox-input"
+                                                            className={`checkbox-input ${!isYearValid ? 'invalid' : ''}`}
+                                                            disabled={!inChoose}
                                                         />
                                                         <h5>{el.average.usual3}</h5>
                                                     </div>
@@ -113,68 +353,114 @@ const Subscribing = () => {
                                                         <h4>{el.average.usual5}</h4>
                                                     </div>
                                                     <h2>{el.average.usual6}</h2>
-                                                    <button>{el.average.usual7}</button>
+                                                    {
+                                                        isIntensiveSelected ? <button  onClick={handleUsualChooseClick}
+                                                                                      className="choose1">{el.intensive.Choose}</button>
+                                                            : <button  onClick={handleUsualChooseClick}
+                                                                      className="choose">{el.average.usual7}</button>
+                                                    }
                                                 </div>
 
                                             </div>
-                                            <div className="cribe--level__just--column__intensive">
-                                              <div className="cribe--level__just--column__intensive--marge">
-                                                  <h1>{el.intensive.title2}</h1>
-                                                  <div className="cribe--level__just--column__intensive--marge__input">
-                                                      <input
-                                                          type="checkbox"
-                                                          value={el.intensive.careful2}
-                                                          checked={selectedPayment === el.intensive.careful2}
-                                                          onChange={handlePaymentChange2}
-                                                          className="checkbox-input2"
-                                                      />
-                                                      <h3 className="cribe--level__just--column__intensive--marge__input--year">{el.average.usual2}</h3>
-                                                  </div>
-                                                  <div className="cribe--level__just--column__intensive--marge__input2">
-                                                      <input
-                                                          type="checkbox"
-                                                          value={el.intensive.careful3}
-                                                          checked={selectedPayment === el.intensive.careful3}
-                                                          onChange={handlePaymentChange2}
-                                                          className="checkbox-input2"
-                                                      />
-                                                      <h5>{el.intensive.careful}</h5>
-                                                  </div>
-                                                  <div className="cribe--level__just--column__intensive--marge__check1">
-                                                      <BsCheckLg className="iconka1"/>
-                                                      <h4>{el.intensive.careful2}</h4>
-                                                  </div>
-                                                  <div className="cribe--level__just--column__intensive--marge__check2">
-                                                      <BsCheckLg className="iconka2"/>
-                                                      <h4>{el.intensive.careful3}</h4>
-                                                  </div>
-                                                  <div className="cribe--level__just--column__intensive--marge__check3">
-                                                      <BsCheckLg className="iconka3"/>
-                                                      <h4>{el.intensive.careful4}</h4>
-                                                  </div>
-                                                  <div className="cribe--level__just--column__intensive--marge__check4">
-                                                      <BsCheckLg className="iconka4"/>
-                                                      <h4>{el.intensive.careful5}</h4>
-                                                  </div>
-                                                  <div className="cribe--level__just--column__intensive--marge__check5">
-                                                      <BsCheckLg className="iconka5"/>
-                                                      <h4>{el.intensive.careful6}</h4>
-                                                  </div>
-                                                  <div className="cribe--level__just--column__intensive--marge__check6">
-                                                      <BsCheckLg className="iconka6"/>
-                                                      <h4>{el.intensive.careful7}</h4>
-                                                  </div>
-                                                  <div className="cribe--level__just--column__intensive--marge__coin">
-                                                      <h2>{el.intensive.coin} </h2><h6>{el.intensive.coin2}</h6>
-                                                  </div>
-                                                  <button>{el.intensive.Choose}</button>
-                                              </div>
+                                            <div  className={isIntensiveSelected ? "cribe--level__just--column__usual" : "cribe--level__just--column__intensive"}>
+                                                <div className="cribe--level__just--column__intensive--marge">
+                                                    <h1>{el.intensive.title2}</h1>
+                                                    <div
+                                                        className="cribe--level__just--column__intensive--marge__input">
+                                                        <input style={{border: !isMonthValid ? "1px solid red" : ""}}
+                                                               type="checkbox"
+                                                               value={el.intensive.careful2}
+                                                               checked={selectedPayment === el.intensive.careful2}
+                                                               onChange={handlePaymentChange2}
+                                                               className={`checkbox-input2 ${!isMonthValid ? 'invalid' : ''}`}
+                                                               disabled={inChoose}
+                                                        />
+                                                        <h3 className="cribe--level__just--column__intensive--marge__input--year">{el.average.usual2}</h3>
+                                                    </div>
+                                                    <div
+                                                        className="cribe--level__just--column__intensive--marge__input2">
+                                                        <input
+                                                            style={{border: !isMonthValid ? "1px solid red" : ""}}
+                                                            type="checkbox"
+                                                            value={el.intensive.careful3}
+                                                            checked={selectedPayment === el.intensive.careful3}
+                                                            onChange={handlePaymentChange2}
+                                                            className={`checkbox-input2 ${!isMonthValid ? 'invalid' : ''}`}
+                                                            disabled={inChoose}
+                                                        />
+                                                        <h5>{el.intensive.careful}</h5>
+                                                    </div>
+                                                    <div
+                                                        className="cribe--level__just--column__intensive--marge__check1">
+                                                        <BsCheckLg className="iconka1"/>
+                                                        <h4>{el.intensive.careful2}</h4>
+                                                    </div>
+                                                    <div
+                                                        className="cribe--level__just--column__intensive--marge__check2">
+                                                        <BsCheckLg className="iconka2"/>
+                                                        <h4>{el.intensive.careful3}</h4>
+                                                    </div>
+                                                    <div
+                                                        className="cribe--level__just--column__intensive--marge__check3">
+                                                        <BsCheckLg className="iconka3"/>
+                                                        <h4>{el.intensive.careful4}</h4>
+                                                    </div>
+                                                    <div
+                                                        className="cribe--level__just--column__intensive--marge__check4">
+                                                        <BsCheckLg className="iconka4"/>
+                                                        <h4>{el.intensive.careful5}</h4>
+                                                    </div>
+                                                    <div
+                                                        className="cribe--level__just--column__intensive--marge__check5">
+                                                        <BsCheckLg className="iconka5"/>
+                                                        <h4>{el.intensive.careful6}</h4>
+                                                    </div>
+                                                    <div
+                                                        className="cribe--level__just--column__intensive--marge__check6">
+                                                        <BsCheckLg className="iconka6"/>
+                                                        <h4>{el.intensive.careful7}</h4>
+                                                    </div>
+                                                    <div className="cribe--level__just--column__intensive--marge__coin">
+                                                        <h2>{el.intensive.coin} </h2><h6>{el.intensive.coin2}</h6>
+                                                    </div>
+                                                    {
+                                                        isIntensiveSelected ?
+                                                            <button  onClick={handleIntensiveChooseClick}
+                                                                    className="choose">{el.average.usual7}</button> :
+                                                            <button onClick={handleIntensiveChooseClick}
+                                                                    className="choose1">{el.intensive.Choose}</button>
+                                                    }
+
+                                                </div>
                                             </div>
                                         </div>
                                         <div className="cribe--level__just--agree">
-                                            <button>{el.btn}</button>
+                                            <Link to={'/check'} className={!isFormValid ? 'disabled-link' : ''} disabled={!isFormValid}>
+                                                {isIntensiveSelected ? (
+                                                        <button
+                                                            disabled={!isFormValid}
+                                                            onClick={handleSubscribeClick}
+                                                        >
+                                                            {el.btn}
+                                                            {el.intensive.dollar}
+                                                        </button>
+                                                    )
+                                                    : (
+                                                        <button
+                                                            disabled={!isFormValid}
+                                                            onClick={handleSubscribeClick}>
+                                                            {el.btn}{el.average.usualCoin}
+                                                        </button>
+                                                    )
+
+                                                }
+
+                                            </Link>
                                             <div className="cribe--level__just--agree__put">
-                                                <input type="checkbox" className="checkbox-put"/>
+
+                                                <input style={{border: !isKnowValid ? "1px solid red" : ""}}
+                                                       type="checkbox" onChange={handleKnowInputChange}
+                                                       className={`checkbox-put ${!isKnowValid ? 'invalid' : ''}`}/>
                                                 <h3>{el.agree}</h3>
                                             </div>
                                         </div>
@@ -190,5 +476,5 @@ const Subscribing = () => {
         </div>
     );
 };
-
 export default Subscribing;
+
