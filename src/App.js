@@ -1,5 +1,5 @@
 import './App.css';
-import React from "react";
+import React, {useState} from "react";
 import Subscribing from "./Pages/Questions/Subscribing/Subscribing";
 import Global from "./components/Global";
 import Footer from "./components/Footer/Footer";
@@ -12,17 +12,15 @@ import { Route, Routes, useLocation } from "react-router-dom";
 import WeAre from "./components/WeAre";
 import Nothing from "./Pages/Nothing/Nothing";
 import Third from "./Pages/Third/Third";
+import UserContext from './components/HukContext/UserContext';
 
-// import AccordionWe from "./Pages/accordionWe/AccordionWe";
-
-import AccordionWe from "./Pages/accordionWe/AccordionWe";
 import YouTube from "./Pages/YouTube/YouTube";
-import Place from "./Pages/Place/place";
 import Check from "./Pages/Check/Check";
 
 
 
 function App() {
+    const [loggedIn, setLoggedIn] = useState(false)
     const location = useLocation();
     return (
             <UserContext.Provider value={{loggedIn,setLoggedIn}}>
