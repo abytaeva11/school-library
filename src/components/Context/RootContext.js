@@ -80,8 +80,19 @@ const RootContext = ({children}) => {
 
         },
     ];
+
+
+const check = [
+    {
+        self: "SELF DEVELOPING SCHOOL",
+        panding: "Ожидание оплаты",
+        result: 'Спасибо за оплату.',
+        chek:'Чек был выслан на вашу электронную почту'
+    }
+]
+
     const subscribe = [
-        {
+        {   sub: "Подписаться",
             decor: "Оформление подписки",
             decorKG:"Жазылуу",
 
@@ -137,6 +148,7 @@ const RootContext = ({children}) => {
                 usual6: "Цена: 225$",
                 usual7: "Выбрано",
 
+
                 titleKG: "Пакет деңгээли",
                 usualKG: "кадимки",
                 usual2KG: "Ай сайын",
@@ -145,6 +157,8 @@ const RootContext = ({children}) => {
                 usual5KG: "Өзүн-өзү өнүктүрүү боюнча бардык мастер-класстар",
                 usual6KG: "Баасы: $225",
                 usual7KG: "Тандалган",
+
+                usualCoin: "250$"
             },
             intensive: {
                 title2: "Интенсив",
@@ -175,6 +189,12 @@ const RootContext = ({children}) => {
             },
             btn: "Оплатить 250$",
             agree: "Я ознакомился и согласен с Условиями оказания услуг",
+                dollar: "500$"
+            },
+            btn: "Оплатить ",
+            agree: "Я ознакомился и согласен с Условиями оказания услуг"
+        },
+]
 
             btnKG: "$250 төлөө",
             agreeKG: "Мен Тейлөө шарттарын окуп чыктым жана макулмун"
@@ -249,7 +269,7 @@ const RootContext = ({children}) => {
 
             btn2KG: "1 жума",
             titleKG: "Киришүү ",
-            task1KG: "1-сабак: курска киришүү ",
+            task1KG: "1-сабак: курhttps://github.com/abytaeva11/school-library/pull/25/conflict?name=src%252FApp.js&ancestor_oid=52d6f51a0639c82365a8860d83c1267a2c1b6b7b&base_oid=502bb0ba842ba6bf068ca9f0db5961d41f706bdb&head_oid=3e207738e84ab871e859a0e17ce2f504b1e7607bска киришүү ",
             task2KG: "2-сабак: онлайн жана оффлайн Бизнес",
             task3KG: " 3-сабак: компаниянын имиджи",
             textKG: " Модулдун натыйжасы: тренинг кандай өтөөрүн, трекер жана курстун башка катышуучулары менен таанышууну үйрөнөсүз.",
@@ -1472,6 +1492,7 @@ const RootContext = ({children}) => {
             fakeBackend,
             accordion,
             reviews,
+            check
 
         }}>
             {children}
