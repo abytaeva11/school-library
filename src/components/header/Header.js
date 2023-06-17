@@ -9,6 +9,8 @@ const Header = () => {
     const {loggedIn} = useContext(UserContext);
     const navigate = useNavigate();
 
+
+
     return (
         <div id="header">
             <div className="container">
@@ -37,7 +39,7 @@ const Header = () => {
                         }
                     >
                         <CiUser className="header-icon" />
-                        {loggedIn ? `${loggedIn}` : 'Войти'}
+                        {loggedIn ? `${loggedIn}` : 'войти'}
                     </button>
                 </div>
             </div>

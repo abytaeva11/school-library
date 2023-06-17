@@ -24,12 +24,13 @@ const YouTube = () => {
                     </div>
                 </div>
             </div>
-            <iframe width="1000" height="536" src="https://www.youtube.com/embed/V0qAq6ZLpic"
+
+            <iframe width="1000" height="536" src="https://www.youtube.com/embed/XZotInPwHHs"
                     title="YouTube video player" frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowFullScreen style={{marginLeft: "130px"}}></iframe>
+                    allowFullScreen  style={{marginLeft: "130px"}}></iframe>
 
-<Place/>
+<Place st/>
             <AccordionWe/>
 
 

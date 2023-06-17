@@ -9,6 +9,8 @@ import {LanguageContext} from "../../components/Context";
 const Hero = () => {
     const { language } = useContext(LanguageContext);
     const { head } = useContext(LanguageContext);
+
+
     return(
         <div>
             <section id="hero">

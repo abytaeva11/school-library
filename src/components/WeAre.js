@@ -10,8 +10,6 @@ const WeAre = () => {
             <Course/>
             <Reviews/>
             <Tell/>
-            <Reviews/>
-
 
         </div>
     );
