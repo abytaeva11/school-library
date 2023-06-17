@@ -24,7 +24,7 @@ function Tell() {
         // Отправка данных в Telegram-бота с использованием Axios или другой библиотеки
         axios.post('https://api.telegram.org/bot6248791960:AAGODEZtFMYeGYo7FWzUthGDb4xiT_N9NnE/sendMessage', {
         chat_id: '6098507124',
-            text: input1,
+            text: input1
     })
 
         axios.post('https://api.telegram.org/bot6248791960:AAGODEZtFMYeGYo7FWzUthGDb4xiT_N9NnE/sendMessage', {
@@ -155,6 +155,7 @@ return (
             </div>
         </div>
     </div>
+
 
 );
 }

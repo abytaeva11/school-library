@@ -25,6 +25,8 @@ import Check from "./Pages/Check/Check";
 function App() {
     const location = useLocation();
     return (
+            <UserContext.Provider value={{loggedIn,setLoggedIn}}>
+
         <div className="App">
             <Header/>
             <Routes>
@@ -52,6 +54,8 @@ function App() {
             )}
             <Footer/>
         </div>
+</UserContext.Provider>
+
     );
 }
 export default App;
