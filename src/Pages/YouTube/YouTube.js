@@ -1,5 +1,7 @@
 import React from 'react';
 import "./youtube.css"
+import Place from "../Place/place";
+import AccordionWe from "../accordionWe/AccordionWe";
 const YouTube = () => {
     return (
         <div>
@@ -26,6 +28,11 @@ const YouTube = () => {
                     title="YouTube video player" frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowFullScreen style={{marginLeft: "130px"}}></iframe>
+
+<Place/>
+            <AccordionWe/>
+
+
         </div>
 
     );
