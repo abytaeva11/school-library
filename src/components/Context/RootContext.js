@@ -80,8 +80,19 @@ const RootContext = ({children}) => {
 
         },
     ];
-    const subscribe = [
-        {
+
+
+const check = [
+    {
+        self: "SELF DEVELOPING SCHOOL",
+        panding: "Ожидание оплаты",
+        result: 'Спасибо за оплату.',
+        chek:'Чек был выслан на вашу электронную почту'
+    }
+]
+
+   const subscribe = [
+        {   sub: "Подписаться",
             decor: "Оформление подписки",
             decorKG:"Жазылуу",
 
@@ -145,6 +156,7 @@ const RootContext = ({children}) => {
                 usual5KG: "Өзүн-өзү өнүктүрүү боюнча бардык мастер-класстар",
                 usual6KG: "Баасы: $225",
                 usual7KG: "Тандалган",
+                usualCoin: "250$"
             },
             intensive: {
                 title2: "Интенсив",
@@ -175,6 +187,12 @@ const RootContext = ({children}) => {
             },
             btn: "Оплатить 250$",
             agree: "Я ознакомился и согласен с Условиями оказания услуг",
+                dollar: "500$"
+            },
+            btn: "Оплатить ",
+            agree: "Я ознакомился и согласен с Условиями оказания услуг"
+        },
+]
 
             btnKG: "$250 төлөө",
             agreeKG: "Мен Тейлөө шарттарын окуп чыктым жана макулмун"
@@ -1472,6 +1490,7 @@ const RootContext = ({children}) => {
             fakeBackend,
             accordion,
             reviews,
+            check
 
         }}>
             {children}

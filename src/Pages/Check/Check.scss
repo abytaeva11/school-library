@@ -1,0 +1,98 @@
+#check {
+  padding: 150px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 27.8281px;
+    color: #FFFFFF;
+    margin: 3px 0 8px 0;
+  }
+
+  .result {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    color: #FFFFFF;
+
+  }
+  .texts{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .chek{
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    color: #FFFFFF;
+
+  }
+  .panding{
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    color: #FFFFFF;
+    margin: 50px 37px 0 0;
+    display: flex;
+    align-items: center;
+  }
+  $offset: 187;
+  $duration: 1.4s;
+
+  .spinner {
+    animation: rotator $duration linear infinite;
+    margin:  0 0 0 10px;
+
+  }
+
+  @keyframes rotator {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(270deg); }
+  }
+
+  .path {
+
+    stroke-dasharray: $offset;
+    stroke-dashoffset: 0;
+    transform-origin: center;
+    animation:
+            dash $duration ease-in-out infinite,
+            colors ($duration*4) ease-in-out infinite;
+  }
+
+  @keyframes colors {
+    0% { stroke: #74ff00; }
+    25% { stroke: rgb(16, 255, 0); }
+    50% { stroke: #ffffff; }
+    75% { stroke: #11ff00; }
+    100% { stroke: #ffffff; }
+  }
+
+  @keyframes dash {
+    0% { stroke-dashoffset: $offset; }
+    50% {
+      stroke-dashoffset: $offset/4;
+      transform:rotate(135deg);
+    }
+    100% {
+      stroke-dashoffset: $offset;
+      transform:rotate(450deg);
+    }
+  }
+  .seredina{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+
