@@ -28,8 +28,6 @@ function App() {
         <div className="App">
             <Header/>
             <Routes>
-                <Route path={'/'} element={<Global/>}/>
-
                 {/*<Route path={'/'} element={<Global/>}/>*/}
                 <Route path={'/login'} element={<Login/>}/>
                 <Route path={'/courses'} element={<WeAre/>}/>
@@ -41,6 +39,8 @@ function App() {
                 <Route path={"/check"} element={<Check/>}/>
                 <Route path={"/many"} element={<Paket/>}/>
                 <Route path={"/buttons"} element={<Nothing/>}/>
+                <Route path={"/youtube"} element={<YouTube/>}/>
+
 
             </Routes>
             {location.pathname !== "/subscribe" && (
@@ -50,35 +50,6 @@ function App() {
                     </Routes>
                 </>
             )}
-            <AccordionWe/>
-            <YouTube/>
-            <Place/>
-            {/*<AccordionWe/>*/}
-
-            {/*<Routes>*/}
-            {/*    /!*<Route path={'/'} element={<Global/>}/>*!/*/}
-            {/*    <Route path={'/login'} element={<Login/>}/>*/}
-            {/*    <Route path={'/courses'} element={<WeAre/>}/>*/}
-            {/*    <Route path={'/third'} element={<Third/>}/>*/}
-
-
-            {/*    <Route path={"/subscribe"} element={<Subscribing/>}/>*/}
-            {/*    <Route path={"/many"} element={<Many/>}/>*/}
-            {/*    <Route path={"/many"} element={<Paket/>}/>*/}
-            {/*    <Route path={"/buttons"} element={<Nothing/>}/>*/}
-
-            {/*</Routes>*/}
-            {/*{location.pathname !== "/subscribe" && (*/}
-            {/*    <>*/}
-            {/*        <Routes>*/}
-            {/*            <Route path={"/"} element={<Global/>}/>*/}
-            {/*        </Routes>*/}
-            {/*    </>*/}
-            {/*)}*/}
-            {/*<AccordionWe/>*/}
-
-            <YouTube/>
-
             <Footer/>
         </div>
     );
