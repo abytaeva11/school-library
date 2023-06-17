@@ -17,6 +17,7 @@ import Third from "./Pages/Third/Third";
 
 import AccordionWe from "./Pages/accordionWe/AccordionWe";
 import YouTube from "./Pages/YouTube/YouTube";
+import Place from "./Pages/Place/place";
 import Check from "./Pages/Check/Check";
 
 
@@ -26,8 +27,9 @@ function App() {
     return (
         <div className="App">
             <Header/>
-
             <Routes>
+                <Route path={'/'} element={<Global/>}/>
+
                 {/*<Route path={'/'} element={<Global/>}/>*/}
                 <Route path={'/login'} element={<Login/>}/>
                 <Route path={'/courses'} element={<WeAre/>}/>
@@ -48,6 +50,9 @@ function App() {
                     </Routes>
                 </>
             )}
+            <AccordionWe/>
+            <YouTube/>
+            <Place/>
             {/*<AccordionWe/>*/}
 
             {/*<Routes>*/}
