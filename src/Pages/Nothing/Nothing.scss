@@ -263,16 +263,27 @@ font-family: 'Montserrat', sans-serif ;
 
     &--column {
       display: flex;
-      margin: 0 0 50px 0;
+      margin: 20px 0 50px 0;
 
-      &__usual {
+      &__usual2:hover{
+        transform: scale(110%);
+        transition: .4s ease-in-out;
+      }
+      &__intensive2:hover{
+        transform: scale(110%);
+        transition: .4s ease-in-out;
+      }
+      &__usual2 {
         width: 245px;
         height: 523px;
-        background: rgb(255 255 255 / 0%);
-        border: 1px solid #FFFFFF;
-        backdrop-filter: blur(3px);
-        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.2);
+        border: 1.26419px solid #FFFFFF;
+        backdrop-filter: blur(3.79256px);
+        /* Note: backdrop-filter has minimal browser support */
+
+        border-radius: 13px;
         position: relative;
+margin:  0 100px 0 0 !important;
         &--book1{
           position: absolute;
           left: -10px;
@@ -390,13 +401,15 @@ font-family: 'Montserrat', sans-serif ;
         }
       }
 
-      &__intensive {
+      &__intensive2 {
         width: 245px;
         height: 523px;
-        background: rgb(255 255 255 / 0%);
-        border: 1px solid #DFAC4D;
-        backdrop-filter: blur(3px);
-        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.2);
+        border: 1.11546px solid rgba(223, 172, 77, 0.6);
+        backdrop-filter: blur(3.34638px);
+        /* Note: backdrop-filter has minimal browser support */
+
+        border-radius: 11px;
 
         &--marge {
           position: relative;
