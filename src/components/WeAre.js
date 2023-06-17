@@ -11,6 +11,7 @@ const WeAre = () => {
             <Reviews/>
             <Tell/>
 
+
         </div>
     );
 };
