@@ -8,7 +8,7 @@ import {Link, Route} from "react-router-dom";
 import Check from "../../Check/Check";
 
 const Subscribing = () => {
-
+    const {language} = useContext(LanguageContext)
     const {subscribe} = useContext(LanguageContext);
     const [selectedPayment, setSelectedPayment] = useState(null);
     const [nameInput, setNameInput] = useState('');
@@ -227,8 +227,8 @@ const Subscribing = () => {
                 <div id="sub" key={el.id}>
                     <div className="cribe">
                         <div className="registration">
-                            <h3>{el.decor}</h3>
-                            <h2>{el.name.title}</h2>
+                            <h3>{ language ? el.decorKG : el.decor  }</h3>
+                            <h2>{ language ? el.name.titleKG : el.name.title}</h2>
                             <input
                                 style={{
                                     border: !isNameValid ? "1px solid red" : ""
@@ -240,7 +240,7 @@ const Subscribing = () => {
                                 onChange={handleNameInputChange}
                             />
                             {!isNameValid && <p className="error-message">Please enter a valid name.</p>}
-                            <h2>{el.email.title}</h2>
+                            <h2>{ language ? el.email.titleKG : el.email.title}</h2>
                             <input style={{
                                 border: !isEmailValid ? "1px solid red" : ""
                             }}
@@ -252,7 +252,7 @@ const Subscribing = () => {
                             />
                             {!isEmailValid &&
                                 <p className="error-message">Please enter a valid email ending with '@gmail.com'.</p>}
-                            <h2>{el.number.title}</h2>
+                            <h2>{ language ? el.number.titleKG : el.number.title}</h2>
                             <input
                                 style={{
                                     border: !isTelValid ? '1px solid red' : '',
@@ -265,7 +265,7 @@ const Subscribing = () => {
                             />
                             {!isTelValid && <p className="error-message">Please enter a valid phone number.</p>}
 
-                            <h2>{el.password.title}</h2>
+                            <h2>{ el.password.title}</h2>
                             <div className="password-input">
                                 <input
                                     ref={passwordInputRef}
@@ -286,7 +286,7 @@ const Subscribing = () => {
                                 )}
                             </div>
                             <div className="registration--master">
-                                <h2>{el.pay.title}</h2>
+                                <h2>{ language ? el.pay.titleKG : el.pay.title}</h2>
                                 <div className="registration--master__payment">
                                     <div className="registration--master__payment--radios">
                                         <input style={{border: !isMasterValid ? "1px solid red" : ""}}
@@ -311,7 +311,7 @@ const Subscribing = () => {
                                 </div>
                                 <div className="registration--master__numbercart">
                                     <div className="registration--master__numbercart--date1">
-                                        <h4>{el.cart.title}</h4>
+                                        <h4>{language ? el.cart.titleKG : el.cart.title}</h4>
                                         <input
                                             type="tel"
                                             style={{ border: !isCartValid ? '1px solid red' : '' }}
@@ -322,14 +322,14 @@ const Subscribing = () => {
                                         />
                                     </div>
                                     <div className="registration--master__numbercart--date2">
-                                        <h4>{el.cart.term}</h4>
+                                        <h4>{language ? el.cart.termKG : el.cart.term}</h4>
                                         <input type="text" style={{border: !isDateValid ? "1px solid red" : ""}}
                                                className={`registration--login ${!isDateValid ? 'invalid' : ''}`}
                                                value={dateInput} onChange={handleDateInputChange}
                                                placeholder="12/25"/>
                                     </div>
                                     <div className="registration--master__numbercart--date3">
-                                        <h4>{el.cart.time}</h4>
+                                        <h4>{language ? el.cart.timeKG : el.cart.time}</h4>
                                         <input
                                             type="text"
                                             style={{ border: !isNumValid ? '1px solid red' : '' }}
@@ -348,7 +348,7 @@ const Subscribing = () => {
                             {
                                 subscribe.map((el) => (
                                     <div className="cribe--level__just">
-                                        <h2>{el.average.title}</h2>
+                                        <h2>{language ? el.average.titleKG : el.average.title}</h2>
                                         <div className="cribe--level__just--column">
                                             <div style={{
                                                 marginRight: isIntensiveSelected ? "20px" : "20px"
@@ -358,7 +358,7 @@ const Subscribing = () => {
                                                 <img className="cribe--level__just--column__usual--book2" src={book2}
                                                      alt=""/>
                                                 <div className="cribe--level__just--column__usual--marge">
-                                                    <h1>{el.average.usual}</h1>
+                                                    <h1>{language ?  el.average.usualKG : el.average.usual}</h1>
                                                     <div className="cribe--level__just--column__usual--marge__input">
                                                         <input
                                                                type="checkbox"
@@ -381,22 +381,22 @@ const Subscribing = () => {
                                                             className={`checkbox-input ${!isYearValid ? 'invalid' : ''}`}
                                                             disabled={!inChoose}
                                                         />
-                                                        <h5>{el.average.usual3}</h5>
+                                                        <h5>{language ? el.average.usual3KG : el.average.usual3}</h5>
                                                     </div>
                                                     <div className="cribe--level__just--column__usual--marge__check1">
                                                         <BsCheckLg className="iconka1"/>
-                                                        <h4>{el.average.usual4}</h4>
+                                                        <h4>{language ? el.average.usual4KG : el.average.usual4}</h4>
                                                     </div>
                                                     <div className="cribe--level__just--column__usual--marge__check2">
                                                         <BsCheckLg className="iconka2"/>
-                                                        <h4>{el.average.usual5}</h4>
+                                                        <h4>{language ?  el.average.usual5KG :el.average.usual5}</h4>
                                                     </div>
-                                                    <h2>{el.average.usual6}</h2>
+                                                    <h2>{language ? el.average.usual6 : el.average.usual6KG }</h2>
                                                     {
                                                         isIntensiveSelected ? <button  onClick={handleUsualChooseClick}
-                                                                                      className="choose1">{el.intensive.Choose}</button>
+                                                                                      className="choose1">{ language ?  el.intensive.ChooseKG : el.intensive.Choose}</button>
                                                             : <button  onClick={handleUsualChooseClick}
-                                                                      className="choose">{el.average.usual7}</button>
+                                                                      className="choose">{language ? el.average.usual7KG : el.average.usual7}</button>
                                                     }
                                                 </div>
 
@@ -405,7 +405,7 @@ const Subscribing = () => {
 
                                             }}  className={isIntensiveSelected ? "cribe--level__just--column__usual" : "cribe--level__just--column__intensive"}>
                                                 <div className="cribe--level__just--column__intensive--marge">
-                                                    <h1>{el.intensive.title2}</h1>
+                                                    <h1>{ language ? el.intensive.title2KG : el.intensive.title2}</h1>
                                                     <div
                                                         className="cribe--level__just--column__intensive--marge__input">
                                                         <input style={{border: !isMonthValid ? "1px solid red" : ""}}
@@ -416,60 +416,60 @@ const Subscribing = () => {
                                                                className={`checkbox-input2 ${!isMonthValid ? 'invalid' : ''}`}
                                                                disabled={inChoose}
                                                         />
-                                                        <h3 className="cribe--level__just--column__intensive--marge__input--year">{el.average.usual2}</h3>
+                                                        <h3 className="cribe--level__just--column__intensive--marge__input--year">{language ? el.average.usual2KG : el.average.usual2}</h3>
                                                     </div>
                                                     <div
                                                         className="cribe--level__just--column__intensive--marge__input2">
                                                         <input
                                                             style={{border: !isMonthValid ? "1px solid red" : ""}}
                                                             type="checkbox"
-                                                            value={el.intensive.careful3}
+                                                            value={ el.intensive.careful3}
                                                             checked={selectedPayment === el.intensive.careful3}
                                                             onChange={handlePaymentChange2}
                                                             className={`checkbox-input2 ${!isMonthValid ? 'invalid' : ''}`}
                                                             disabled={inChoose}
                                                         />
-                                                        <h5>{el.intensive.careful}</h5>
+                                                        <h5>{language ? el.intensive.carefulKG : el.intensive.careful}</h5>
                                                     </div>
                                                     <div
                                                         className="cribe--level__just--column__intensive--marge__check1">
                                                         <BsCheckLg className="iconka1"/>
-                                                        <h4>{el.intensive.careful2}</h4>
+                                                        <h4>{ language ? el.intensive.careful2KG : el.intensive.careful2}</h4>
                                                     </div>
                                                     <div
                                                         className="cribe--level__just--column__intensive--marge__check2">
                                                         <BsCheckLg className="iconka2"/>
-                                                        <h4>{el.intensive.careful3}</h4>
+                                                        <h4>{language ? el.intensive.careful3KG :  el.intensive.careful3}</h4>
                                                     </div>
                                                     <div
                                                         className="cribe--level__just--column__intensive--marge__check3">
                                                         <BsCheckLg className="iconka3"/>
-                                                        <h4>{el.intensive.careful4}</h4>
+                                                        <h4>{language ? el.intensive.careful4KG :  el.intensive.careful4}</h4>
                                                     </div>
                                                     <div
                                                         className="cribe--level__just--column__intensive--marge__check4">
                                                         <BsCheckLg className="iconka4"/>
-                                                        <h4>{el.intensive.careful5}</h4>
+                                                        <h4>{language ? el.intensive.careful5KG :  el.intensive.careful5}</h4>
                                                     </div>
                                                     <div
                                                         className="cribe--level__just--column__intensive--marge__check5">
                                                         <BsCheckLg className="iconka5"/>
-                                                        <h4>{el.intensive.careful6}</h4>
+                                                        <h4>{language ? el.intensive.careful6KG :  el.intensive.careful6}</h4>
                                                     </div>
                                                     <div
                                                         className="cribe--level__just--column__intensive--marge__check6">
                                                         <BsCheckLg className="iconka6"/>
-                                                        <h4>{el.intensive.careful7}</h4>
+                                                        <h4>{language ? el.intensive.careful7KG :  el.intensive.careful7}</h4>
                                                     </div>
                                                     <div className="cribe--level__just--column__intensive--marge__coin">
-                                                        <h2>{el.intensive.coin} </h2><h6>{el.intensive.coin2}</h6>
+                                                        <h2>{language ? el.intensive.coinKG :  el.intensive.coin} </h2><h6>{language ? el.intensive.coin2KG : el.intensive.coin2}</h6>
                                                     </div>
                                                     {
                                                         isIntensiveSelected ?
                                                             <button  onClick={handleIntensiveChooseClick}
-                                                                    className="choose">{el.average.usual7}</button> :
+                                                                    className="choose">{language ? el.average.usual7KG  : el.average.usual7}</button> :
                                                             <button onClick={handleIntensiveChooseClick}
-                                                                    className="choose1">{el.intensive.Choose}</button>
+                                                                    className="choose1">{language ? el.average.ChooseKG : el.intensive.Choose}</button>
                                                     }
 
                                                 </div>
@@ -482,7 +482,7 @@ const Subscribing = () => {
                                                             disabled={!isFormValid}
                                                             onClick={handleSubscribeClick}
                                                         >
-                                                            {el.btn}
+                                                            {language ? el.btnKG : el.btn}
                                                             {el.intensive.dollar}
                                                         </button>
                                                     )
@@ -490,7 +490,7 @@ const Subscribing = () => {
                                                         <button
                                                             disabled={!isFormValid}
                                                             onClick={handleSubscribeClick}>
-                                                            {el.btn}{el.average.usualCoin}
+                                                            {language ? el.btnKG : el.btn}{el.average.usualCoin}
                                                         </button>
                                                     )
 
@@ -502,7 +502,7 @@ const Subscribing = () => {
                                                 <input style={{border: !isKnowValid ? "1px solid red" : ""}}
                                                        type="checkbox" onChange={handleKnowInputChange}
                                                        className={`checkbox-put ${!isKnowValid ? 'invalid' : ''}`}/>
-                                                <h3>{el.agree}</h3>
+                                                <h3>{language ? el.agreeKG : el.agree}</h3>
                                             </div>
                                         </div>
 

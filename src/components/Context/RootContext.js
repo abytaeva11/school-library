@@ -123,7 +123,8 @@ const check = [
             pay: {
                 title: "Оплата",
                 visa: "Visa",
-                card: "Master Card"
+                card: "Master Card",
+                titleKG: "Төлөм"
             },
             cart: {
                 title: "Номер карты",
@@ -189,7 +190,7 @@ const check = [
 
             btn: "Оплатить ",
             agree: "Я ознакомился и согласен с Условиями оказания услуг",
-            btnKG: "$250 төлөө",
+            btnKG: "Төлөө",
             agreeKG: "Мен Тейлөө шарттарын окуп чыктым жана макулмун"
 
 }
