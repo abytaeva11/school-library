@@ -1,0 +1,49 @@
+.place-text h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 44px;
+    color: #FFFFFF;
+    margin-left: 2px;
+}
+
+.place-text  span {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    color: #FFFFFF;
+    font-size: 20px;
+}
+p {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.81);
+    font-size: 20px;
+    margin: 20px 0 ;
+}
+.place-list {
+    list-style-type: disc;
+    color: #FFFFFF;
+    font-size: 24px;
+
+}
+.place-list1{
+    padding: 100px 0 ;
+}
+.place-list1 h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 44px;
+    margin-left: -2px;
+    color: #FFFFFF;
+    border-left: 10px solid white;
+    padding: 0 20px;
+
+}
+.place-list li{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.81);
+    font-size: 20px;
+    margin: 20px 20px;
+}
