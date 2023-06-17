@@ -16,6 +16,8 @@ import UserContext from './components/HukContext/UserContext';
 
 import YouTube from "./Pages/YouTube/YouTube";
 import Check from "./Pages/Check/Check";
+import Course2 from "./Pages/Course/course2";
+import Questions from "./Pages/Questions/Questions";
 
 
 
@@ -40,6 +42,7 @@ function App() {
                 <Route path={"/many"} element={<Paket/>}/>
                 <Route path={"/buttons"} element={<Nothing/>}/>
                 <Route path={"/youtube"} element={<YouTube/>}/>
+                <Route path={"/photo"} element={<Course2/>}/>
 
 
             </Routes>
