@@ -1,6 +1,7 @@
 import React from 'react';
 import img1 from "./img/image 1.svg";
 import "./course2.css"
+import {NavLink} from "react-router-dom";
 
 const Course2 = () => {
     return (
@@ -22,7 +23,7 @@ const Course2 = () => {
                                 </div>
                             </div>
                             <div className="text2">
-                                <img src={img1} alt=""/>
+                                <NavLink to={"/youtube"}> <img src={img1} alt=""/></NavLink>
                                 <a href="">Подробнее...</a>
                             </div>
                         </div>
@@ -39,7 +40,7 @@ const Course2 = () => {
                                 </div>
                             </div>
                             <div className="text2">
-                                <img src={img1} alt=""/>
+                                <NavLink to={"/youtube"}> <img src={img1} alt=""/></NavLink>
                                 <a href="">Подробнее...</a>
                             </div>
                         </div>
@@ -56,7 +57,7 @@ const Course2 = () => {
                                 </div>
                             </div>
                             <div className="text2">
-                                <img src={img1} alt=""/>
+                                <NavLink to={"/youtube"}> <img src={img1} alt=""/></NavLink>
                                 <a href="">Подробнее...</a>
                             </div>
                         </div>
@@ -83,7 +84,7 @@ const Course2 = () => {
                                 </div>
                             </div>
                             <div className="text2">
-                                <img src={img1} alt=""/>
+                                <NavLink to={"/youtube"}> <img src={img1} alt=""/></NavLink>
                                 <a href="">Подробнее...</a>
                             </div>
                         </div>
@@ -100,7 +101,7 @@ const Course2 = () => {
                                 </div>
                             </div>
                             <div className="text2">
-                                <img src={img1} alt=""/>
+                                <NavLink to={"/youtube"}> <img src={img1} alt=""/></NavLink>
                                 <a href="">Подробнее...</a>
                             </div>
                         </div>
@@ -117,60 +118,7 @@ const Course2 = () => {
                                 </div>
                             </div>
                             <div className="text2">
-                                <img src={img1} alt=""/>
-                                <a href="">Подробнее...</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="image1">
-                        <div className="image1-block">
-                            <h1>Создание команды</h1>
-                            <div className="text">
-                                <div>
-                                    <p>Обучение</p>
-                                </div>
-                                <div className="btn">
-                                    <button>Все</button>
-                                    <button>Новое</button>
-                                    <button>Книги</button>
-                                </div>
-                            </div>
-                            <div className="text2">
-                                <img src={img1} alt=""/>
-                                <a href="">Подробнее...</a>
-                            </div>
-                        </div>
-                        <div className="image1-block">
-                            <h1>Создание команды</h1>
-                            <div className="text">
-                                <div>
-                                    <p>Обучение</p>
-                                </div>
-                                <div className="btn">
-                                    <button>Все</button>
-                                    <button>Новое</button>
-                                    <button>Книги</button>
-                                </div>
-                            </div>
-                            <div className="text2">
-                                <img src={img1} alt=""/>
-                                <a href="">Подробнее...</a>
-                            </div>
-                        </div>
-                        <div className="image1-block">
-                            <h1>Создание команды</h1>
-                            <div className="text">
-                                <div>
-                                    <p>Обучение</p>
-                                </div>
-                                <div className="btn">
-                                    <button>Все</button>
-                                    <button>Новое</button>
-                                    <button>Книги</button>
-                                </div>
-                            </div>
-                            <div className="text2">
-                                <img src={img1} alt=""/>
+                                <NavLink to={"/youtube"}> <img src={img1} alt=""/></NavLink>
                                 <a href="">Подробнее...</a>
                             </div>
                         </div>
@@ -189,7 +137,7 @@ const Course2 = () => {
                                 </div>
                             </div>
                             <div className="text2">
-                                <img src={img1} alt=""/>
+                                <NavLink to={"/youtube"}> <img src={img1} alt=""/></NavLink>
                                 <a href="">Подробнее...</a>
                             </div>
                         </div>
@@ -206,7 +154,7 @@ const Course2 = () => {
                                 </div>
                             </div>
                             <div className="text2">
-                                <img src={img1} alt=""/>
+                                <NavLink to={"/youtube"}> <img src={img1} alt=""/></NavLink>
                                 <a href="">Подробнее...</a>
                             </div>
                         </div>
@@ -223,60 +171,7 @@ const Course2 = () => {
                                 </div>
                             </div>
                             <div className="text2">
-                                <img src={img1} alt=""/>
-                                <a href="">Подробнее...</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="image1">
-                        <div className="image1-block">
-                            <h1>Создание команды</h1>
-                            <div className="text">
-                                <div>
-                                    <p>Обучение</p>
-                                </div>
-                                <div className="btn">
-                                    <button>Все</button>
-                                    <button>Новое</button>
-                                    <button>Книги</button>
-                                </div>
-                            </div>
-                            <div className="text2">
-                                <img src={img1} alt=""/>
-                                <a href="">Подробнее...</a>
-                            </div>
-                        </div>
-                        <div className="image1-block">
-                            <h1>Создание команды</h1>
-                            <div className="text">
-                                <div>
-                                    <p>Обучение</p>
-                                </div>
-                                <div className="btn">
-                                    <button>Все</button>
-                                    <button>Новое</button>
-                                    <button>Книги</button>
-                                </div>
-                            </div>
-                            <div className="text2">
-                                <img src={img1} alt=""/>
-                                <a href="">Подробнее...</a>
-                            </div>
-                        </div>
-                        <div className="image1-block">
-                            <h1>Создание команды</h1>
-                            <div className="text">
-                                <div>
-                                    <p>Обучение</p>
-                                </div>
-                                <div className="btn">
-                                    <button>Все</button>
-                                    <button>Новое</button>
-                                    <button>Книги</button>
-                                </div>
-                            </div>
-                            <div className="text2">
-                                <img src={img1} alt=""/>
+                                <NavLink to={"/youtube"}> <img src={img1} alt=""/></NavLink>
                                 <a href="">Подробнее...</a>
                             </div>
                         </div>
@@ -295,7 +190,7 @@ const Course2 = () => {
                                 </div>
                             </div>
                             <div className="text2">
-                                <img src={img1} alt=""/>
+                                <NavLink to={"/youtube"}> <img src={img1} alt=""/></NavLink>
                                 <a href="">Подробнее...</a>
                             </div>
                         </div>
@@ -312,7 +207,7 @@ const Course2 = () => {
                                 </div>
                             </div>
                             <div className="text2">
-                                <img src={img1} alt=""/>
+                                <NavLink to={"/youtube"}> <img src={img1} alt=""/></NavLink>
                                 <a href="">Подробнее...</a>
                             </div>
                         </div>
@@ -329,7 +224,7 @@ const Course2 = () => {
                                 </div>
                             </div>
                             <div className="text2">
-                                <img src={img1} alt=""/>
+                                <NavLink to={"/youtube"}> <img src={img1} alt=""/></NavLink>
                                 <a href="">Подробнее...</a>
                             </div>
                         </div>
@@ -348,7 +243,7 @@ const Course2 = () => {
                                 </div>
                             </div>
                             <div className="text2">
-                                <img src={img1} alt=""/>
+                                <NavLink to={"/youtube"}> <img src={img1} alt=""/></NavLink>
                                 <a href="">Подробнее...</a>
                             </div>
                         </div>
@@ -365,7 +260,7 @@ const Course2 = () => {
                                 </div>
                             </div>
                             <div className="text2">
-                                <img src={img1} alt=""/>
+                                <NavLink to={"/youtube"}> <img src={img1} alt=""/></NavLink>
                                 <a href="">Подробнее...</a>
                             </div>
                         </div>
@@ -382,7 +277,113 @@ const Course2 = () => {
                                 </div>
                             </div>
                             <div className="text2">
-                                <img src={img1} alt=""/>
+                                <NavLink to={"/youtube"}> <img src={img1} alt=""/></NavLink>
+                                <a href="">Подробнее...</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="image1">
+                        <div className="image1-block">
+                            <h1>Создание команды</h1>
+                            <div className="text">
+                                <div>
+                                    <p>Обучение</p>
+                                </div>
+                                <div className="btn">
+                                    <button>Все</button>
+                                    <button>Новое</button>
+                                    <button>Книги</button>
+                                </div>
+                            </div>
+                            <div className="text2">
+                                <NavLink to={"/youtube"}> <img src={img1} alt=""/></NavLink>
+                                <a href="">Подробнее...</a>
+                            </div>
+                        </div>
+                        <div className="image1-block">
+                            <h1>Создание команды</h1>
+                            <div className="text">
+                                <div>
+                                    <p>Обучение</p>
+                                </div>
+                                <div className="btn">
+                                    <button>Все</button>
+                                    <button>Новое</button>
+                                    <button>Книги</button>
+                                </div>
+                            </div>
+                            <div className="text2">
+                                <NavLink to={"/youtube"}> <img src={img1} alt=""/></NavLink>
+                                <a href="">Подробнее...</a>
+                            </div>
+                        </div>
+                        <div className="image1-block">
+                            <h1>Создание команды</h1>
+                            <div className="text">
+                                <div>
+                                    <p>Обучение</p>
+                                </div>
+                                <div className="btn">
+                                    <button>Все</button>
+                                    <button>Новое</button>
+                                    <button>Книги</button>
+                                </div>
+                            </div>
+                            <div className="text2">
+                                <NavLink to={"/youtube"}> <img src={img1} alt=""/></NavLink>
+                                <a href="">Подробнее...</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="image1">
+                        <div className="image1-block">
+                            <h1>Создание команды</h1>
+                            <div className="text">
+                                <div>
+                                    <p>Обучение</p>
+                                </div>
+                                <div className="btn">
+                                    <button>Все</button>
+                                    <button>Новое</button>
+                                    <button>Книги</button>
+                                </div>
+                            </div>
+                            <div className="text2">
+                                <NavLink to={"/youtube"}> <img src={img1} alt=""/></NavLink>
+                                <a href="">Подробнее...</a>
+                            </div>
+                        </div>
+                        <div className="image1-block">
+                            <h1>Создание команды</h1>
+                            <div className="text">
+                                <div>
+                                    <p>Обучение</p>
+                                </div>
+                                <div className="btn">
+                                    <button>Все</button>
+                                    <button>Новое</button>
+                                    <button>Книги</button>
+                                </div>
+                            </div>
+                            <div className="text2">
+                                <NavLink to={"/youtube"}> <img src={img1} alt=""/></NavLink>
+                                <a href="">Подробнее...</a>
+                            </div>
+                        </div>
+                        <div className="image1-block">
+                            <h1>Создание команды</h1>
+                            <div className="text">
+                                <div>
+                                    <p>Обучение</p>
+                                </div>
+                                <div className="btn">
+                                    <button>Все</button>
+                                    <button>Новое</button>
+                                    <button>Книги</button>
+                                </div>
+                            </div>
+                            <div className="text2">
+                                <NavLink to={"/youtube"}> <img src={img1} alt=""/></NavLink>
                                 <a href="">Подробнее...</a>
                             </div>
                         </div>
