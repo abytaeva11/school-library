@@ -5,6 +5,9 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import line from "../img/Line 7.png"
 import {LanguageContext} from "../../../components/Context";
+import book1 from "../../Tabs/img/book1.png";
+import book2 from "../../Tabs/img/book2.png";
+
 
 
 const Many = () => {
@@ -149,6 +152,15 @@ const Many = () => {
                         </div>
                     </div>
                 </div>
+
+                <div className="baby__face">
+                    <img className="baby1" src={book1} alt=""/>
+                    {/*<img className="baby2" src={book2} alt=""/>*/}
+                    <img className="baby3" src={book1} alt=""/>
+                    {/*<img className="baby4" src={book2} alt=""/>*/}
+
+                </div>
+
             </div>
         </div>
     );

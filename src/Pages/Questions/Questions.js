@@ -125,10 +125,10 @@ const Questions = () => {
                         </h2>
                         <div className="flex">
                             <div className="relative">
-                                <img src={query} className="ml-20 mt-8" width={280} alt="" />
+                                <img src={query} className="ml-20 mt-8" width={280} alt="" style={{ marginLeft:"2rem"}} />
                             </div>
                             <div className="ml-12 mt-4">
-                                <div id={`accordion-${index}`} className="accordion">
+                                <div id={`accordion-${index}`} className="accordion" style={{width:"700px"}}>
                                     <AccordionItem
                                         id={`accordion-item-${index}-1`}
                                         title={language ? el.accord.question1KG : el.accord.question1}
