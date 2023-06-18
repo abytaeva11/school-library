@@ -4,8 +4,8 @@ import "../Subscribing/Subscribe.scss";
 import {BsCheckLg} from "react-icons/bs";
 import book1 from "../../Questions/Subscribing/book1.svg";
 import book2 from "../../Questions/Subscribing/book2.svg";
-import {Link, Route} from "react-router-dom";
-import Check from "../../Check/Check";
+import {Link} from "react-router-dom";
+
 
 const Subscribing = () => {
     const {language} = useContext(LanguageContext)
@@ -130,7 +130,6 @@ const Subscribing = () => {
         setTelInput(event.target.value);
         setIsTelValid(true); // Reset the validity when the input changes
     };
-
     const handleEmailInputChange = (event) => {
         setEmailInput(event.target.value);
         setIsEmailValid(true); // Reset the validity when the input changes
@@ -224,7 +223,7 @@ const Subscribing = () => {
     return (
         <div>
             {subscribe.map((el) => (
-                <div id="sub" key={el.id}>
+                <div className="sub" key={el.id}>
                     <div className="cribe">
                         <div className="registration">
                             <h3>{ language ? el.decorKG : el.decor  }</h3>
@@ -249,6 +248,7 @@ const Subscribing = () => {
                                    placeholder={el.email.input}
                                    value={emailInput}
                                    onChange={handleEmailInputChange}
+                                   disabled={!nameInput}
                             />
                             {!isEmailValid &&
                                 <p className="error-message">Please enter a valid email ending with '@gmail.com'.</p>}
@@ -262,6 +262,7 @@ const Subscribing = () => {
                                 onChange={handleTelInputChange}
                                 type="tel"
                                 placeholder={el.number.input}
+                                disabled={!emailInput}
                             />
                             {!isTelValid && <p className="error-message">Please enter a valid phone number.</p>}
 
@@ -271,8 +272,9 @@ const Subscribing = () => {
                                     ref={passwordInputRef}
                                     className="registration--login"
                                     type="password"
-                                    placeholder="Enter password"
+                                    placeholder="if you do have"
                                     onChange={handlePasswordInputChange}
+                                    disabled={!telInput}
                                 />
 
                                 {isLoading && (
@@ -295,6 +297,7 @@ const Subscribing = () => {
                                                checked={selectedMaster === el.pay.visa}
                                                onChange={handleMasterChange}
                                                className={`checkbox-input ${!isMasterValid ? "invalid" : "" } `}
+                                               disabled={!numInput}
                                         />
                                         <h3>{el.pay.visa}</h3>
                                     </div>
@@ -305,6 +308,7 @@ const Subscribing = () => {
                                             checked={selectedMaster === el.pay.card}
                                             onChange={handleMasterChange}
                                             className={`checkbox-input ${!isMasterValid ? "invalid" : "" }  `}
+                                            disabled={!numInput}
                                         />
                                         <h3>{el.pay.card}</h3>
                                     </div>
@@ -319,6 +323,7 @@ const Subscribing = () => {
                                             value={cartInput}
                                             onChange={handleCartInputChange}
                                             placeholder="1234 4567 7788 9210"
+                                            disabled={!numInput}
                                         />
                                     </div>
                                     <div className="registration--master__numbercart--date2">
@@ -326,7 +331,9 @@ const Subscribing = () => {
                                         <input type="text" style={{border: !isDateValid ? "1px solid red" : ""}}
                                                className={`registration--login ${!isDateValid ? 'invalid' : ''}`}
                                                value={dateInput} onChange={handleDateInputChange}
-                                               placeholder="12/25"/>
+                                               placeholder="12/25"
+                                               disabled={!cartInput}/>
+
                                     </div>
                                     <div className="registration--master__numbercart--date3">
                                         <h4>{language ? el.cart.timeKG : el.cart.time}</h4>
@@ -337,6 +344,7 @@ const Subscribing = () => {
                                             value={numInput}
                                             onChange={handleNumInputChange}
                                             placeholder="398"
+                                            disabled={!dateInput}
                                         />
                                     </div>
 
@@ -351,8 +359,9 @@ const Subscribing = () => {
                                         <h2>{language ? el.average.titleKG : el.average.title}</h2>
                                         <div className="cribe--level__just--column">
                                             <div style={{
-                                                marginRight: isIntensiveSelected ? "20px" : "20px"
-                                            }} className={isIntensiveSelected ? "cribe--level__just--column__intensive" : "cribe--level__just--column__usual" }>
+                                                marginRight: isIntensiveSelected ? "20px" : "20px",
+                                                border: isIntensiveSelected ? "1px solid white" : '1px solid #dfac4d'
+                                            }} className=  "cribe--level__just--column__usual" >
                                                 <img className="cribe--level__just--column__usual--book1" src={book1}
                                                      alt=""/>
                                                 <img className="cribe--level__just--column__usual--book2" src={book2}
@@ -393,17 +402,19 @@ const Subscribing = () => {
                                                     </div>
                                                     <h2>{language ? el.average.usual6 : el.average.usual6KG }</h2>
                                                     {
-                                                        isIntensiveSelected ? <button  onClick={handleUsualChooseClick}
-                                                                                      className="choose1">{ language ?  el.intensive.ChooseKG : el.intensive.Choose}</button>
-                                                            : <button  onClick={handleUsualChooseClick}
-                                                                      className="choose">{language ? el.average.usual7KG : el.average.usual7}</button>
+                                                        isIntensiveSelected ? <button style={{background: isIntensiveSelected ? "transparent" : "", color: isIntensiveSelected ? "white" : ''}}  onClick={handleUsualChooseClick}
+                                                                                      className="choose1"> {
+                                                                isIntensiveSelected ? el.intensive.Choose : el.average.usual7
+                                                            } </button>
+                                                            : <button style={{background: isIntensiveSelected ? "" : "white" , color: isIntensiveSelected ? "" : '#595FEB'}} onClick={handleUsualChooseClick}
+                                                                      className="choose1">{ isIntensiveSelected ?  el.intensive.Choose : el.average.usual7   }</button>
                                                     }
                                                 </div>
 
                                             </div>
                                             <div style={{
-
-                                            }}  className={isIntensiveSelected ? "cribe--level__just--column__usual" : "cribe--level__just--column__intensive"}>
+                                                border: isIntensiveSelected ? "1px solid #dfac4d" : "1px solid white"
+                                            }}  className= "cribe--level__just--column__intensive">
                                                 <div className="cribe--level__just--column__intensive--marge">
                                                     <h1>{ language ? el.intensive.title2KG : el.intensive.title2}</h1>
                                                     <div
@@ -466,10 +477,13 @@ const Subscribing = () => {
                                                     </div>
                                                     {
                                                         isIntensiveSelected ?
-                                                            <button  onClick={handleIntensiveChooseClick}
-                                                                    className="choose">{language ? el.average.usual7KG  : el.average.usual7}</button> :
+                                                            <button style={{
+                                                                background: isIntensiveSelected ? "white" : "",
+                                                                color: isIntensiveSelected ?  "#595FEB" : ""
+                                                            }} onClick={handleIntensiveChooseClick}
+                                                                    className="choose1   ">{isIntensiveSelected ? el.average.usual7  : el.intensive.Choose}</button> :
                                                             <button onClick={handleIntensiveChooseClick}
-                                                                    className="choose1">{language ? el.average.ChooseKG : el.intensive.Choose}</button>
+                                                                    className="choose1">{language ?  el.average.usual7 : el.intensive.Choose}</button>
                                                     }
 
                                                 </div>

@@ -16,7 +16,7 @@ const Bolot = () => {
                             <p>Страрательный парень</p>
                         </div>
                     </div>
-                    <input className='text-fuchsia-500' type="file" placeholder='Photo' accept='image/png'/>
+                    <input className='kol text-fuchsia-500' type="file" placeholder='Photo' accept='image/png'/>
 
                 </div>
             </div>
