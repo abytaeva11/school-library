@@ -71,7 +71,7 @@ const Tabs = () => {
                                                 </div>
                                                 <div className="tabs--img__right">
                                                     <img src={book.images} alt="" style={{ width: "100%", display: "block" }} />
-                                                    <img className=" py-3" src={book.img} alt="" />
+                                                    <img className=" py-3" src={book.img} alt=""    />
                                                 </div>
                                                 <img src={line} alt="" className="lines" />
                                                 <div className="tabs__img--bottom text-white d-flex align-items-center justify-content-between">

@@ -125,7 +125,7 @@ const Questions = () => {
                         </h2>
                         <div className="flex">
                             <div className="relative">
-                                <img src={query} className="ml-20 mt-8" width={280} alt="" style={{ marginLeft:"2rem"}} />
+                                <img src={query} className="ml-20 mt-8" width={280} alt="" style={{ marginLeft:"2rem" ,}} />
                             </div>
                             <div className="ml-12 mt-4">
                                 <div id={`accordion-${index}`} className="accordion" style={{width:"700px"}}>
