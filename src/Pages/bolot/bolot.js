@@ -8,7 +8,7 @@ const Bolot = () => {
                 <div className="bolot">
                     <div className="bolot-title">
                         <h3>Спикер</h3>
-                      h3  <h1>Muslim Bolot</h1>
+                        <h1>Muslim Bolot</h1>
                         <p>Милиардер, Филиантроп, Гений, Бизнес мен</p>
                         <div className="bolot-text">
                             <p>Был обычным школьником, но изменился.</p>
@@ -16,7 +16,7 @@ const Bolot = () => {
                             <p>Страрательный парень</p>
                         </div>
                     </div>
-                    <input className='text-fuchsia-500' type="file" placeholder='Photo' accept='image/png'/>
+                    <input className='kol text-fuchsia-500' type="file" placeholder='Photo' accept='image/png'/>
 
                 </div>
             </div>
