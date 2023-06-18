@@ -5,8 +5,15 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import line from "../img/Line 7.png"
 import {LanguageContext} from "../../../components/Context";
-import book1 from "../../Tabs/img/book1.png";
-import book2 from "../../Tabs/img/book2.png";
+
+import kaif1 from "./img/Kaif 1.png"
+import kaif2 from "./img/Kaif 2.png"
+import kaif3 from "./img/Kaif 3.png"
+import kaif4 from "./img/Kaif 4.png"
+import kaif5 from "./img/Kaif 5.png"
+import kaif6 from "./img/Kaif 6.png"
+
+
 
 
 
@@ -62,7 +69,7 @@ const Many = () => {
     return (
         <div id="many">
             <div className="container ">
-                <div className="row  justify-content-center">
+                <div className="row  justify-content-center" >
 
                     <p>{language? " Биздин курстар" : "Наши курсы"}</p>
                     <h1> {language ? "Макалалар " : "Статьи" }</h1>
@@ -85,7 +92,7 @@ const Many = () => {
                     </div>
                     <div className="many__many" >
                         <div className="many--all" >
-                            <div className="row gap-0.4 "  style={{ "--bs-gutter-x": "5.5rem" }}>
+                            <div className="row gap-0.4 "  style={{ "--bs-gutter-x": "1.5rem" }}>
                                 {fakeBackend.map((el) =>
                                     selectTab === el.id ? (
                                         el.books.map((book, value) => (
@@ -95,7 +102,7 @@ const Many = () => {
                                                 onClick={() => setAdd(true)}
                                                 style={{
                                                     "--bs-gutter-x": "2rem",
-                                                    width: "30.5%",
+                                                    width: "30.9%",
                                                     margin: "10px 16px ",
                                                     height: "100%",
                                                     borderRadius: "5px",
@@ -153,11 +160,15 @@ const Many = () => {
                     </div>
                 </div>
 
-                <div className="baby__face">
-                    <img className="baby1" src={book1} alt=""/>
-                    {/*<img className="baby2" src={book2} alt=""/>*/}
-                    <img className="baby3" src={book1} alt=""/>
-                    {/*<img className="baby4" src={book2} alt=""/>*/}
+                <div className="babes">
+                    <img className="kaif1" src={kaif1} alt=""/>
+                    <img className="kaif2" src={kaif2} alt=""/>
+                    <img className="kaif3" src={kaif3} alt=""/>
+                    <img className="kaif4" src={kaif4} alt=""/>
+                    <img className="kaif5" src={kaif5} alt=""/>
+                    <img className="kaif6" src={kaif6} alt=""/>
+
+
 
                 </div>
 
