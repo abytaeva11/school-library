@@ -23,7 +23,7 @@ const You = () => {
         <div style={{marginLeft:"170px"}}>
             <ReactPlayer
                 ref={playerRef}
-                url="https://i.pinimg.com/originals/b7/83/a3/b783a38e9a5a87f62162bc1558ed067f.jpg"
+                url="https://i.pinimg.com/originals/b7/83/a3/b783a38e9a5a87f62162bc1558ed067f.jpg "
                 controls={true}
                 playing={false}
                 width="900px"

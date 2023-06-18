@@ -8,6 +8,8 @@ const Muslim = () => {
     return (
         <div id='musa '>
             <div className="container">
+                <h1 className='ml-0 mb-14'>Отзывы</h1>
+
                 <h1 className='ml-0 mb-16 mt-40'>Отзывы</h1>
                 <div className="mus flex justify-around mb-8">
                     <div className="musa">
@@ -24,6 +26,8 @@ const Muslim = () => {
                             актуальность материалов</p>
 
                     </div>
+                    <div className="musa">
+                        <div className="musa-block flex">
                     <div className="musa mb-20">
                         <div className="musa-block flex ">
                             <img src={img2} alt="img" className='mr-2 ml-3 mb-3'/>

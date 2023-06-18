@@ -285,66 +285,7 @@ const Nothing = () => {
 
                     <div className="nothing--all">
 
-                        {/*<div className="nothing--all__left">*/}
-                        {/*    <div className="nothing--all__right ">*/}
-                        {/*        <h4>Обычный</h4>*/}
-                        {/*        <div className="ordinary">*/}
-                        {/*            <input type="checkbox" id="check1" className="round-checkbox"/>*/}
-                        {/*            <h6>Ежемесячно</h6>*/}
-                        {/*        </div>*/}
-                        {/*        <div className="ordinary">*/}
-                        {/*            <input type="checkbox" id="check2" className="round-checkbox-transparent"/>*/}
-                        {/*            <h6>Ежегодно</h6>*/}
-                        {/*        </div>*/}
-                        {/*        <div className="ordinary--span"> <span><AiOutlineCheck*/}
-                        {/*            style={{fontSize: " 22px"}}/></span><h2> Все новые статьи</h2></div>*/}
-                        {/*        <div className="ordinary--span"> <span><AiOutlineCheck*/}
-                        {/*            style={{fontSize: "22px"}}/></span> <h2> Все мастер классы по саморазвитию</h2>*/}
-                        {/*        </div>*/}
-                        {/*    </div>*/}
 
-
-                        {/*    <div className="baby--btn">*/}
-                        {/*        <h4>Цена: 225$</h4>*/}
-                        {/*        <button>Подписаться</button>*/}
-                        {/*    </div>*/}
-                        {/*</div>*/}
-
-                        {/*<div className="second--all">*/}
-                        {/*    <div className="second">*/}
-                        {/*        <div className="second--all">*/}
-                        {/*            <h4>Интенсив</h4>*/}
-                        {/*            <div className="second--baby">*/}
-                        {/*                <input type="checkbox" id="check1" className="round-checkbox"/>*/}
-                        {/*                <h6>Ежемесячно</h6>*/}
-                        {/*            </div>*/}
-                        {/*            <div className="second--baby">*/}
-                        {/*                <input type="checkbox" id="check2" className="round-checkbox-transparent"/>*/}
-                        {/*                <h6>Ежегодно</h6>*/}
-                        {/*            </div>*/}
-                        {/*            <div className="aiOut"><span><AiOutlineCheck/> </span><h2> Все новые статьи</h2>*/}
-                        {/*            </div>*/}
-                        {/*            <div className="aiOut"><span><AiOutlineCheck/> </span><h2>Все мастер классы по*/}
-                        {/*                саморозвитию</h2></div>*/}
-                        {/*            <div className="aiOut"><span><AiOutlineCheck/> </span><h2>Курс по чтению языка*/}
-                        {/*                тела</h2>*/}
-                        {/*            </div>*/}
-                        {/*            <div className="aiOut"><span><AiOutlineCheck/> </span><h2>Курс по накоплению средств*/}
-                        {/*                с*/}
-                        {/*                выполотой долгов</h2></div>*/}
-                        {/*            <div className="aiOut"><span><AiOutlineCheck/> </span><h2> Курс по быстрому*/}
-                        {/*                карьерному*/}
-                        {/*                росту</h2></div>*/}
-                        {/*            <div className="aiOut"><span><AiOutlineCheck/> </span><h2>Курс по одолеванию страха*/}
-                        {/*                потери</h2></div>*/}
-                        {/*        </div>*/}
-                        {/*        <div className="baby--btn">*/}
-                        {/*            <h5>Цена: 750$</h5>*/}
-                        {/*            <button>Подписаться</button>*/}
-                        {/*        </div>*/}
-
-                        {/*    </div>*/}
-                        {/*</div>*/}
                         <div className="cribe--level">
                             {
                                 subscribe.map((el) => (
@@ -556,8 +497,6 @@ const Nothing = () => {
                             ))}
                         </div>
                     </div>
-                    );
-                    };
 
                 </div>
 
