@@ -63,6 +63,10 @@ const Muslim = () => {
 
 
         </div>
+            </div>
+
+
+        </div>
     );
 };
 
