@@ -306,7 +306,7 @@ const Nothing = () => {
                                                             value={el.average.usual}
                                                             checked={selectedPayment === el.average.usual}
                                                             onChange={handlePaymentChange}
-                                                            className={`checkbox-input ${!isYearValid ? 'invalid' : ''}`}
+                                                            className={`check-input ${!isYearValid ? 'invalid' : ''}`}
 
                                                         />
 
@@ -319,7 +319,7 @@ const Nothing = () => {
                                                             value={el.average.usual2}
                                                             checked={selectedPayment === el.average.usual2}
                                                             onChange={handlePaymentChange}
-                                                            className={`checkbox-input ${!isYearValid ? 'invalid' : ''}`}
+                                                            className={`check-input ${!isYearValid ? 'invalid' : ''}`}
 
                                                         />
                                                         <h5>{language ? el.average.usual3KG : el.average.usual3}</h5>
@@ -355,7 +355,7 @@ const Nothing = () => {
                                                                value={el.intensive.careful2}
                                                                checked={selectedPayment === el.intensive.careful2}
                                                                onChange={handlePaymentChange2}
-                                                               className={`checkbox-input2 ${!isMonthValid ? 'invalid' : ''}`}
+                                                               className={`check-input2 ${!isMonthValid ? 'invalid' : ''}`}
                                                         />
                                                         <h3 className="cribe--level__just--column__intensive2--marge__input--year">{language ? el.average.usual2KG : el.average.usual2}</h3>
                                                     </div>
@@ -367,7 +367,7 @@ const Nothing = () => {
                                                             value={el.intensive.careful3}
                                                             checked={selectedPayment === el.intensive.careful3}
                                                             onChange={handlePaymentChange2}
-                                                            className={`checkbox-input2 ${!isMonthValid ? 'invalid' : ''}`}
+                                                            className={`check-input2 ${!isMonthValid ? 'invalid' : ''}`}
                                                         />
                                                         <h5>{language ? el.intensive.carefulKG  : el.intensive.careful}</h5>
                                                     </div>
@@ -497,6 +497,10 @@ const Nothing = () => {
                             ))}
                         </div>
                     </div>
+
+                   
+
+
 
                 </div>
 
