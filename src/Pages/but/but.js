@@ -8,7 +8,7 @@ const But = () => {
     return (
         <div id='but'>
             <div className="container">
-                <div className="but mt-5 flex justify-between">
+                <div className="but mt-24 flex justify-between">
                     <div className="but-block">
                         <img src={log1} alt="img" className='mt-4'/>
                         <h3>43 материала</h3>
