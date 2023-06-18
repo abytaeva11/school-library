@@ -46,10 +46,10 @@ const YouTube = () => {
 
 <Place/>
             <AccordionWe/>
-            {/*<But/>*/}
-            {/*<Kurse/>*/}
-            {/*<Bolot/>*/}
-            {/*<Muslim/>*/}
+            <But/>
+            <Kurse/>
+            <Bolot/>
+            <Muslim/>
 
         </div>
 
