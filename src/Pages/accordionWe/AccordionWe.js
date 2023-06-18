@@ -24,10 +24,9 @@ if(selected===i){
 
     return (
         <div className="container">
-            <div className=" align-items-start d-flex">
-                <img src={line} alt=""/>
-                <h1>{ language? "КУРСТУН ПРОГРАММАСЫ"  :"ПРОГРАММА КУРСА"} </h1>
-            </div>
+                <h1 className="lemon" style={{borderLeft:"10px solid white",
+                    padding: "0 20px",marginLeft:"-10px"
+                }}>{ language? "КУРСТУН ПРОГРАММАСЫ"  :"ПРОГРАММА КУРСА"} </h1>
             <div className="accordion">
                 {
                     accordion.map((item, i) => (

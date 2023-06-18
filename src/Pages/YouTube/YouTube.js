@@ -3,15 +3,20 @@ import "./youtube.css"
 import Place from "../Place/place";
 import AccordionWe from "../accordionWe/AccordionWe";
 import {LanguageContext} from "../../components/Context";
+import But from "../but/but";
+import Kurse from "../kurse/kurse";
+import Bolot from "../bolot/bolot";
+import Muslim from "../musli/muslim";
+import You from "../You/You";
 const YouTube = () => {
     const { language } = useContext(LanguageContext);
-    const { you } = useContext(LanguageContext);
+    const { hero } = useContext(LanguageContext);
     return (
         <div>
 
             <div id="effect">
                 {
-                    you.map((el) => (
+                    hero.map ((el) => (
                         <div className="container">
                             <a className="link" href="">{language ? el.you.textKG : el.you.text}</a>
                             <div className="effect">
@@ -32,14 +37,19 @@ const YouTube = () => {
                 }
             </div>
 
-            <iframe width="1000" height="536" src="https://www.youtube.com/embed/XZotInPwHHs"
-                    title="YouTube video player" frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowFullScreen  style={{marginLeft: "130px"}}></iframe>
+            {/*<iframe width="1000" height="536" src="https://www.youtube.com/embed/XZotInPwHHs"*/}
+            {/*        title="YouTube video player" frameBorder="0"*/}
+            {/*        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"*/}
+            {/*        allowFullScreen  style={{marginLeft: "130px"}}></iframe>*/}
 
-<Place st/>
+            <You/>
+
+<Place/>
             <AccordionWe/>
-
+            {/*<But/>*/}
+            {/*<Kurse/>*/}
+            {/*<Bolot/>*/}
+            {/*<Muslim/>*/}
 
         </div>
 

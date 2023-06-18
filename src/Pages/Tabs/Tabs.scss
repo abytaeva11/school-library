@@ -7,7 +7,9 @@ body {
 #tabs {
   margin: 100px 0;
 }
-
+.lines{
+  //margin: -50px 0 0 0;
+}
 .tab--global__all {
   display: flex;
   align-items: center;
@@ -109,23 +111,31 @@ body {
 }
 .baby__face1{
   position: absolute;
-  top: 1620px;
-  left: 325px;
+  top: 1423px;
+  left: 392px;
+  z-index: -99;
+  width: 175.08px;
+  height: 150.59px;
 
 }
 .baby__face2{
   position: absolute;
-  top: 1880px;
-  left: 1140px;
+  top: 1680px;
+  left: 1280px;
+  z-index: -99;
+  width: 134.08px;
+  height: 150.59px;
 }
 .baby__face3{
   position: absolute;
-  top: 2690px;
-  left: 952px;
+  top: 2580px;
+  left: 1059px;
+  width: 73px;
+  height: 67px;
 }
 .baby__face4{
   position: absolute;
-  top: 2730px;
-  left: 230px;
+  top: 2575px;
+  left: 215px;
   padding: 50px 0;
 }

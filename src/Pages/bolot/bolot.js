@@ -8,7 +8,7 @@ const Bolot = () => {
                 <div className="bolot">
                     <div className="bolot-title">
                         <h3>Спикер</h3>
-                        <h1>Muslim Bolot</h1>
+                      h3  <h1>Muslim Bolot</h1>
                         <p>Милиардер, Филиантроп, Гений, Бизнес мен</p>
                         <div className="bolot-text">
                             <p>Был обычным школьником, но изменился.</p>

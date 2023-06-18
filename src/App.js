@@ -18,7 +18,7 @@ import YouTube from "./Pages/YouTube/YouTube";
 import Check from "./Pages/Check/Check";
 import Course2 from "./Pages/Course/course2";
 import Questions from "./Pages/Questions/Questions";
-
+import You from "./Pages/You/You";
 
 
 function App() {
@@ -53,6 +53,21 @@ function App() {
                     </Routes>
                 </>
             )}
+{/*<YouTube/>*/}
+
+
+{/*<You/>*/}
+
+
+
+
+
+
+
+
+
+
+
             <Footer/>
         </div>
 </UserContext.Provider>

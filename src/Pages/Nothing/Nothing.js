@@ -385,7 +385,7 @@ const Nothing = () => {
                                                     </div>
                                                     <div className="cribe--level__just--column__usual2--marge__check1">
                                                         <BsCheckLg className="iconka1"/>
-                                                        <h4>{language ? average.usual4KG : el.average.usual4}</h4>
+                                                        <h4>{language ? el.average.usual4KG : el.average.usual4}</h4>
                                                     </div>
                                                     <div className="cribe--level__just--column__usual2--marge__check2">
                                                         <BsCheckLg className="iconka2"/>

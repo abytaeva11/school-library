@@ -21,6 +21,7 @@ a{
     display: flex;
     align-items: center;
     justify-content: space-between;
+//padding-top: -200px;
     &--img{
       margin: 0;
   }
@@ -60,26 +61,26 @@ a{
     }
   }
 }
-  padding: 200px 0 100px 0;
+  padding: 117px 0 140px 0;
   position: relative;
   .book1{
     position: absolute;
-    bottom: 655px;
-    left: 240px;
+    bottom: 475px;
+    left: 260px;
 }
   .book2{
     position: absolute;
-    left: 1140px;
-    bottom: 800px;
+    left: 1240px;
+    bottom: 570px;
 }
   .book3{
     position: absolute;
-    left: 990px;
-    bottom: 80px;
+    left: 1130px;
+    bottom: -70px;
 }
   .book4{
     position: absolute;
-    bottom: 140px;
+    bottom: -40px;
     left: 2px;
 }
 }

@@ -6,6 +6,9 @@
     color: #FFFFFF;
     margin-left: 2px;
 }
+#place{
+    padding:100px 0  ;
+}
 
 .place-text  span {
     font-family: 'Montserrat', sans-serif;
