@@ -2,6 +2,15 @@ import React, {useContext} from 'react';
 import "./place.css"
 import {LanguageContext} from "../../components/Context";
 
+import place1 from "../../assets/img/img3.png"
+import place2 from "../../assets/img/img5.png"
+import place3 from "../../assets/img/img4.png"
+import place4 from "../../assets/img/img1.png"
+import place5 from "../../assets/img/img2.png"
+import place6 from "../../assets/img/img1.png"
+
+
+
 const Place = () => {
     const { language } = useContext(LanguageContext);
     const { place } = useContext(LanguageContext);
@@ -57,6 +66,18 @@ const Place = () => {
                       ))
                     }
                 </div>
+
+                <div className="place-book">
+                    <img className="place1" src={place1} alt=""/>
+                    <img className="place2" src={place2} alt=""/>
+                    <img className="place3" src={place3} alt=""/>
+                    <img className="place4" src={place4} alt=""/>
+                    <img className="place5" src={place5} alt=""/>
+                    <img className="place6" src={place6} alt=""/>
+
+
+                </div>
+
             </div>
         </section>
     );

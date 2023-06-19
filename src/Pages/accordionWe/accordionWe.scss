@@ -6,11 +6,11 @@
 //  align-items: center;
 //}
 .accordion{
-  width: 980px;
-  margin-left:70px;
+  width: 900px;
+  margin-left:105px;
   //height: 283px;
 .item{
-  margin-bottom: 5px;
+  margin-bottom: 15px;
   padding: 10px 20px;
   cursor: pointer;
   border: 1px solid #FFFFFF;
@@ -44,7 +44,7 @@ align-items: center;
 .apple h2{
   font-family: 'Montserrat',sans-serif;
   font-weight: 600;
-  font-size: 28px;
+  font-size: 19px;
 }
 .apple button{
   width: 148px;
@@ -61,7 +61,15 @@ align-items: center;
   font-family: 'Montserrat',sans-serif;
   font-weight: 400;
   font-size: 16px;
+  //margin-top: 15px;
+  margin-bottom: -0.5rem;
+  margin-top: 10px;
 }
+.apple span{
+  font-size: 36px;
+}
+
+
 
 .content{
   max-height: 0;

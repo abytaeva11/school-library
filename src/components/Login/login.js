@@ -4,11 +4,28 @@ import './login.scss'
 import { useNavigate } from "react-router-dom";
 import UserContext from '../HukContext/UserContext';
 
-const Login = () => {
+const Login = ({login, setLogin, setShowLogin}) => {
     // const { loggedIn ,  setLoggedIn } = useContext(UserContext);
-    const [userName, setUserName] = useState('');
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+
+
+
+
+
+    console.log(login)
+
+    const [user, setUser] = useState({
+        id: Math.round(Math.random() * 1000),
+        name: '',
+        email: '',
+        password: ''
+    })
+
+    const handleChange = (e) => {
+        setUser({
+            ...user, [e.target.name]: e.target.value
+        })
+    }
+
     const [nameDirty, setNameDirty] = useState(false);
     const [emailDirty, setEmailDirty] = useState(false);
     const [passwordDirty, setPasswordDirty] = useState(false);
@@ -20,69 +37,23 @@ const Login = () => {
     const [headerText, setHeaderText] = useState('Войти');
     const navigate = useNavigate();
 
-    useEffect(() => {
-        if (nameError , emailError , passwordError) {
-            setFormValid(false);
-        } else {
-            setFormValid(true);
+
+
+    console.log( login.every( el => el.length > 0))
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        const newUser = {
+            id: user.id,
+            name: user.name,
+            email: user.email,
+            password: user.password
         }
-    }, [nameError, emailError, passwordError]);
+        localStorage.setItem('userL', JSON.stringify([{...newUser}, ...login]))
+        setLogin([ {...newUser},...login])
+        navigate('/')
+    }
 
-
-    const nameHandler = (e) => {
-        setUserName(e.target.value);
-        if (!e.target.value) {
-            setNameError('Поле не может быть пустым');
-        } else {
-            setNameError('');
-        }
-        setHeaderText(e.target.value ? `Привет, ${e.target.value}` : 'Войти');
-    };
-
-
-
-    const emailHandler = (e) => {
-        setEmail(e.target.value);
-        const re = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-        if (!re.test(String(e.target.value).toLowerCase())) {
-            setEmailError('Некорректный email');
-        } else {
-            setEmailError('');
-        }
-    };
-
-    const blurHandler = (e) => {
-        switch (e.target.name) {
-            case 'userName':
-                setNameDirty(true);
-                break;
-            case 'email':
-                setEmailDirty(true);
-                break;
-            case 'password':
-                setPasswordDirty(true);
-                break;
-            default:
-                break;
-        }
-    };
-
-    const passwordHandler = (e) => {
-        setPassword(e.target.value);
-        if (e.target.value.length < 8 || e.target.value.length > 15) {
-            setPasswordError('Пароль должен содержать от 8 до 15 символов');
-            if (!e.target.value) {
-                setPasswordError('Поле не может быть пустым');
-            }
-        } else {
-            setPasswordError('');
-        }
-    };
-
-    const handleLogin = () => {
-        setLoggedIn(true);
-        navigate('/');
-    };
 
     return (
         <div>
@@ -94,22 +65,20 @@ const Login = () => {
                             <h1 className={''}>SELF DEVELOPING SCHOOL</h1>
                         </center>
                         <center className={'mt-2'}>
-                            <div className="hero-block ml-16">
+                            <form onSubmit={handleSubmit} className="hero-block ml-16">
                                 <h1>{headerText}</h1>
                                 {(nameDirty && nameError) && <div style={{ color: 'red' }}>{nameError}</div>}
                                 <input
-                                    onChange={nameHandler}
-                                    value={userName}
-                                    onBlur={blurHandler}
+                                    onChange={handleChange}
+                                    value={user.name}
                                     className="hero-in"
-                                    name='userName'type="text"
+                                    name='name'type="text"
                                     placeholder="Name" required
                                 />
                                 {(emailDirty && emailError) && <div style={{ color: 'red' }}>{emailError}</div>}
                                 <input
-                                    onChange={emailHandler}
-                                    value={email}
-                                    onBlur={blurHandler}
+                                    onChange={handleChange}
+                                    value={user.email}
                                     className="hero-in"
                                     name='email'
                                     type="email"
@@ -118,25 +87,23 @@ const Login = () => {
                                 />
                                 {(passwordDirty && passwordError) && <div style={{ color: 'red' }}>{passwordError}</div>}
                                 <input
-                                    onChange={passwordHandler}
-                                    value={password}
-                                    onBlur={blurHandler}
+                                    onChange={handleChange}
+                                    value={user.password}
                                     className="hero-in"
                                     name='password'
                                     type="password"
                                     placeholder="Password"
-                                    required
                                 />
                                 <button
-                                    onClick={handleLogin}
-                                    disabled={!formValid}
+                                    // onClick={handleLogin}
                                     className="hero-btn"
                                     type="submit"
-                                >
-                                    {loggedIn ? `Привет, ${userName}` : headerText}
+                                >Войти
+                                    {/*{loggedIn ? `Привет, ${userName}` : headerText}*/}
                                 </button>
-                                <a href="#">Забыли пароль?</a>
-                            </div>
+
+                            </form>
+                            <a href="#">Забыли пароль?</a>
                         </center>
                     </div>
                 </div>

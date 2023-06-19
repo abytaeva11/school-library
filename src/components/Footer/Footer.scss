@@ -1,20 +1,22 @@
 
 #footer {
-  //background: rgba(89, 95, 235, 0.58);
+  background: rgba(74, 76, 255, 0.42);
   border-top: 1px solid #FFFFFF;
   position: relative;
+  padding: 0 0 60px 0 ;
 }
 
 .books {
   position: absolute;
   left: 865px;
-  bottom: 5px;
+  bottom: 1px;
+  display: none;
 }
 .all{
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-left: 80px;
+  margin-right: -40px;
 }
 .foot {
   display: flex;
@@ -32,30 +34,29 @@
 .foot-title-img {
   margin: 0 0 0 21px;
 }
-.foot-title{
-
-}
 .foot-title h1 {
   font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 500;
-  font-size: 12px;
+  font-size: 16px;
   line-height: 18px;
   color: #FFFFFF;
   position: absolute;
-  margin-left: -30px;
+  margin-left: -50px;
 }
 
 .lang {
   display: flex;
   align-items: center;
-  margin: 65px 0;
+  //margin: 65px 0;
+  margin-top: 70px;
+  margin-left: -50px;
 }
 
 .lang h2 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
-  font-size: 15px;
+  font-size: 18px;
   line-height: 24px;
   color: #FFFFFF;
   transition: .2s;
@@ -119,8 +120,8 @@
 .link a {
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
-  font-size: 16px;
-  line-height: 20px;
+  font-size: 13px;
+  line-height: 10px;
   color: #FFFFFF;
   display: flex;
   margin: 15px 10px;
@@ -149,10 +150,6 @@
   font-size: 20px;
 }
 
-.icon3 {
-  font-size: 20px;
-}
-
 .call h2 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
@@ -166,8 +163,8 @@
 .call p {
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
-  font-size: 16px;
-  line-height: 20px;
+  font-size: 13px;
+  line-height: 10px;
   color: #FFFFFF;
   display: flex;
   align-items: flex-start;
@@ -175,23 +172,23 @@
 
 .icon2 {
   color: #FFFFFF;
-  font-size: 20px;
+  font-size: 18px;
 }
 
-
-.location h1 {
+.location h2 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 24px;
   color: #FFFFFF;
+
 
 }
 
 .location p {
   font-weight: 400;
-  font-size: 16px;
-  line-height: 20px;
+  font-size: 13px;
+  line-height: 18px;
   color: #FFFFFF;
   display: flex;
   align-items: flex-start;
@@ -199,20 +196,24 @@
 
 .icon3 {
   color: #FFFFFF;
-  font-size: 25px;
+  font-size: 20px;
   margin: 0 10px;
 }
 
 .logo3 {
-  margin-top: -80px;
-  margin-left: 420px;
+  margin-left: 550px;
   position: absolute;
+  margin-top: 20px;
 }
 
 .logo4 {
   position: absolute;
-  bottom: 50px;
-  left: 570px;
+  left: 700px;
+}
+.location{
+  margin-top: -13px;
+  margin-left: 30px;
+  width: 230px;
 }
 
 
