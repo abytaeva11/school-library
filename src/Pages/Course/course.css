@@ -2,29 +2,51 @@
     background: linear-gradient(100deg, #D78B59, #595FEB);
     padding: 200px 0;
 }
-h1{
+.bingo {
     font-family: 'Montserrat',sans-serif;
-    font-style: normal;
     font-weight: 600;
     font-size: 40px;
     line-height: 49px;
     color: #FFFFFF;
-    margin-left: 80px;
-    margin-bottom: 30px;
+    margin-left: 45px;
+}
+.course{
+    position: relative;
+}
+.finish2{
+    position: absolute;
+    margin-left: 238px;
+    margin-top: -140px;
+    z-index: 99;
+}
+.finish3{
+    position: absolute;
+    margin-left: 1068px;
+    margin-top: 180px;
+    z-index: 99;
+
 }
 .course1{
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
+    width: 1180px;
+    margin-left: -52px;
 }
+
+/*.finish3{*/
+/*    position: absolute;*/
+/*    margin-left: 20px;*/
+/*}*/
 .course-block {
-    margin: 0 10px;
-    width: 400px;
+    /*margin: 0 10px;*/
+    width: 490px;
     height: 430px;
     border-radius: 10px;
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid #FFFFFF;
     backdrop-filter: blur(7.5px);
+    margin: 0 20px;
 }
 .course-block h1 {
     font-family: 'Montserrat', sans-serif;
@@ -49,38 +71,32 @@ h1{
     color: #FFFFFF;
     margin: 0 20px;
 }
-.text button {
+.text div button {
     font-family: 'Montserrat', sans-serif;
     font-style: normal;
     font-weight: 400;
-    font-size: 13px;
+    font-size: 15px;
     line-height: 20px;
     border: 1px solid white;
     border-radius: 10px;
-    padding: 10px 10px;
+    padding: 7px 5px;
     margin: 7px 5px;
     color: #FFFFFF;
     backdrop-filter: blur(7.5px);
     background: rgba(255, 255, 255, 0.02);
+}
 
-
-}
-.btn {
-    margin-right: 10px;
-}
-.course-block img {
-    margin: 0 23px;
-    width: 300px;
-}
-.text2 a {
+.course-block  a {
     font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
     color: #FFFFFF;
-    margin: 20px 20px;
+    margin-top: 270px;
+    margin-left: 20px;
     position: absolute;
+
 }
 .class{
     font-family: 'Montserrat',sans-serif;
@@ -89,8 +105,9 @@ h1{
     font-size: 40px;
     line-height: 49px;
     color: #FFFFFF;
+    margin-left:  40px;
 }
-.btn2 button {
+.btn2-btn button{
     font-family: 'Roboto',sans-serif;
     font-weight: 400;
     font-size: 16px;
@@ -99,7 +116,6 @@ h1{
     border: 1px solid white;
     border-radius: 10px;
     padding: 10px 20px;
-    margin-left: 465px;
     margin-top: 50px;
 }
 .bigmaster {
@@ -117,6 +133,15 @@ h1{
     border: 1px solid white;
     border-radius: 10px;
     padding: 7px 40px;
+    margin-left: 430px;
+
     margin-left: 550px;
     margin-top: 50px;
+}
+.text2 img{
+    width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -20px;
 }

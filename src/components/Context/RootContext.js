@@ -1426,7 +1426,7 @@ const check = [
                 bos3:"Войти",
 
                 bosKG:"Башкы бет",
-                bos1KG:"Мектеп",
+                bos1KG:"Биздин курстар",
                 bos2KG:"Биз жөнүндө",
                 bos3KG:"Кирүү үчүн",
 
@@ -1434,6 +1434,11 @@ const check = [
 
         }
     ];
+    const you = [
+        {
+
+        }
+    ]
 
     const hero = [
         {
