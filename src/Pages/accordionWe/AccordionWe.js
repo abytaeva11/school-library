@@ -25,7 +25,7 @@ if(selected===i){
     return (
         <div className="container">
                 <h1 className="lemon" style={{borderLeft:"10px solid white",
-                    padding: "0 20px",marginLeft:"-10px"
+                    padding: "0 20px",marginLeft:"1px"
                 }}>{ language? "КУРСТУН ПРОГРАММАСЫ"  :"ПРОГРАММА КУРСА"} </h1>
             <div className="accordion">
                 {
@@ -38,9 +38,9 @@ if(selected===i){
                               </div>
                               <div className="content-all">
                                   <button style={{margin:" 5px 110px"}}> {language? item.btn2KG: item.btn2}</button>
-                                  <div className="d-flex align-items-center flex-column" >
-                                      <h4>{item.main}</h4>
-                                      <span className="material-symbols-outlined">{selected===i?"expand_more":"expand_less"}</span>
+                                  <div className="d-flex align-items-center flex-column">
+                                      <h4 >{item.main}</h4>
+                                      <span className="material-symbols-outlined">{selected===i?"expand_less":"expand_more"}</span>
                                   </div>
                               </div>
 

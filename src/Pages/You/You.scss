@@ -1,5 +1,6 @@
 #you {
   .you {
+    position: relative;
     &--picture {
       position: relative;
       &__bacvid{
@@ -61,4 +62,11 @@
     top: calc(102% - 80px);
     left: 20px;
   }
+}
+
+.alone{
+position: absolute;
+  bottom: 350px;
+  left: 0;
+  z-index: -99;
 }

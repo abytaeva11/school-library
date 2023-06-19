@@ -8,6 +8,12 @@ import Kurse from "../kurse/kurse";
 import Bolot from "../bolot/bolot";
 import Muslim from "../musli/muslim";
 import You from "../You/You";
+
+import third1 from "../../assets/img/img1.png"
+import third4 from "../../assets/img/img4.png"
+
+
+
 const YouTube = () => {
     const { language } = useContext(LanguageContext);
     const { hero } = useContext(LanguageContext);
@@ -35,6 +41,14 @@ const YouTube = () => {
 
                     ))
                 }
+
+                <div className="third-book">
+                    <img className="third1" src={third1} alt=""/>
+                    <img className="third4"  src={third4} alt=""/>
+
+
+                </div>
+
             </div>
 
             {/*<iframe width="1000" height="536" src="https://www.youtube.com/embed/XZotInPwHHs"*/}
@@ -42,7 +56,7 @@ const YouTube = () => {
             {/*        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"*/}
             {/*        allowFullScreen  style={{marginLeft: "130px"}}></iframe>*/}
 
-
+<You/>
 
 <Place/>
             <AccordionWe/>
