@@ -57,8 +57,8 @@ align-items: center;
 .wrapper {
   position: relative;
   width: 33%;
-  margin-left: 89px;
-  padding: 50px 0 100px 0;
+  margin-left: 102px;
+  padding: 40px 0 100px 0;
 }
 .slider-button:hover {
   background: #fff;
@@ -72,7 +72,7 @@ align-items: center;
 .slider-arrow {
   cursor: pointer;
   position: absolute;
-  right: -43px;
+  right: -54px;
   margin-top: -40px;
   border: 1px solid #FFFFFF;
   color: white;
@@ -92,7 +92,7 @@ align-items: center;
   border-radius: 5px;
   width: 40px;
   height: 40px;
-  right: 385px;
+  right: 372px;
 
 }
 .slider-button{
@@ -103,12 +103,13 @@ align-items: center;
   border-radius: 5px;
   width: 40px;
   height: 40px;
+  margin-left: 10px;
 }
 .title h5{
   font-family: 'Montserrat',sans-serif;
   font-style: normal;
   font-weight: 500;
-  font-size: 22px;
+  font-size: 20px;
   color: #FFFFFF;
   padding: 20px 0 5px 0;
 }
@@ -140,6 +141,17 @@ align-items: center;
   height: 20px;
   color: #FFFFFF;
 }
+
+.many--text h2{
+  font-family: 'Montserrat',sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  width: 148px;
+  height: 20px;
+  color: #FFFFFF;
+}
+
 .tabs__img--bottom{
   align-items: center;
   justify-content: space-between;
@@ -170,35 +182,35 @@ align-items: center;
 
 }
 
-.kaif1{
+.copybook1{
   position: absolute;
-  top: 740px;
-  left: 1px;
+  top: 690px;
+  left: 10px;
   z-index: -99;
 }
-.kaif2{
+.copybook2{
   position: absolute;
-  top: 1219px;
-  left: 1150px;
+  top: 695px;
+  left: 990px;
   z-index: -99;
 }
-.kaif3{
+.copybook3{
   position: absolute;
   top: 150px;
-  left: 1240px;
+  left: 1070px;
 }
-.kaif4{
+.copybook4{
   position: absolute;
   top: 281px;
-  left: 274px;
+  left: 294px;
 }
-.kaif5{
+.copybook5{
   position: absolute;
-  top: 1551px;
-  left: 384px;
+  top: 1481px;
+  left: 344px;
   z-index: -99;
 }
-.kaif6{
+.copybook6{
   position: absolute;
   top: 1801px;
   left: 1284px;

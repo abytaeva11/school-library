@@ -102,7 +102,7 @@ const Many = () => {
                                                 onClick={() => setAdd(true)}
                                                 style={{
                                                     "--bs-gutter-x": "2rem",
-                                                    width: "30.9%",
+                                                    width: "30.5%",
                                                     margin: "10px 16px ",
                                                     height: "100%",
                                                     borderRadius: "5px",
@@ -117,7 +117,7 @@ const Many = () => {
                                                             <button style={{background:book.id === 1 || book.id === 4 || book.id === 7 ? "#fff":" " }} className="buttons">{book.id === 1 || book.id === 4 || book.id === 7 ? "Новое " : " "  }</button>
                                                             </div>
                                                         <div className="many--text">
-                                                            <h6 style={{fontSize:language?"11px":""}}>{language?book.textKg: book.text}</h6>
+                                                            <h2 style={{fontSize:language?"11px":""}}>{language?book.textKg: book.text}</h2>
                                                             <button>{language?book.textAllKg:book.textAll}</button>
                                                             <button>{language?book.textNewKg :book.textNew}</button>
                                                             <button>{language?book.textBooksKg:book.textBooks}</button>
@@ -161,12 +161,12 @@ const Many = () => {
                 </div>
 
                 <div className="babes">
-                    <img className="kaif1" src={kaif1} alt=""/>
-                    <img className="kaif2" src={kaif2} alt=""/>
-                    <img className="kaif3" src={kaif3} alt=""/>
-                    <img className="kaif4" src={kaif4} alt=""/>
-                    <img className="kaif5" src={kaif5} alt=""/>
-                    <img className="kaif6" src={kaif6} alt=""/>
+                    <img className="copybook1" src={kaif1} alt=""/>
+                    <img className="copybook2" src={kaif2} alt=""/>
+                    <img className="copybook3" src={kaif3} alt=""/>
+                    <img className="copybook4" src={kaif4} alt=""/>
+                    <img className="copybook5" src={kaif5} alt=""/>
+                    <img className="copybook6" src={kaif6} alt=""/>
 
 
 
