@@ -1,5 +1,8 @@
 import React from 'react';
 import "./Third.scss"
+import self1 from "../../assets/img/img1.png"
+import self2 from "../../assets/img/img2.png"
+import self3 from "../../assets/img/img4.png"
 
 
 
@@ -14,6 +17,13 @@ const Third = () => {
             Так как чтобы быть успешным в жизни не обязательно быть бакалавром, ведь столько богатых людей которые даже не ходили в университет.
             A наш логотип прозрачный так как у нас все легко и понятно.</p>
     </div>
+
+    <div className="self">
+        <img className="self1" src={self1} alt=""/>
+        <img className="self2" src={self2} alt=""/>
+        <img className="self3" src={self3} alt=""/>
+    </div>
+
 </div>
         </div>
     );

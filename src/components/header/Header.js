@@ -1,3 +1,4 @@
+
 import React, {useContext, useState} from 'react';
 import {Link, useNavigate, NavLink} from 'react-router-dom';
 import {CiUser} from 'react-icons/ci';
@@ -21,6 +22,11 @@ const Header = ({login, setLogin}) => {
 
     console.log(login)
 
+const Header = () => {
+    const {loggedIn} = useContext(UserContext);
+    const navigate = useNavigate();
+    const { language } = useContext(LanguageContext);
+    const { nail } = useContext(LanguageContext);
     return (
         <div id="header">
             <div className="container">
@@ -57,7 +63,7 @@ const Header = ({login, setLogin}) => {
                                 login.length > 0 ? login : 'войти'
                             }
                         </button>
-                    </div>))}
+
                 </div>
             </div>
         </div>

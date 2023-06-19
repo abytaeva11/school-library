@@ -13,18 +13,40 @@ a {
 }
 
 #paket {
-    margin: 100px 60px;
-    width: 1296px;
-    height: 550px;
-    background: rgba(255, 255, 255, 0.1);
+    position: relative;
+    margin: 100px 50px;
+    width: 1140px;
+    height: 500px;
+    background: rgba(255, 255, 255, 0.15);
     border: 1px solid #FFFFFF;
     backdrop-filter: blur(7px);
     border-radius: 10px;
+    padding: 50px 0 0 0 ;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     /*margin-left: 60px;*/
 }
+.oki2{
+    margin-left: 920px;
+    margin-top: -75px;
+}
+.oki4{
+    margin-left: 1010px;
+    margin-top: -910px;
+}
+.oksid  {
+    position: absolute;
+    margin-top: -470px;
+    margin-left: 200px;
+    z-index: 99;
+}
+.oki3{
+    margin-top: -220px;
+    margin-left: -82px;
+}
+
+
 .paket--text__btn2{
     font-family: 'Roboto', sans-serif;
     font-style: normal;
@@ -47,19 +69,18 @@ a {
     background: #D9D9D9;
     right: 80px;
 }
-
 .paket {
     display: flex;
     align-items: center;
     justify-content: space-around;
+    width: 1000px;
+    margin-left: 60px;
+
 }
 .paket--img {
     margin: 0;
 }
 
-.paket--text {
-
-}
 
 h2 {
     font-family: 'Montserrat', sans-serif;
@@ -97,23 +118,6 @@ p {
 
 }
 
-.books1 {
-    /*position: absolute;*/
-    /*bottom: 655px;*/
-    /*left: 240px;*/
-}
-
-.books2 {
-    /*position: absolute;*/
-    /*left: 1140px;*/
-    /*bottom: 800px;*/
-}
-
-.books3 {
-    /*position: absolute;*/
-    /*left: 990px;*/
-    /*bottom: 80px;*/
-}
 
 .books2 {
     position: absolute;

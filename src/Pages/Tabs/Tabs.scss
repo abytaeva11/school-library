@@ -111,31 +111,32 @@ body {
 }
 .baby__face1{
   position: absolute;
-  top: 1423px;
-  left: 392px;
+  top: 1310px;
+  left: 345px;
   z-index: -99;
   width: 175.08px;
   height: 150.59px;
+  filter: blur(1px);
 
 }
 .baby__face2{
   position: absolute;
-  top: 1680px;
-  left: 1280px;
+  top: 1560px;
+  left: 1130px;
   z-index: -99;
   width: 134.08px;
   height: 150.59px;
 }
 .baby__face3{
   position: absolute;
-  top: 2580px;
-  left: 1059px;
+  top: 2384px;
+  left: 980px;
   width: 73px;
   height: 67px;
 }
 .baby__face4{
   position: absolute;
-  top: 2575px;
+  top: 2385px;
   left: 215px;
   padding: 50px 0;
 }
