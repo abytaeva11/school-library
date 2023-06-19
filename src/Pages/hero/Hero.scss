@@ -24,10 +24,12 @@ a{
 //padding-top: -200px;
     &--img{
       margin: 0;
+      width: 400px;
+      height: 400px;
   }
     &--text{
       h2{
-        font-family: 'Montserrat';
+        font-family: 'Montserrat',sans-serif;
         font-style: normal;
         font-weight: 600;
         font-size: 40px;
@@ -36,7 +38,7 @@ a{
         margin: 10px 0;
     }
       p{
-        font-family: 'Montserrat';
+        font-family: 'Montserrat',sans-serif;
         font-style: normal;
         font-weight: 400;
         font-size: 24px;
@@ -61,21 +63,21 @@ a{
     }
   }
 }
-  padding: 117px 0 140px 0;
+  padding: 100px 0 140px 0;
   position: relative;
   .book1{
     position: absolute;
-    bottom: 475px;
-    left: 260px;
+    bottom: 455px;
+    left: 280px;
 }
   .book2{
     position: absolute;
-    left: 1240px;
-    bottom: 570px;
+    left: 1080px;
+    bottom: 550px;
 }
   .book3{
     position: absolute;
-    left: 1130px;
+    left: 970px;
     bottom: -70px;
 }
   .book4{
