@@ -11,3 +11,16 @@
   line-height: 24px;
   color: #FFFFFF;
 }
+#but{
+  position: relative;
+}
+.but1{
+  position: absolute;
+  bottom: 70px;
+  left: 350px;
+  filter: blur(5px);
+}
+.but2{
+  position: absolute;
+  right: 0;
+}

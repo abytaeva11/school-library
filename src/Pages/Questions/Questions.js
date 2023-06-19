@@ -30,13 +30,15 @@ const Questions = () => {
                     isExpanded ? "expanded" : ""
                 }`}
             >
-                <h2 className="">
+                <h2 className="" >
                     <button
                         className="flex items-center relative justify-between w-full p-[0.4rem] text-left"
                         onClick={toggleAccordion}
                         aria-expanded={isExpanded}
+
                     >
-            <span className="text-white font-[300] text-[25px] font-sans w-[540px]">
+            <span className="text-white font-[300] text-[25px] font-sans w-[540px]"
+           >
               {title}
             </span>
                         <svg
@@ -123,15 +125,15 @@ const Questions = () => {
                     </div>
                 ))}
                 {data.map((el, index) => (
-                    <div className="pt-[8rem] items-center" key={el.accord.name}>
+                    <div className="pt-[8rem] items-center" key={el.accord.name} >
                         <h2 className="text-white text-3xl font-semibold">
                             {language ? el.accord.nameKG : el.accord.name}
                         </h2>
-                        <div className="flex">
+                        <div className="flex" >
                             <div className="relative">
                                 <img src={query} className="ml-20 mt-8" width={280} alt="" style={{ marginLeft:"2rem" ,}} />
                             </div>
-                            <div className="ml-[20px] mt-4">
+                            <div className="ml-[20px] mt-4" >
                                 <div id={`accordion-${index}`} className="accordion" style={{width:"700px"}}>
                                     <AccordionItem
                                         id={`accordion-item-${index}-1`}
