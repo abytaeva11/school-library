@@ -285,66 +285,7 @@ const Nothing = () => {
 
                     <div className="nothing--all">
 
-                        {/*<div className="nothing--all__left">*/}
-                        {/*    <div className="nothing--all__right ">*/}
-                        {/*        <h4>Обычный</h4>*/}
-                        {/*        <div className="ordinary">*/}
-                        {/*            <input type="checkbox" id="check1" className="round-checkbox"/>*/}
-                        {/*            <h6>Ежемесячно</h6>*/}
-                        {/*        </div>*/}
-                        {/*        <div className="ordinary">*/}
-                        {/*            <input type="checkbox" id="check2" className="round-checkbox-transparent"/>*/}
-                        {/*            <h6>Ежегодно</h6>*/}
-                        {/*        </div>*/}
-                        {/*        <div className="ordinary--span"> <span><AiOutlineCheck*/}
-                        {/*            style={{fontSize: " 22px"}}/></span><h2> Все новые статьи</h2></div>*/}
-                        {/*        <div className="ordinary--span"> <span><AiOutlineCheck*/}
-                        {/*            style={{fontSize: "22px"}}/></span> <h2> Все мастер классы по саморазвитию</h2>*/}
-                        {/*        </div>*/}
-                        {/*    </div>*/}
 
-
-                        {/*    <div className="baby--btn">*/}
-                        {/*        <h4>Цена: 225$</h4>*/}
-                        {/*        <button>Подписаться</button>*/}
-                        {/*    </div>*/}
-                        {/*</div>*/}
-
-                        {/*<div className="second--all">*/}
-                        {/*    <div className="second">*/}
-                        {/*        <div className="second--all">*/}
-                        {/*            <h4>Интенсив</h4>*/}
-                        {/*            <div className="second--baby">*/}
-                        {/*                <input type="checkbox" id="check1" className="round-checkbox"/>*/}
-                        {/*                <h6>Ежемесячно</h6>*/}
-                        {/*            </div>*/}
-                        {/*            <div className="second--baby">*/}
-                        {/*                <input type="checkbox" id="check2" className="round-checkbox-transparent"/>*/}
-                        {/*                <h6>Ежегодно</h6>*/}
-                        {/*            </div>*/}
-                        {/*            <div className="aiOut"><span><AiOutlineCheck/> </span><h2> Все новые статьи</h2>*/}
-                        {/*            </div>*/}
-                        {/*            <div className="aiOut"><span><AiOutlineCheck/> </span><h2>Все мастер классы по*/}
-                        {/*                саморозвитию</h2></div>*/}
-                        {/*            <div className="aiOut"><span><AiOutlineCheck/> </span><h2>Курс по чтению языка*/}
-                        {/*                тела</h2>*/}
-                        {/*            </div>*/}
-                        {/*            <div className="aiOut"><span><AiOutlineCheck/> </span><h2>Курс по накоплению средств*/}
-                        {/*                с*/}
-                        {/*                выполотой долгов</h2></div>*/}
-                        {/*            <div className="aiOut"><span><AiOutlineCheck/> </span><h2> Курс по быстрому*/}
-                        {/*                карьерному*/}
-                        {/*                росту</h2></div>*/}
-                        {/*            <div className="aiOut"><span><AiOutlineCheck/> </span><h2>Курс по одолеванию страха*/}
-                        {/*                потери</h2></div>*/}
-                        {/*        </div>*/}
-                        {/*        <div className="baby--btn">*/}
-                        {/*            <h5>Цена: 750$</h5>*/}
-                        {/*            <button>Подписаться</button>*/}
-                        {/*        </div>*/}
-
-                        {/*    </div>*/}
-                        {/*</div>*/}
                         <div className="cribe--level">
                             {
                                 subscribe.map((el) => (
@@ -365,7 +306,7 @@ const Nothing = () => {
                                                             value={el.average.usual}
                                                             checked={selectedPayment === el.average.usual}
                                                             onChange={handlePaymentChange}
-                                                            className={`checkbox-input ${!isYearValid ? 'invalid' : ''}`}
+                                                            className={`check-input ${!isYearValid ? 'invalid' : ''}`}
 
                                                         />
 
@@ -378,14 +319,14 @@ const Nothing = () => {
                                                             value={el.average.usual2}
                                                             checked={selectedPayment === el.average.usual2}
                                                             onChange={handlePaymentChange}
-                                                            className={`checkbox-input ${!isYearValid ? 'invalid' : ''}`}
+                                                            className={`check-input ${!isYearValid ? 'invalid' : ''}`}
 
                                                         />
                                                         <h5>{language ? el.average.usual3KG : el.average.usual3}</h5>
                                                     </div>
                                                     <div className="cribe--level__just--column__usual2--marge__check1">
                                                         <BsCheckLg className="iconka1"/>
-                                                        <h4>{language ? average.usual4KG : el.average.usual4}</h4>
+                                                        <h4>{language ? el.average.usual4KG : el.average.usual4}</h4>
                                                     </div>
                                                     <div className="cribe--level__just--column__usual2--marge__check2">
                                                         <BsCheckLg className="iconka2"/>
@@ -414,7 +355,7 @@ const Nothing = () => {
                                                                value={el.intensive.careful2}
                                                                checked={selectedPayment === el.intensive.careful2}
                                                                onChange={handlePaymentChange2}
-                                                               className={`checkbox-input2 ${!isMonthValid ? 'invalid' : ''}`}
+                                                               className={`check-input2 ${!isMonthValid ? 'invalid' : ''}`}
                                                         />
                                                         <h3 className="cribe--level__just--column__intensive2--marge__input--year">{language ? el.average.usual2KG : el.average.usual2}</h3>
                                                     </div>
@@ -426,7 +367,7 @@ const Nothing = () => {
                                                             value={el.intensive.careful3}
                                                             checked={selectedPayment === el.intensive.careful3}
                                                             onChange={handlePaymentChange2}
-                                                            className={`checkbox-input2 ${!isMonthValid ? 'invalid' : ''}`}
+                                                            className={`check-input2 ${!isMonthValid ? 'invalid' : ''}`}
                                                         />
                                                         <h5>{language ? el.intensive.carefulKG  : el.intensive.careful}</h5>
                                                     </div>
@@ -556,8 +497,10 @@ const Nothing = () => {
                             ))}
                         </div>
                     </div>
-                    );
-                    };
+
+                   
+
+
 
                 </div>
 

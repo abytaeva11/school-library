@@ -6,6 +6,16 @@ import 'slick-carousel/slick/slick-theme.css';
 import line from "../img/Line 7.png"
 import {LanguageContext} from "../../../components/Context";
 
+import kaif1 from "./img/Kaif 1.png"
+import kaif2 from "./img/Kaif 2.png"
+import kaif3 from "./img/Kaif 3.png"
+import kaif4 from "./img/Kaif 4.png"
+import kaif5 from "./img/Kaif 5.png"
+import kaif6 from "./img/Kaif 6.png"
+
+
+
+
 
 const Many = () => {
     const {fakeBackend} = useContext(LanguageContext)
@@ -59,7 +69,7 @@ const Many = () => {
     return (
         <div id="many">
             <div className="container ">
-                <div className="row  justify-content-center">
+                <div className="row  justify-content-center" >
 
                     <p>{language? " Биздин курстар" : "Наши курсы"}</p>
                     <h1> {language ? "Макалалар " : "Статьи" }</h1>
@@ -82,7 +92,7 @@ const Many = () => {
                     </div>
                     <div className="many__many" >
                         <div className="many--all" >
-                            <div className="row gap-0.4 "  style={{ "--bs-gutter-x": "5.5rem" }}>
+                            <div className="row gap-0.4 "  style={{ "--bs-gutter-x": "1.5rem" }}>
                                 {fakeBackend.map((el) =>
                                     selectTab === el.id ? (
                                         el.books.map((book, value) => (
@@ -107,7 +117,7 @@ const Many = () => {
                                                             <button style={{background:book.id === 1 || book.id === 4 || book.id === 7 ? "#fff":" " }} className="buttons">{book.id === 1 || book.id === 4 || book.id === 7 ? "Новое " : " "  }</button>
                                                             </div>
                                                         <div className="many--text">
-                                                            <h6 style={{fontSize:language?"11px":""}}>{language?book.textKg: book.text}</h6>
+                                                            <h2 style={{fontSize:language?"11px":""}}>{language?book.textKg: book.text}</h2>
                                                             <button>{language?book.textAllKg:book.textAll}</button>
                                                             <button>{language?book.textNewKg :book.textNew}</button>
                                                             <button>{language?book.textBooksKg:book.textBooks}</button>
@@ -149,6 +159,19 @@ const Many = () => {
                         </div>
                     </div>
                 </div>
+
+                <div className="babes">
+                    <img className="copybook1" src={kaif1} alt=""/>
+                    <img className="copybook2" src={kaif2} alt=""/>
+                    <img className="copybook3" src={kaif3} alt=""/>
+                    <img className="copybook4" src={kaif4} alt=""/>
+                    <img className="copybook5" src={kaif5} alt=""/>
+                    <img className="copybook6" src={kaif6} alt=""/>
+
+
+
+                </div>
+
             </div>
         </div>
     );

@@ -1,0 +1,45 @@
+#bolot{
+  margin: 130px 0 70px 0 ;
+}
+.bolot{
+  display: flex;
+  justify-content: space-between;
+}
+.bolot-title h3{
+
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  color: #FFFFFF;
+}
+.bolot-title h1{
+  margin: 0;
+  font-weight: 600;
+  font-size: 40px;
+  color: #FFFFFF;
+}
+.bolot-title p {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 29px;
+  color: #FFFFFF;
+}
+.bolot-text{
+  margin:50px 0 0 80px;
+}
+.kol{
+
+  width: 473px;
+  height: 324px;
+
+  width: 420px;
+  height: 284px;
+  margin-top: 10px;
+
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid #FFFFFF;
+  backdrop-filter: blur(12px);
+  border-radius: 10px;
+  padding: 130px;
+}

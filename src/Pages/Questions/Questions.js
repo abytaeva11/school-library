@@ -89,7 +89,7 @@ const Questions = () => {
                             className="absolute top-0 left-0 w-16 card-image1 animate-card-image1"
                             alt=""
                         />
-                        <div className="flex flex-col mr-[2rem] w-[802px] ml-[25px] ">
+                        <div className="flex flex-col mr-[2rem] w-[948px] ml-[25px] ">
                             <h2 className="text-white tracking-[1.5px] font-semibold text-[35px] mb-[0.95rem] ">
                                 {language ? el.card.titleKG : el.card.title}
                             </h2>
@@ -125,10 +125,10 @@ const Questions = () => {
                         </h2>
                         <div className="flex">
                             <div className="relative">
-                                <img src={query} className="ml-20 mt-8" width={280} alt="" />
+                                <img src={query} className="ml-20 mt-8" width={280} alt="" style={{ marginLeft:"2rem" ,}} />
                             </div>
-                            <div className="ml-12 mt-4">
-                                <div id={`accordion-${index}`} className="accordion">
+                            <div className="ml-[15rem] mt-4">
+                                <div id={`accordion-${index}`} className="accordion" style={{width:"700px"}}>
                                     <AccordionItem
                                         id={`accordion-item-${index}-1`}
                                         title={language ? el.accord.question1KG : el.accord.question1}

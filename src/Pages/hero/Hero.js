@@ -9,15 +9,13 @@ import {LanguageContext} from "../../components/Context";
 const Hero = () => {
     const { language } = useContext(LanguageContext);
     const { head } = useContext(LanguageContext);
-
-
     return(
         <div>
             <section id="hero">
                 <div>
                     {head.map((el) => (
                         <div className="container">
-                            <div className="hero">
+                                <div className="hero" >
                                 <div className="hero--text">
                                     <h2 style={{color:"white"}}>{language ? el.text.alongKG : el.text.along}</h2>
                                     <p>{language ? el.text.along2KG : el.text.along2}</p>
@@ -25,7 +23,6 @@ const Hero = () => {
                                 </div>
                                 <img className="hero--img" src={book} alt=""/>
                             </div>
-                            <div className="line"></div>
                             <img  className="book1" src={img1} alt=""/>
                             <img  className="book2" src={img2} alt=""/>
                             <img  className="book3" src={img3} alt=""/>

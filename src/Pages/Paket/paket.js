@@ -9,6 +9,12 @@ import okim2 from ".././hero/img/book4.png"
 import okim3 from ".././hero/img/bookMin.png"
 
 
+import book1 from "../../assets/img/img1.png"
+import book2 from "../../assets/img/img2.png"
+import book3 from "../../assets/img/img3.png"
+import book4 from "../../assets/img/img4.png"
+
+
 const Paket = () => {
     const { language } = useContext(LanguageContext);
     const { pack } = useContext(LanguageContext);
@@ -37,8 +43,20 @@ const Paket = () => {
                     <img className="oki3" src={okim2} alt=""/>
                     <img  className="oki4" src={okim3} alt=""/>
                 </div>
+<div>
+    <img className="books2" src={book4} alt=""/>
+</div>
+
             </section>
+
+            <div className="book">
+                {/*<img className="books1" src={book1} alt=""/>*/}
+                {/*<img className="books2" src={book2} alt=""/>*/}
+                {/*<img className="books3" src={book3} alt=""/>*/}
+
+            </div>
         </div>
+
 
     )
 }

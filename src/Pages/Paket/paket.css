@@ -45,9 +45,6 @@ a {
     margin-top: -220px;
     margin-left: -82px;
 }
-.paket--textХ{
-    margin-left: 40px;
-}
 
 
 .paket--text__btn2{
@@ -84,9 +81,6 @@ a {
     margin: 0;
 }
 
-.paket--text {
-
-}
 
 h2 {
     font-family: 'Montserrat', sans-serif;
@@ -124,26 +118,9 @@ p {
 
 }
 
-.book1 {
-    position: absolute;
-    bottom: 655px;
-    left: 240px;
-}
 
-.book2 {
-    position: absolute;
-    left: 1140px;
-    bottom: 800px;
-}
-
-.book3 {
-    position: absolute;
-    left: 990px;
-    bottom: 80px;
-}
-
-.book4 {
+.books2 {
     position: absolute;
     bottom: 140px;
-    left: 2px;
+    right: 1200px;
 }

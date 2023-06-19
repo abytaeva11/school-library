@@ -32,6 +32,11 @@ const Course = () => {
                                 <a href="">Подробнее...</a>
 
                             </div>
+                            <div className="text2">
+                                <NavLink to={"/youtube"}> <img src={img1} alt=""/></NavLink>
+
+//                                 <a style={{marginTop:"270px"}} href="">Подробнее...</a>
+                            </div>
                         <div className="course-block">
                             <h1>Создание команды</h1>
                             <div className="text">
@@ -46,6 +51,7 @@ const Course = () => {
                             </div>
                             <div className="text2">
                                 <NavLink to={"/youtube"}> <img src={img1} alt=""/></NavLink>
+//                                 <a style={{marginTop:"270px"}} href="">Подробнее...</a>
                             </div>
                             <a href="">Подробнее...</a>
 
@@ -64,6 +70,7 @@ const Course = () => {
                             </div>
                             <div className="text2">
                                 <NavLink to={"/youtube"}> <img src={img1} alt=""/></NavLink>
+//                                <a style={{marginTop:"270px"}} href="">Подробнее...</a>
                             </div>
                             <a href="">Подробнее...</a>
 
@@ -97,7 +104,7 @@ const Course = () => {
                                 </div>
                                 <div className="text2">
                                     <NavLink to={"/youtube"}> <img src={img1} alt=""/></NavLink>
-                                    <a href="">Подробнее...</a>
+//                                     <a style={{marginTop:"270px"}} href="">Подробнее...</a>
                                 </div>
                             </div>
                             <div className="course-block">
@@ -114,7 +121,7 @@ const Course = () => {
                                 </div>
                                 <div className="text2">
                                     <NavLink to={"/youtube"}> <img src={img1} alt=""/></NavLink>
-                                    <a href="">Подробнее...</a>
+//                                     <a style={{marginTop:"270px"}} href="">Подробнее...</a>
                                 </div>
                             </div>
                             <div className="course-block">
@@ -131,7 +138,7 @@ const Course = () => {
                                 </div>
                                 <div className="text2">
                                     <NavLink to={"/youtube"}> <img src={img1} alt=""/></NavLink>
-                                    <a href="">Подробнее...</a>
+//                                     <a style={{marginTop:"270px"}} href="">Подробнее...</a>
                                 </div>
                             </div>
                         </div>
@@ -153,7 +160,7 @@ const Course = () => {
                                 </div>
                                 <div className="text2">
                                     <NavLink to={"/youtube"}> <img src={img1} alt=""/></NavLink>
-                                    <a href="">Подробнее...</a>
+//                                     <a style={{marginTop:"270px"}} href="">Подробнее...</a>
                                 </div>
                             </div>
                             <div className="course-block">
@@ -170,7 +177,7 @@ const Course = () => {
                                 </div>
                                 <div className="text2">
                                     <NavLink to={"/youtube"}> <img src={img1} alt=""/></NavLink>
-                                    <a href="">Подробнее...</a>
+//                                     <a style={{marginTop:"270px"}} href="">Подробнее...</a>
                                 </div>
                             </div>
                             <div className="course-block">
@@ -187,7 +194,7 @@ const Course = () => {
                                 </div>
                                 <div className="text2">
                                     <NavLink to={"/youtube"}> <img src={img1} alt=""/></NavLink>
-                                    <a href="">Подробнее...</a>
+//                                     <a style={{marginTop:"270px"}} href="">Подробнее...</a>
                                 </div>
                             </div>
                         </div>
