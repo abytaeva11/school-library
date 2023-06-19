@@ -59,7 +59,7 @@ const You = () => {
                                 width: zet ? "65px" : "",
                                 height: zet ? "40px" : ""
                             }}
-                                className={`you--picture__play ${zet ? '' : 'active'}`}
+                                className={`you--picture__play ${zet ? '' : 'activeta'}`}
                                 onClick={handleButtonClick}
                             >
                 <span style={{
