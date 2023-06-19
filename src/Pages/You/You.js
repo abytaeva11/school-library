@@ -5,6 +5,8 @@ import { FaPlay } from "react-icons/fa";
 import {IoMdPause} from "react-icons/io";
 import paly from "../You/128210 (Original).mp4"
 
+import alone from "../../assets/img/img2.png"
+
 const You = () => {
     const [videoActivated, setVideoActivated] = useState(false);
     const [ next, setNext] = useState(false)
@@ -42,6 +44,10 @@ const You = () => {
 
                         </video>
                     </div>
+                    <div>
+                        <img className="alone" src={alone} alt=""/>
+                    </div>
+
                 </div>
             </div>
         </div>
