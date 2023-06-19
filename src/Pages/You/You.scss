@@ -1,5 +1,6 @@
 #you {
   .you {
+    position: relative;
     &--picture {
       position: relative;
 
@@ -157,7 +158,7 @@
     }
   }
 
-  /* Добавляем стили для перемещенной кнопки */
+ 
   .you--picture__play.active {
     top: calc(57% - 80px);
     transition: .2s;
@@ -169,7 +170,16 @@
 
   }
 }
+
 .you--picture__bacvid--line__border--anim {
   transition: width 100s;
   cursor: pointer;
+
+
+.alone{
+position: absolute;
+  bottom: 350px;
+  left: 0;
+  z-index: -99;
+
 }

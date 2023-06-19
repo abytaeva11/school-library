@@ -1,7 +1,8 @@
 #third{
   color: #FFFFFF;
   .third{
-
+position: relative;
+    padding: 50px 0;
     h1{
       font-family: 'Montserrat',sans-serif;
       font-weight: 500;
@@ -9,7 +10,7 @@
       line-height: 58px;
       text-align: center;
       width: 693px;
-      height: 58px;
+      height: 128px;
       margin-left:209px;
       top: 230px;
       letter-spacing: 0.3px;
@@ -26,7 +27,7 @@
     }
     p{
       width: 1006px;
-      height: 116px;
+      height: 96px;
      margin-left: 61px;
       margin-bottom: 69px;
       font-family: 'Montserrat',sans-serif;
@@ -36,4 +37,22 @@
       text-align: center;
     }
   }
+}
+
+.self1{
+  position: absolute;
+  top: 130px;
+  right: 110px  ;
+}
+.self2{
+  position: absolute;
+bottom: 10px;
+  left: 0;
+
+}
+.self3{
+  position: absolute;
+  top: 230px;
+  left: 220px  ;
+
 }

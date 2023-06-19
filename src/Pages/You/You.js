@@ -8,6 +8,8 @@ import creative from "../You/creative.svg"
 import { IoSettingsSharp } from "react-icons/io5";
 import { AiOutlineFullscreen } from "react-icons/ai";
 
+import alone from "../../assets/img/img2.png"
+
 const You = () => {
     const [videoActivated, setVideoActivated] = useState(false);
     const [isResizing, setIsResizing] = useState(false);
@@ -109,6 +111,10 @@ const You = () => {
                             </div>
                         </div>
                     </div>
+                    <div>
+                        <img className="alone" src={alone} alt=""/>
+                    </div>
+
                 </div>
             </div>
         </div>
