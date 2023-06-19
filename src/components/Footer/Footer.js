@@ -3,7 +3,6 @@ import visa from "./img/visa.png"
 import maestro from "./img/master.png"
 import book from "./img/book.png"
 
-
 import {AiOutlineInstagram, AiOutlineMail, AiOutlineYoutube} from "react-icons/ai";
 import {BsFacebook, BsTelegram, BsTelephone, BsTwitter} from "react-icons/bs";
 import {SlSocialVkontakte} from "react-icons/sl";
@@ -71,7 +70,7 @@ const Footer = () => {
                                             <p>< AiOutlineMail className="icon2 mr-2"/>Self_dev_school@gmail.com</p>
                                         </div>
                                         <div className="location">
-                                            <h1>{language ? el.text.adressKG : el.text.adress}</h1>
+                                            <h2>{language ? el.text.adressKG : el.text.adress}</h2>
                                             <div className="line1"></div>
                                             <p><BiLocationPlus className="icon3"/>{language ? el.text.streetKG : el.text.street}</p>
                                             <p><Tb123 className="icon3"/>{language ? el.text.codeKG : el.text.code}</p>
@@ -82,7 +81,6 @@ const Footer = () => {
                                 <img className="logo4" src={maestro} alt=""/>
                                 <img className="books" src={book} alt=""/>
                             </div>
-
                         ))}
                     </div>
                 </section>

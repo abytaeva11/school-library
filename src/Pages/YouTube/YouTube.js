@@ -25,7 +25,7 @@ const YouTube = () => {
                                     <p>{language ? el.you.text2KG : el.you.text2}</p>
                                     <button>{language ? el.you.text3KG : el.you.text3}</button>
                                 </div>
-//                                 <div className="effect-title2">
+//   z                              <div className="effect-title2">
 //                                     <h2>{language ? el.you.text4KG : el.you.text4}</h2>
 //                                     <p>{language ? el.you.text5KG : el.you.text5}</p>
 //                                     <p>{language ? el.you.text6KG : el.you.text6}</p>
