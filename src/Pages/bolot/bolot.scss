@@ -43,3 +43,28 @@
   border-radius: 10px;
   padding: 130px;
 }
+#bolot{
+  position: relative;
+}
+.bolot1{
+  position: absolute;
+  right: 110px;
+  bottom: 130px;
+  filter: blur(3px);
+
+}
+
+.bolot2{
+  position: absolute;
+  right: 210px;
+  bottom: -6px;
+}
+.bolot3{
+  position: absolute;
+  left: 270px;
+  bottom: 100px;
+}
+.bolot4{
+  position: absolute;
+  bottom: -80px ;
+}

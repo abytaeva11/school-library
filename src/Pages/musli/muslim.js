@@ -3,7 +3,7 @@ import img from '../musli/img/surot.svg'
 import img2 from '../musli/img/log2.svg'
 import {AiFillStar} from "react-icons/ai";
 import './musim.scss'
-
+import muslim1 from "../../assets/img/img3.png"
 const Muslim = () => {
     return (
         <div id='musa '>
@@ -69,8 +69,14 @@ const Muslim = () => {
                             актуальность материалов</p>
 
                     </div>
+                    <div>
+                        <img className="muslim1" src={muslim1} alt=""/>
+
+                    </div>
                 </div>
+
             </div>
+
         </div>
 
 

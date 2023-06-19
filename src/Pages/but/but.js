@@ -3,6 +3,10 @@ import log1 from '../but/img/youtu.svg'
 import log2 from '../but/img/log2.svg'
 import log3 from '../but/img/log3.svg'
 import './but.scss'
+import but1 from "../../assets/img/img3.png"
+import but2 from "../../assets/img/img5.png"
+
+
 
 const But = () => {
     return (
@@ -33,6 +37,12 @@ const But = () => {
 
                     </div>
                 </div>
+                <div>
+                    <img className="but1" src={but1} alt=""/>
+                    <img className="but2" src={but2} alt=""/>
+
+                </div>
+
             </div>
 
 

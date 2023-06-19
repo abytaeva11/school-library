@@ -6,7 +6,7 @@
     margin: 0;
 }
 body {
-    background: linear-gradient(110deg, #D78B59, #595FEB);
+    background: linear-gradient(105deg, #D78B59, #595FEB);
     font-family: 'Montserrat', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -25,4 +25,5 @@ a{
     padding-bottom: 6.5px;
     margin-right: 4px;
 }
+/*background: linear-gradient(105deg, #D78B59 0%, #D78B59 10%, #595FEB 40%, #595FEB 100%);*/
 
