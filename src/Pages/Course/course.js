@@ -32,7 +32,7 @@ const Course = () => {
                                 <a href="">Подробнее...</a>
 
                             </div>
-                            {/*<div className="text2">*/}
+                           {/*<div className="text2">*/}
                             {/*    <NavLink to={"/youtube"}> <img src={img1} alt=""/></NavLink>*/}
 
                             {/*</div>*/}
@@ -101,6 +101,8 @@ const Course = () => {
                                 </div>
                                 <div className="text2">
                                     <NavLink to={"/youtube"}> <img src={img1} alt=""/></NavLink>
+                                    <a style={{marginTop:"270px"}} href="">Подробнее...</a>
+
                                 </div>
                             </div>
                             <div className="course-block">
@@ -117,6 +119,8 @@ const Course = () => {
                                 </div>
                                 <div className="text2">
                                     <NavLink to={"/youtube"}> <img src={img1} alt=""/></NavLink>
+                                  <a style={{marginTop:"270px"}} href="">Подробнее...</a>
+
                                 </div>
                             </div>
                             <div className="course-block">
@@ -133,6 +137,7 @@ const Course = () => {
                                 </div>
                                 <div className="text2">
                                     <NavLink to={"/youtube"}> <img src={img1} alt=""/></NavLink>
+                                     <a style={{marginTop:"270px"}} href="">Подробнее...</a>
                                 </div>
                             </div>
                         </div>
