@@ -5,6 +5,10 @@ import query from "../../Pages/Questions/img/bigQuery.png";
 import { LanguageContext } from "../../components/Context";
 import {Link, useNavigate} from "react-router-dom";
 import "../Questions/Question.scss";
+import back1 from  "../../assets/img/img2.png"
+import back3 from  "../../assets/img/img3.png"
+
+
 
 const Questions = () => {
     const { language } = useContext(LanguageContext);
@@ -65,7 +69,7 @@ const Questions = () => {
             <div className="container mx-auto">
                 {data?.map((el) => (
                     <div
-                        className="backdrop-blur-lg relative px-6 flex rounded-lg border border-indigo-50 transition-transform duration-300 pt-[41px] pb-[35px]"
+                        className="back backdrop-blur-lg relative px-6 flex rounded-lg border border-indigo-50 transition-transform duration-300 pt-[41px] pb-[35px]"
                         onMouseEnter={(e) => {
                             const card = e.currentTarget;
                             const images = card.querySelector(".card-image1");
@@ -113,13 +117,13 @@ const Questions = () => {
                         </div>
                         <img
                             src={sub2}
-                            className="absolute bottom-0 right-[15.5rem] w-40 card-image2 animate-card-image2"
+                            className="absolute bottom-0 right-[15.5rem] w-60 card-image2 animate-card-image2"
                             alt=""
                         />
                     </div>
                 ))}
                 {data.map((el, index) => (
-                    <div className="pt-12 items-center" key={el.accord.name}>
+                    <div className="pt-[8rem] items-center" key={el.accord.name}>
                         <h2 className="text-white text-3xl font-semibold">
                             {language ? el.accord.nameKG : el.accord.name}
                         </h2>
@@ -127,7 +131,7 @@ const Questions = () => {
                             <div className="relative">
                                 <img src={query} className="ml-20 mt-8" width={280} alt="" style={{ marginLeft:"2rem" ,}} />
                             </div>
-                            <div className="ml-[15rem] mt-4">
+                            <div className="ml-[20px] mt-4">
                                 <div id={`accordion-${index}`} className="accordion" style={{width:"700px"}}>
                                     <AccordionItem
                                         id={`accordion-item-${index}-1`}
@@ -158,6 +162,13 @@ const Questions = () => {
                         </div>
                     </div>
                 ))}
+
+                <div className="back">
+                    <img className="back1" src={back1} alt=""/>
+                    <img className="back3" src={back3} alt=""/>
+
+                </div>
+
             </div>
         </div>
     );
