@@ -79,8 +79,9 @@ li:after{
   background-color: #ffffff;
   transform-origin: bottom right;
   transition: transform 0.5s ease-out;
+
 }
-li:hover::after{
+li:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
 }
