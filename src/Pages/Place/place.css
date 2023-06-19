@@ -8,6 +8,7 @@
 }
 #place{
     padding:100px 0  ;
+    position: relative;
 }
 
 .place-text  span {
@@ -49,4 +50,40 @@ p {
     color: rgba(255, 255, 255, 0.81);
     font-size: 20px;
     margin: 20px 20px;
+}
+.place1{
+    position: absolute;
+    top: 170px;
+    left: 400px;
+    z-index: -99;
+    filter: blur(3px);
+
+}
+.place2{
+    position: absolute;
+    top: 553px;
+    left: 1142px;
+    z-index: -99;
+
+}
+.place3{
+    position: absolute;
+    top: 1600px;
+    left: 1002px;
+}
+
+.place4{
+    position: absolute;
+    top: 1700px;
+    left: 252px;
+}
+.place5{
+    position: absolute;
+    left: 0;
+    bottom: 80px;
+}
+.place6{
+    position: absolute;
+    left: 760px;
+    bottom: 130px;
 }
