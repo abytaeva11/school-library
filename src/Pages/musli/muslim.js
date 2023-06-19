@@ -72,10 +72,6 @@ const Muslim = () => {
                 </div>
             </div>
         </div>
-            </div>
-
-
-        </div>
     );
 };
 
