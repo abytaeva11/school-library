@@ -22,16 +22,19 @@ import You from "./Pages/You/You";
 
 
 function App() {
+
+    const [login, setLogin] = useState(JSON.parse(localStorage.getItem('userL')) || [])
+
     const [loggedIn, setLoggedIn] = useState(false)
     const location = useLocation();
     return (
             <UserContext.Provider value={{loggedIn,setLoggedIn}}>
 
         <div className="App">
-            <Header/>
+            <Header login={login} setLogin={setLogin}/>
             <Routes>
                 {/*<Route path={'/'} element={<Global/>}/>*/}
-                <Route path={'/login'} element={<Login/>}/>
+                <Route path={'/login'} element={<Login login={login} setLogin={setLogin} />}/>
                 <Route path={'/courses'} element={<WeAre/>}/>
                 <Route path={'/third'} element={<Third/>}/>
 
