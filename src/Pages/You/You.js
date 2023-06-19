@@ -1,43 +1,49 @@
-import React, { useRef } from 'react';
-import ReactPlayer from 'react-player';
+import React, { useState } from 'react';
+import picture from "../You/picture.png"
+import "../You/You.scss"
+import { FaPlay } from "react-icons/fa";
+import {IoMdPause} from "react-icons/io";
+import paly from "../You/128210 (Original).mp4"
 
 const You = () => {
-    const playerRef = useRef(null);
-
-    const toggleFullScreen = () => {
-        const player = playerRef.current;
-        if (player) {
-            if (player.requestFullscreen) {
-                player.requestFullscreen();
-            } else if (player.mozRequestFullScreen) {
-                player.mozRequestFullScreen();
-            } else if (player.webkitRequestFullscreen) {
-                player.webkitRequestFullscreen();
-            } else if (player.msRequestFullscreen) {
-                player.msRequestFullscreen();
-            }
-        }
+    const [videoActivated, setVideoActivated] = useState(false);
+    const [ next, setNext] = useState(false)
+    // const [buttonIcon, setButtonIcon] = useState(<FaPlay/>)
+    const handleButtonClick = () => {
+        setVideoActivated(!videoActivated); // Переключаем значение флага videoActivated
+        setNext(!next)
+        // setTimeout(()=>{
+        //     setButtonIcon(videoActivated ? <FaPlay/> : <IoMdPause/>)
+        // }, 1000)
     };
 
     return (
-        <div style={{marginLeft:"170px"}}>
-            <ReactPlayer
-                ref={playerRef}
-                url="https://i.pinimg.com/originals/b7/83/a3/b783a38e9a5a87f62162bc1558ed067f.jpg "
-                controls={true}
-                playing={false}
-                width="900px"
-                height="400px"
-            />
+        <div id="you">
+            <div className="you">
+                <div className="container">
+                    <div className="you--picture">
+                        {/*<img className="you--picture__pic" src={picture} alt=""/>*/}
+                        {
+                            !videoActivated ?   <button className={`you--picture__play ${videoActivated ? 'active' : ''}`} onClick={handleButtonClick}>
+                            <span className="you--picture__play--iconca">
+                          {videoActivated ?  <IoMdPause /> : <FaPlay /> }
+                                <div></div>
+                            </span>
+                            </button> :
+                                <button className={`you--picture__pause ${videoActivated ? 'activated' : ''}`} onClick={handleButtonClick}>
+                            <span className="you--picture__pause--iconca">
+                              {videoActivated ?  <IoMdPause /> : <FaPlay /> }
+                            </span>
+                                </button>
+                        }
 
+                        <video id="player" playsInline controls data-poster="/path/to/poster.jpg">
+                            <source src={paly} type="video/mp4"/>
 
-
-
-            {/*<iframe width="480" height="270"*/}
-            {/*        src="https://dzen.ru/embed/vWxLm7YZ9YkE?from_block=partner&from=zen&mute=0&autoplay=0&tv=0"*/}
-            {/*        allow="autoplay; fullscreen; accelerometer; gyroscope; picture-in-picture; encrypted-media"*/}
-            {/*        frameBorder="0" scrolling="no" allowFullScreen></iframe>*/}
-
+                        </video>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 };
