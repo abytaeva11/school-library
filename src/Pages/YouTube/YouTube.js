@@ -5,13 +5,13 @@ import AccordionWe from "../accordionWe/AccordionWe";
 import {LanguageContext} from "../../components/Context";
 const YouTube = () => {
     const { language } = useContext(LanguageContext);
-    const { you } = useContext(LanguageContext);
+    const { hero } = useContext(LanguageContext);
     return (
         <div>
 
             <div id="effect">
                 {
-                    you.map((el) => (
+                    hero.map((el) => (
                         <div className="container">
                             <a className="link" href="">{language ? el.you.textKG : el.you.text}</a>
                             <div className="effect">
@@ -24,7 +24,7 @@ const YouTube = () => {
                                     <h2>{language ? el.you.text4KG : el.you.text4}</h2>
                                     <p>{language ? el.you.text5KG : el.you.text5}</p>
                                     <p>{language ? el.you.text6KG : el.you.text6}</p>
-                                </div>
+                                </div>z
                             </div>
                         </div>
 

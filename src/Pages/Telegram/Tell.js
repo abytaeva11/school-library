@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
+
 function Tell() {
     const [input1, setInput1] = useState('');
     const [input2, setInput2] = useState('');
@@ -55,7 +56,7 @@ return (
             <div className="tell flex justify-around my-32">
                 <div className="tell-title">
                     <h1 style={{
-                        marginLeft: '-13px',
+                        marginLeft: '-11px',
                         marginBottom:' 47px',
                     }} >Оставить отзыв</h1>
                     <p>Если вам понравилась наша <br/>
@@ -153,6 +154,9 @@ return (
                     </form>
                 </div>
             </div>
+            {/*<img  className="tal" src={talk1} alt=""/>*/}
+            {/*<img className="tal2" src={talk2} alt=""/>*/}
+
         </div>
     </div>
 
