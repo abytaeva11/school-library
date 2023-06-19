@@ -54,7 +54,7 @@ const Header = ({login, setLogin}) => {
                             className={'rounded-tr-md rounded-br-md rounded-bl-md w-32 h-10 rounded-sm flex items-center bg-white text-blue-500 flex justify-center items-center mb-4 '}
                         ><CiUser className="header-icon"/>
                             {
-                                login.length > 0 ? login : 'войти'
+                                login.length > 0 ? login : 'войти,'
                             }
                         </button>
                     </div>))}
