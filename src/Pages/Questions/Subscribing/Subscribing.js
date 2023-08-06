@@ -353,6 +353,7 @@ const Subscribing = () => {
                         </div>
 
                         <div className="cribe--level">
+                        
                             {
                                 subscribe.map((el) => (
                                     <div className="cribe--level__just">
